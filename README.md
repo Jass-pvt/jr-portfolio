@@ -18,7 +18,7 @@ A personal portfolio website showcasing projects, skills, and achievements of **
 ---
 
 ## 🛠 Technologies Used
-- **Frontend:** HTML, CSS, JavaScript, React, Tailwind CSS  
+- **Frontend:** HTML, CSS, JavaScript.
 - **Backend / Deployment:** GitHub Pages  
 - **Tools:** VS Code, Figma, Git, GitHub  
 - **Deployment:** GitHub Pages,Versal  
