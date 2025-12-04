@@ -8,7 +8,7 @@ A personal portfolio website showcasing projects, skills, and achievements of **
 
 --- 
  
-## 🚀 Features
+## 🚀 Features 
 - Clean, professional, and responsive design  
 - Showcases projects with live demos and GitHub links  
 - Highlights skills and technologies  
