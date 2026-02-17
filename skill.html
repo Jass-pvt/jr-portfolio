@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Skills</title>
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        color: #fff;
+        background: url("background.jpg") no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+    }
+
+    /* Overlay for readability */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(16, 16, 16, 0.8);
+        z-index: -1;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(31, 31, 31, 0.95);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 40px;
+        z-index: 1000;
+    }
+
+    nav .logo {
+        color: #a855f7;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    #main-content {
+        padding-top: 100px;
+        text-align: center;
+        animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .section-title {
+        font-size: 22px;
+        margin: 30px 0 10px;
+        color: #a855f7;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+    }
+
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .skill-card {
+        background: rgba(30, 30, 30, 0.9);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeUp 0.8s ease forwards;
+    }
+
+    .skill-card i {
+        font-size: 35px;
+        margin-bottom: 10px;
+        color: #a855f7;
+        display: block;
+    }
+
+    .skill-card h3 {
+        font-size: 16px;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+    }
+
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+        margin-top: 30px;
+        }
+
+        .tech-card {
+        background: linear-gradient(145deg, #1e1e1e, #252525);
+        border-radius: 18px;
+        padding: 22px;
+        text-align: center;
+        transition: all 0.35s ease;
+        box-shadow: 0 0 0 rgba(138, 43, 226, 0);
+        }
+
+        .tech-card i {
+        font-size: 34px;
+        color: #9b5cff;
+        margin-bottom: 12px;
+        }
+
+        .tech-card h3 {
+        font-size: 18px;
+        margin-bottom: 6px;
+        color: #ffffff;
+        }
+
+        .tech-card p {
+        font-size: 14px;
+        color: #cfcfcf;
+        line-height: 1.5;
+        }
+
+        .tech-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 25px rgba(155, 92, 255, 0.35);
+}
+
+
+
+    .back-btn {
+        position: fixed;
+        top: 120px;
+        right: 30px;
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: transparent;
+        color: #a855f7;
+        border: 2px solid #a855f7;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 2000;
+    }
+
+    .back-btn:hover {
+        background-color: #a855f7;
+        color: white;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+        nav .logo {
+            font-size: 18px;
+        }
+        .skill-card i {
+            font-size: 28px;
+        }
+        .back-btn {
+            top: 90px;
+            right: 15px;
+            font-size: 14px;
+            padding: 6px 12px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">My Skills</div>
+    <button class="back-btn" onclick="goBack()">Back</button>
+</nav>
+
+<div id="main-content">
+
+    <h2 class="section-title">Programming Skills</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-brands fa-python"></i><h3>Python</h3></div>
+        <div class="skill-card"><i class="fa-brands fa-html5"></i><h3>HTML5</h3></div>
+        <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><h3>CSS</h3></div>
+        <div class="skill-card"><i class="fa-brands fa-js"></i><h3>JavaScript</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-r"></i><h3>R Programming</h3></div>
+        <div class="skill-card"><i class="fa-brands fa-react"><h3>React Basic</h3></i></div>
+    </div>
+
+    <h2 class="section-title">Soft Skills</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-solid fa-people-group"></i><h3>Teamwork</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-lightbulb"></i><h3>Problem-Solving</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-clock"></i><h3>Time Management</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-bolt"></i><h3>Quick Learning</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-comments"></i><h3>Effective Communication</h3></div>
+    </div>
+
+    <h2 class="section-title">Languages</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>Hindi - Native</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>English - Professional</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>Rajasthani - Fluent</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>Marwadi - Fluent</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>Tamil - Conversational</h3></div>
+    </div>
+
+    <h2 class="section-title">Technologies</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-solid fa-shield-halved"></i><h3>Cyber Security</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-cloud"></i><h3>Cloud Computing</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-gears"></i><h3>DevOps </h3></div>
+        <div class="skill-card"><i class="fa-solid fa-brain"></i><h3>Artificial Intelligence</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-robot"></i><h3>Machine Learning</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-chart-line"></i><h3>Data Analytics</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-microchip"></i><h3>IoT</h3></div>
+        
+        
+    
+
+    </div>
+
+    <h2 class="section-title">Tools & Platforms</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-solid fa-code"></i><h3>VS Code</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-chart-column"></i><h3>Power BI</h3></div>
+        <div class="skill-card"><i class="fa-brands fa-github"></i><h3>Git, GitHub</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-book"></i><h3>Jupyter Notebook</h3></div>
+        <div class="skill-card">  <i class="fa-brands fa-python"></i>  <h3>Python IDLE</h3></div>
+        <div class="skill-card">  <i class="fa-solid fa-flask"></i>  <h3>Google Colab</h3></div>
+        <div class="skill-card">  <i class="fab fa-r-project skill-icon"></i>   <h3>R</h3></div>
+    </div>
+
+    <h2 class="section-title">Databases & APIs</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-solid fa-database"></i><h3>MongoDB</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-database"></i><h3>MySQL</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-network-wired"></i><h3>REST APIs, JSON</h3></div>
+    </div>
+
+    <h2 class="section-title">Frameworks & Libraries</h2>
+
+   
+        <div class="tech-grid">
+
+        <div class="tech-card">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Frameworks</h3>
+            <p>Streamlit, React (Basics), Express.js</p>
+        </div>
+
+        <div class="tech-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Data Science</h3>
+            <p>Pandas, NumPy</p>
+        </div>
+
+        <div class="tech-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Visualization</h3>
+            <p>Matplotlib, Seaborn, Plotly, Cufflinks</p>
+        </div>
+
+        <div class="tech-card">
+            <i class="fa-solid fa-brain"></i>
+            <h3>Machine Learning</h3>
+            <p>Scikit-learn, Random Forest, OpenCV</p>
+        </div>
+
+        <div class="tech-card">
+            <i class="fa-solid fa-language"></i>
+            <h3>NLP</h3>
+            <p>NLTK, Regex</p>
+        </div>
+
+        <div class="tech-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Networking & Security</h3>
+            <p>Requests, WHOIS, tldextract, SSL/TLS</p>
+        </div>
+
+        
+
+        </div>
+
+
+
+    <h2 class="section-title">Operating Systems</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-brands fa-windows"></i><h3>Windows</h3></div>
+        <div class="skill-card"><i class="fa-brands fa-linux"></i><h3>Linux</h3></div>
+
+    </div>
+
+    <h2 class="section-title">Productivity Tools</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-solid fa-file-word"></i><h3>Microsoft Office</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-users"></i><h3>Google Workspace</h3></div>
+    </div>
+
+
+ 
+    
+</div>
+ <script>
+function goBack() {
+    window.location.href = "http://127.0.0.1:5500/jr.html";
+}
+</script>
+</body>
+</html>

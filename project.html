@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Projects</title>
+<style>
+    body {
+        background-color: #121212;
+        font-family: Arial, sans-serif;
+        color: #e0e0e0;
+        padding: 40px;
+    }
+
+    h2 {
+        color: #c084fc;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 28px;
+        text-shadow: 0 0 8px rgba(192,132,252,0.8);
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: auto;
+        
+    }
+
+    /* FIXED: Card auto-height + no scrollbar */
+    .project {
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        transition: all 0.3s ease;
+        border-left: 4px solid #9b59b6;
+        position: relative;
+        height: auto;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-card {
+        background: #111;
+        border-radius: 16px;
+        padding: 20px;
+        transition: all 0.3s ease;
+        border: 1px solid #222;
+    }
+
+    .project:hover {
+        background: #1a1a1a;
+        box-shadow: 0 0 15px 4px rgba(128, 0, 255, 0.4); /* purple glow */
+        transform: translateY(-5px);
+        border-color: #bb86fc;
+    }
+
+    .project h3 {
+        color: #c084fc;
+        margin-bottom: 6px;
+        font-size: 20px;
+    }
+
+    .project p {
+        font-size: 14px;
+        color: #bbb;
+        margin-bottom: 8px;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 20px;
+    }
+
+    ul li {
+        margin: 6px 0;
+        padding: 6px 10px;
+        background: #242424;
+        border-radius: 6px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    ul li::before {
+        content: "•";
+        position: absolute;
+        left: -20px;
+        font-size: 20px;
+        color: #9b59b6;
+        top: 4px;
+    }
+
+    ul li:hover {
+        background: #333;
+        transform: translateX(4px);
+    }
+
+    a {
+        color: #9b59b6;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .back-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 8px 16px;
+        font-size: 14px;
+        background-color: transparent;
+        color: #a855f7;
+        border: 2px solid #a855f7;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background-color: #a855f7;
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h2>My Projects</h2>
+
+<div class="projects-grid">
+
+    <div class="project">
+    <h3>Interactive Developer Portfolio</h3>
+    <p> 2026</p>
+    <p>
+        <a href="YOUR_PORTFOLIO_LINK_HERE" target="_blank">
+            Live Website →
+        </a>
+    </p>
+
+    <p><strong>Tech Stack:</strong> HTML5, CSS3, JavaScript, Responsive Design, Git, GitHub Pages / Netlify</p>
+
+    <ul>
+        <li>Designed and developed a fully responsive professional portfolio to showcase projects, certifications, and technical expertise.</li>
+        <li>Implemented dynamic filtering, structured project sections, and interactive UI components for enhanced user experience.</li>
+        <li>Deployed the application using Git-based workflows with production hosting on GitHub Pages / Netlify.</li>
+        <li>Optimized performance, accessibility, and cross-browser compatibility.</li>
+    </ul>
+    </div>
+
+
+    <div class="project">
+        <h3>DataForge – Interactive Stock Market Analytics Dashboard</h3>
+        <p>2025</p>
+        <p><a href="https://dataforge-jr.streamlit.app" target="_blank">Live Project Link</a></p>
+        <p><strong>Tech Stack:</strong> Streamlit, Python, Yahoo Finance (yfinance), 
+            Pandas, NumPy, Plotly, Cufflinks</p>
+
+        <ul>
+            <li>Built an interactive stock market analytics dashboard using Streamlit.</li>
+            <li>Enabled real-time stock price analysis using Yahoo Finance (yfinance).</li>
+            <li>Visualized market trends and indicators with dynamic and interactive charts.</li>
+            <li>Implemented portfolio-level analysis for better investment insights.</li>
+            <li>Deployed the application on Streamlit Cloud for public access.</li>
+            <li>Designed the project for educational and demonstration purposes only.</li>
+        </ul>
+    </div>
+
+
+    <div class="project">
+        <h3>Smart Kitchen Gardening – IoT Automation + Organic Learning Platform</h3>
+        <p>Jul 2025 – Present</p>
+        <p><a href="https://snack.expo.dev/@jaswanthrathore/smart-garden-iot-system" target="_blank">Project Link</a></p>
+        <p><strong>Tech Stack:</strong> ESP8266, DHT11, Soil Sensor, Firebase, Flutter/React Native, 
+            HTML, CSS, JS, Node.js, MongoDB</p>
+
+        <ul>
+            <li>Built an IoT + web system for smart gardening and organic education.</li>
+            <li>Developed real-time monitoring for soil moisture, temperature, humidity.</li>
+            <li>Implemented auto/manual irrigation with cloud logging & alerts.</li>
+            <li>Designed learning modules for Vegetables, Fruits, and Nuts.</li>
+            <li>Added user login, subscriptions, dashboard, and product catalog.</li>
+            <li>Unified gardening education + IoT automation in one platform.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>URL Safety Checker using Python & Cybersecurity Techniques</h3>
+        <p>Sep 2025 – Nov 2025</p>
+        <p><a href="https://colab.research.google.com/drive/1oKLhvnJ9Ea6KcbNwUbw6jUnnxGZFCbf3?usp=sharing" target="_blank">Project Link</a></p>
+        <p><strong>Tech Stack:</strong> Python, WHOIS, Requests, Regex, tldextract, SSL/TLS, JSON</p>
+        <ul>
+            <li>Analyzed URL safety using cybersecurity heuristics.</li>
+            <li>Performed SSL inspection, WHOIS lookup & phishing-pattern analysis.</li>
+            <li>Integrated optional VirusTotal/GSB API scanning.</li>
+            <li>Generated safety scores using domain age & suspicious patterns.</li>
+            <li>Produced detailed safety/malicious reports.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>Spam Detection using Machine Learning for Cybersecurity</h3>
+        <p>Feb 2025 – Mar 2025</p>
+        <p><a href="https://colab.research.google.com/drive/1KcVvp4gavg07-NO--TX4UmsJKKwQbYkk?usp=sharing" target="_blank">Project Link</a></p>
+        <p><strong>Tech Stack:</strong> Python, Scikit-learn, NLTK, Streamlit, Matplotlib</p>
+        <ul>
+            <li>Developed an ML model to classify spam/ham messages.</li>
+            <li>Implemented NLP preprocessing & tokenization.</li>
+            <li>Achieved <strong>94.87% accuracy</strong> using XGBoost/Random Forest.</li>
+            <li>Compared models using accuracy & recall.</li>
+            <li>Deployed Streamlit app for real-time detection.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>Budget Tracker</h3>
+        <p><strong>Jun 2025 – Jun 2025</strong></p>
+        <p><a href="https://expenses-measure.vercel.app/" target="_blank">Project Link</a></p>
+        <p><strong>Tech Stack:</strong> HTML, CSS, JS, Node.js, Python, Chart.js, Vercel</p>
+        <ul>
+            <li>Built a full-stack app to auto-categorize expenses.</li>
+            <li>Integrated Python pandas with Node.js for CSV parsing.</li>
+            <li>Used Chart.js for visual spending graphs.</li>
+            <li>Won <strong>1st Prize</strong> at IEEE Expo.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>Formula One Race Winning Probability using R</h3>
+        <p>Sep 2024 – Oct 2024</p>
+        <p><a href="https://colab.research.google.com/drive/1p89CSUaefr1hcaLpxWbvjrmqjIvt35TH" target="_blank">Project Link</a></p>
+        <p><strong>Tech Stack:</strong> R, Random Forest, dplyr, Simulation</p>
+        <ul>
+            <li>Built ML model predicting F1 race-winning chances.</li>
+            <li>Simulated datasets with tyre/fuel conditions.</li>
+            <li>Achieved OOB error ≈ 25.75%.</li>
+            <li>Improved prediction for rare winning events.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>Organic Kitchen Gardening (Website)</h3>
+        <p>Aug 2024 – Nov 2024</p>
+        <p><a href="https://urban-roots-jr.vercel.app/" target="_blank">Project Link</a></p>
+        <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+        <ul>
+            <li>Developed a multi-page website for organic gardening.</li>
+            <li>Built dedicated fruit/vegetable sections.</li>
+            <li>Added personalized plant suggestions.</li>
+            <li>Optimized layout for user engagement.</li>
+        </ul>
+    </div>
+
+</div>
+
+<button class="back-btn" onclick="window.location.href='http://127.0.0.1:5500/jr.html'">Back</button>
+
+</body>
+</html>
