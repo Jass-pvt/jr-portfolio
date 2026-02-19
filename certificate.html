@@ -6,158 +6,199 @@
   <title>My Certificates & Badges</title>
 
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #fff;
-      text-align: center;
-    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+  line-height: 1.6;
+}
 
-    header {
-      background-color: #1f1f1f;
-      padding: 20px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #a855f7;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+/* ================= HEADER ================= */
 
-    .tab-buttons {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
+header {
+  background: linear-gradient(145deg, #1f1f1f, #181818);
+  padding: 25px 20px 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #a855f7;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    .tab-btn {
-      padding: 8px 20px;
-      background: transparent;
-      border: 2px solid #a855f7;
-      color: #a855f7;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 16px;
-    }
+/* ================= TAB BUTTONS ================= */
 
-    .tab-btn.active, .tab-btn:hover {
-      background: #a855f7;
-      color: white;
-    }
+.tab-buttons {
+  margin: 20px 0 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-    .hidden { display: none; }
+.tab-btn {
+  padding: 8px 20px;
+  background: transparent;
+  border: 2px solid #a855f7;
+  color: #a855f7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
 
-    /* Responsive Grid - Adjusted for all devices */
-    .cert-container, .badges-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      padding: 40px 20px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+.tab-btn.active,
+.tab-btn:hover {
+  background: #a855f7;
+  color: white;
+}
 
-    /* Card Styling */
-    .cert-card, .badge-card {
-      background: #1e1e1e;
-      padding: 30px 20px;
-      border-radius: 16px;
-      border: 1px solid #333;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+.hidden {
+  display: none;
+}
 
-    .cert-card:hover, .badge-card:hover {
-      transform: translateY(-10px);
-      border-color: #a855f7;
-      box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
-    }
+/* ================= GRID ================= */
 
-    /* Fixed Image Logic to prevent box breaking */
-    .cert-card img, .badge-card img {
-      width: 100%;
-      height: 120px;
-      margin-bottom: 20px;
-      object-fit: contain; /* Ensures images fit inside without stretching */
-    }
+.cert-container,
+.badges-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 20px 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-    h3 {
-      color: #fff;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
+/* ================= CARD ================= */
 
-    .view-link {
-      color: #a855f7;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-      margin-top: auto; /* Pushes link to the bottom */
-      padding-top: 10px;
-    }
+.cert-card,
+.badge-card {
+  background: #1e1e1e;
+  padding: 30px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+}
 
-    .view-link:hover { text-decoration: underline; }
+/* Hover Effect */
+.cert-card:hover,
+.badge-card:hover {
+  transform: translateY(-8px);
+  border-color: #a855f7;
+  box-shadow: 0 15px 40px rgba(168, 85, 247, 0.25);
+}
 
-    .back-btn {
-        position: fixed;
-        top: 120px;
-        right: 30px;
-        padding: 8px 16px;
-        font-size: 16px;
-        background-color: transparent;
-        color: #a855f7;
-        border: 2px solid #a855f7;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 2000;
-    }
+/* ================= IMAGE ================= */
 
-    .back-btn:hover {
-        background-color: #a855f7;
-        color: white;
-    }
+.cert-card img,
+.badge-card img {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+/* ================= TEXT ================= */
 
-    @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+h3 {
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
 
-    @media (max-width: 600px) {
-        nav .logo {
-            font-size: 18px;
-        }
-        .skill-card i {
-            font-size: 28px;
-        }
-        .back-btn {
-            top: 90px;
-            right: 15px;
-            font-size: 14px;
-            padding: 6px 12px;
-        }
-    }
+.view-link {
+  color: #a855f7;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: auto;
+  padding-top: 10px;
+  transition: 0.3s;
+}
 
-    /* Mobile view optimizations */
-    @media (max-width: 480px) {
-      .cert-container, .badges-container {
-        grid-template-columns: 1fr;
-      }
-    }
+.view-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-btn {
+  position: fixed;
+  top: 120px;
+  right: 30px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #a855f7;
+  border: 2px solid #a855f7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2000;
+}
+
+.back-btn:hover {
+  background-color: #a855f7;
+  color: white;
+}
+
+.filter-buttons {
+  margin: 10px 0 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+  .back-btn {
+    top: 90px;
+    right: 15px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cert-container,
+  .badges-container {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
+
 </head>
 
 <body>
@@ -173,17 +214,19 @@
   <p>
 
   </p>
+</header> 
     <!-- FILTER BUTTONS -->
-  <div class="filter-buttons">
+ 
+
+
+<div id="certificates">
+   <div class="filter-buttons">
     <button class="tab-btn active" onclick="filterCards('all', event)">All</button>
     <button class="tab-btn" onclick="filterCards('cloud', event)">Cloud</button>
     <button class="tab-btn" onclick="filterCards('cyber', event)">Cybersecurity</button>
     <button class="tab-btn" onclick="filterCards('ml', event)">Machine Learning</button>
     <button class="tab-btn" onclick="filterCards('dev', event)">Development</button>
   </div>
-</header>
-
-<div id="certificates">
     <div class="cert-container">
 
     <div class="cert-card" data-category="dev">
