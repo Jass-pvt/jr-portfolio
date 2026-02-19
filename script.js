@@ -46,6 +46,15 @@ function type() {
 type();
 
 
+// Hamburger Menu Toggle
+const navLinks = document.getElementById("navLinks");
+const hamburger = document.querySelector(".hamburger");
+
+function toggleMenu() {
+  navLinks.classList.toggle("active");
+  hamburger.classList.toggle("active");
+}
+
 
 
 
@@ -64,6 +73,8 @@ if (currentTheme === 'dark') {
 } else {
   document.body.classList.add('light-theme');
 }
+
+
 
 // Update icon
 function updateThemeIcon() {
