@@ -2,23 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <title>Experience — Jaswanth Rathore</title>
 <link rel="stylesheet" href="subpage-style.css" />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<style>
-.exp-wrap {
-  max-width: 1100px; margin: 0 auto;
-  padding: 0 2rem 4rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
-  gap: 16px;
-  position: relative; z-index: 1;
-}
-.section-content { display: none; }
-.section-content.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 16px; }
-</style>
 </head>
 <body>
 
@@ -26,7 +14,7 @@
 
 <div class="page-header">
   <h2>Experience</h2>
-  <p>Professional simulations, internships & open-source contributions</p>
+  <p>Internships, simulations & open-source contributions</p>
 </div>
 
 <div class="tab-buttons">
@@ -34,48 +22,44 @@
   <button class="tab-btn" onclick="showSection('open-source', event)">Open Source</button>
 </div>
 
-<div style="max-width:1100px;margin:0 auto;padding:0 2rem 4rem;position:relative;z-index:1;">
+<div class="page-content">
 
   <div id="experience" class="section-content active">
-
     <div class="exp-card">
       <div class="card-meta">2025</div>
       <div class="card-title">HackerRank – Software Engineer Certification</div>
       <div class="card-sub">Problem Solving · SQL · Data Structures</div>
       <ul class="card-points">
         <li>Earned proctored HackerRank SE certification.</li>
-        <li>Solved algorithmic challenges with time/space complexity focus.</li>
-        <li>Advanced SQL queries: joins, aggregations, window functions.</li>
+        <li>Algorithmic challenges with time/space complexity focus.</li>
+        <li>Advanced SQL: joins, aggregations, window functions.</li>
         <li>Strong analytical and debugging skill demonstration.</li>
       </ul>
     </div>
-
     <div class="exp-card">
       <div class="card-meta">August 2025</div>
       <div class="card-title">Tata Consultancy Services – Cybersecurity Analyst</div>
-      <div class="card-sub">Job Simulation via Forage · Virtual</div>
+      <div class="card-sub">Job Simulation · Forage · Virtual</div>
       <ul class="card-points">
         <li>Identity & Access Management (IAM) scenarios.</li>
-        <li>Applied cybersecurity best practices aligned to business needs.</li>
-        <li>Delivered structured documentation and stakeholder presentations.</li>
+        <li>Applied cybersecurity best practices for business needs.</li>
+        <li>Delivered structured documentation and presentations.</li>
       </ul>
     </div>
-
     <div class="exp-card">
       <div class="card-meta">September 2025</div>
       <div class="card-title">Deloitte Australia – Cybersecurity Job Simulation</div>
-      <div class="card-sub">Job Simulation via Forage · Virtual</div>
+      <div class="card-sub">Job Simulation · Forage · Virtual</div>
       <ul class="card-points">
         <li>Analyzed web activity logs for suspicious behavior.</li>
         <li>Investigated simulated breach scenarios end-to-end.</li>
-        <li>Identified compromised user accounts and proposed mitigations.</li>
+        <li>Identified compromised accounts and proposed mitigations.</li>
       </ul>
     </div>
-
     <div class="exp-card">
       <div class="card-meta">October 2025</div>
       <div class="card-title">JPMorgan Chase & Co. – Software Engineering</div>
-      <div class="card-sub">Job Simulation via Forage · Virtual</div>
+      <div class="card-sub">Job Simulation · Forage · Virtual</div>
       <ul class="card-points">
         <li>Integrated Kafka with Spring Boot microservice.</li>
         <li>Transaction validation using Spring Data JPA.</li>
@@ -83,45 +67,41 @@
         <li>Tested reliability using Maven test suites.</li>
       </ul>
     </div>
-
     <div class="exp-card">
       <div class="card-meta">Oct – Nov 2024</div>
       <div class="card-title">Asan Innovation – Frontend & Python Developer Intern</div>
       <div class="card-sub">Internship · Virtual</div>
       <ul class="card-points">
-        <li>Developed responsive UIs using HTML, CSS, and JavaScript.</li>
-        <li>Built and optimized backend features using Python.</li>
-        <li>Integrated frontend with backend APIs for seamless data flow.</li>
-        <li>Participated in testing, debugging, and deployment of web apps.</li>
+        <li>Responsive UIs using HTML, CSS, and JavaScript.</li>
+        <li>Backend features using Python scripting.</li>
+        <li>Frontend–backend API integration for data flow.</li>
+        <li>Testing, debugging, and deployment of web apps.</li>
       </ul>
     </div>
-
   </div>
 
   <div id="open-source" class="section-content">
-
     <div class="exp-card">
       <div class="card-meta">2025</div>
       <div class="card-title">Elite Coders Winter of Code 2025</div>
       <ul class="card-points">
         <li>Contributed to community-driven open-source projects.</li>
-        <li>Submitted pull requests following contribution guidelines.</li>
-        <li>Collaborated with mentors and maintainers on reviews.</li>
-        <li>Git & GitHub workflows for version control.</li>
+        <li>Submitted PRs following contribution guidelines.</li>
+        <li>Collaborated with mentors and maintainers.</li>
+        <li>Git & GitHub version control workflows.</li>
       </ul>
     </div>
-
     <div class="exp-card">
       <div class="card-meta">2025</div>
       <div class="card-title">Open Source Connect Global</div>
       <ul class="card-points">
-        <li>Participated in global open-source collaboration program.</li>
-        <li>Identified bugs and implemented targeted improvements.</li>
-        <li>Strengthened collaborative development understanding.</li>
+        <li>Global open-source collaboration program.</li>
+        <li>Identified bugs and implemented improvements.</li>
+        <li>Strengthened collaborative development skills.</li>
       </ul>
     </div>
-
   </div>
+
 </div>
 
 <script>
