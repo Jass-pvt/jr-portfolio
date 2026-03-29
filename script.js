@@ -1,53 +1,38 @@
-
+/* ============================================================
+   TYPING ANIMATION
+   ============================================================ */
 const phrases = [
   "Python Developer",
   "Cybersecurity Enthusiast",
-  "Front-End Development",
-  "AI & ML Developer ",
-    "Cloud Enthusiast"
+  "Front-End Developer",
+  "AI & ML Developer",
+  "Cloud Enthusiast"
 ];
 
-const typingElement = document.getElementById("typing");
-let phraseIndex = 0;
-let letterIndex = 0;
-let isDeleting = false;
-let typingSpeed = 150; // base typing speed
-let pauseEnd = 1500;   // pause after full phrase
-let pauseStart = 500;  // pause before starting next phrase
+const typingEl = document.getElementById("typing");
+let pIdx = 0, lIdx = 0, deleting = false;
 
 function type() {
-  const currentPhrase = phrases[phraseIndex];
+  const phrase = phrases[pIdx];
+  typingEl.textContent = phrase.substring(0, lIdx);
 
-  if (isDeleting) {
-    typingElement.textContent = currentPhrase.substring(0, letterIndex--);
-  } else {
-    typingElement.textContent = currentPhrase.substring(0, letterIndex++);
+  let delay = deleting ? 80 : 130;
+
+  if (!deleting && lIdx === phrase.length) {
+    deleting = true; delay = 1800;
+  } else if (deleting && lIdx === 0) {
+    deleting = false; pIdx = (pIdx + 1) % phrases.length; delay = 400;
   }
 
-  let delay = typingSpeed;
-
-  // Pause at the end of typing
-  if (!isDeleting && letterIndex === currentPhrase.length) {
-    isDeleting = true;
-    delay = pauseEnd; // longer pause after full phrase
-  }
-
-  // Pause at the start before typing next phrase
-  else if (isDeleting && letterIndex === 0) {
-    isDeleting = false;
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-    delay = pauseStart; // small pause before next phrase
-  }
-
+  lIdx += deleting ? -1 : 1;
   setTimeout(type, delay);
 }
-
-// Start typing
 type();
 
-
-// Hamburger Menu Toggle
-const navLinks = document.getElementById("navLinks");
+/* ============================================================
+   HAMBURGER MENU
+   ============================================================ */
+const navLinks  = document.getElementById("navLinks");
 const hamburger = document.querySelector(".hamburger");
 
 function toggleMenu() {
@@ -55,58 +40,53 @@ function toggleMenu() {
   hamburger.classList.toggle("active");
 }
 
+document.addEventListener("click", (e) => {
+  if (!e.target.closest("nav")) {
+    navLinks.classList.remove("active");
+    hamburger.classList.remove("active");
+  }
+});
 
+/* ============================================================
+   THEME TOGGLE
+   ============================================================ */
+const themeBtn = document.getElementById("theme-toggle");
 
-
-// Theme toggle button logic
-const themeToggleBtn = document.getElementById('theme-toggle');
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-// Load saved preference or system preference
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme === 'dark') {
-  document.body.classList.add('dark-theme');
-} else if (currentTheme === 'light') {
-  document.body.classList.add('light-theme');
-} else if (prefersDarkScheme.matches) {
-  document.body.classList.add('dark-theme');
+const saved = localStorage.getItem("theme");
+if (saved === "light") {
+  document.body.classList.add("light-theme");
 } else {
-  document.body.classList.add('light-theme');
+  document.body.classList.add("dark-theme");
 }
 
-
-
-// Update icon
-function updateThemeIcon() {
-  const icon = themeToggleBtn.querySelector('i');
-  if (document.body.classList.contains('dark-theme')) {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-  } else {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-  }
+function updateIcon() {
+  const icon = themeBtn.querySelector("i");
+  const isLight = document.body.classList.contains("light-theme");
+  icon.className = isLight ? "fas fa-sun" : "fas fa-moon";
 }
-updateThemeIcon();
+updateIcon();
 
-// Toggle theme on button click
-themeToggleBtn.addEventListener('click', () => {
-  if (document.body.classList.contains('dark-theme')) {
-    document.body.classList.remove('dark-theme');
-    document.body.classList.add('light-theme');
-    localStorage.setItem('theme', 'light');
-  } else {
-    document.body.classList.remove('light-theme');
-    document.body.classList.add('dark-theme');
-    localStorage.setItem('theme', 'dark');
-  }
-  updateThemeIcon();
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+  document.body.classList.toggle("dark-theme");
+  localStorage.setItem("theme", document.body.classList.contains("light-theme") ? "light" : "dark");
+  updateIcon();
 });
 
-// Simple contact form submission (prevents reload and clears form with alert)
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  alert('Thank you for reaching out! Your message has been sent.');
-  contactForm.reset();
+/* ============================================================
+   SCROLL REVEAL  (simple intersection observer)
+   ============================================================ */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.animation = "fadeSlideUp 0.6s ease forwards";
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".card-item, .doing-card, .profile-card, .stat-item").forEach(el => {
+  el.style.opacity = "0";
+  observer.observe(el);
 });
+
