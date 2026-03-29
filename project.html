@@ -2,21 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <title>Projects — Jaswanth Rathore</title>
 <link rel="stylesheet" href="subpage-style.css" />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<style>
-.projects-wrap {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 2rem 4rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
-  gap: 16px;
-  position: relative; z-index: 1;
-}
-</style>
 </head>
 <body>
 
@@ -24,106 +14,108 @@
 
 <div class="page-header">
   <h2>My Projects</h2>
-  <p>A collection of work spanning web, ML, IoT, and cybersecurity</p>
+  <p>Web · ML · IoT · Cybersecurity</p>
 </div>
 
-<div class="projects-wrap">
+<div class="page-content">
+  <div class="cards-grid">
 
-  <div class="proj-card">
-    <div class="card-meta">2026 · Web</div>
-    <div class="card-title">Interactive Developer Portfolio</div>
-    <a class="card-link" href="https://jass-pvt.github.io/jr-portfolio/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Website</a>
-    <div class="tag-stack"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">GitHub Pages</span></div>
-    <ul class="card-points">
-      <li>Fully responsive professional portfolio with dynamic filtering and interactive UI.</li>
-      <li>Deployed with Git-based CI/CD workflows on GitHub Pages & Netlify.</li>
-      <li>Optimized for performance, accessibility, and cross-browser compatibility.</li>
-    </ul>
+    <div class="proj-card">
+      <div class="card-meta">2026 · Web</div>
+      <div class="card-title">Interactive Developer Portfolio</div>
+      <a class="card-link" href="https://jass-pvt.github.io/jr-portfolio/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Website</a>
+      <div class="tag-stack"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">GitHub Pages</span></div>
+      <ul class="card-points">
+        <li>Fully responsive professional portfolio with dynamic filtering.</li>
+        <li>Deployed with Git CI/CD on GitHub Pages & Netlify.</li>
+        <li>Optimized for performance and cross-browser compatibility.</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <div class="card-meta">2025 · Data Analytics</div>
+      <div class="card-title">DataForge – Stock Market Analytics Dashboard</div>
+      <a class="card-link" href="https://dataforge-jr.streamlit.app" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
+      <div class="tag-stack"><span class="tag">Streamlit</span><span class="tag">Python</span><span class="tag">yfinance</span><span class="tag">Plotly</span></div>
+      <ul class="card-points">
+        <li>Real-time stock analysis using Yahoo Finance API.</li>
+        <li>Dynamic interactive charts with portfolio-level insights.</li>
+        <li>Deployed on Streamlit Cloud for public access.</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <div class="card-meta">Jul 2025 – Present · IoT</div>
+      <div class="card-title">Smart Kitchen Gardening – IoT + Learning Platform</div>
+      <a class="card-link" href="https://snack.expo.dev/@jaswanthrathore/smart-garden-iot-system" target="_blank"><i class="fas fa-external-link-alt"></i> Project Link</a>
+      <div class="tag-stack"><span class="tag">ESP8266</span><span class="tag">Firebase</span><span class="tag">Flutter</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+      <ul class="card-points">
+        <li>Real-time soil moisture, temperature & humidity monitoring.</li>
+        <li>Auto/manual irrigation with cloud logging & alerts.</li>
+        <li>User login, subscriptions, dashboard, and product catalog.</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <div class="card-meta">Sep – Nov 2025 · Cybersecurity</div>
+      <div class="card-title">URL Safety Checker</div>
+      <a class="card-link" href="https://colab.research.google.com/drive/1oKLhvnJ9Ea6KcbNwUbw6jUnnxGZFCbf3" target="_blank"><i class="fas fa-external-link-alt"></i> Colab Link</a>
+      <div class="tag-stack"><span class="tag">Python</span><span class="tag">WHOIS</span><span class="tag">SSL/TLS</span><span class="tag">Regex</span></div>
+      <ul class="card-points">
+        <li>SSL inspection, WHOIS lookup & phishing-pattern detection.</li>
+        <li>Safety scoring using domain age and suspicious patterns.</li>
+        <li>Optional VirusTotal / GSB API integration.</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <div class="card-meta">Feb – Mar 2025 · ML</div>
+      <div class="card-title">Spam Detection using Machine Learning</div>
+      <a class="card-link" href="https://colab.research.google.com/drive/1KcVvp4gavg07-NO--TX4UmsJKKwQbYkk" target="_blank"><i class="fas fa-external-link-alt"></i> Colab Link</a>
+      <div class="tag-stack"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">NLTK</span><span class="tag">XGBoost</span></div>
+      <ul class="card-points">
+        <li>NLP preprocessing, tokenization & feature extraction.</li>
+        <li><strong style="color:var(--purple)">94.87% accuracy</strong> with XGBoost / Random Forest.</li>
+        <li>Streamlit app for real-time spam detection.</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <div class="card-meta">Jun 2025 · FullStack · 🏆 1st Prize IEEE</div>
+      <div class="card-title">Budget Tracker</div>
+      <a class="card-link" href="https://expenses-measure.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
+      <div class="tag-stack"><span class="tag">HTML</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">Chart.js</span><span class="tag">Vercel</span></div>
+      <ul class="card-points">
+        <li>Full-stack app to auto-categorize and track expenses.</li>
+        <li>Python pandas + Node.js for CSV parsing and analytics.</li>
+        <li>Chart.js for visual spending graphs and summaries.</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <div class="card-meta">Sep – Oct 2024 · ML</div>
+      <div class="card-title">F1 Race Winning Probability</div>
+      <a class="card-link" href="https://colab.research.google.com/drive/1p89CSUaefr1hcaLpxWbvjrmqjIvt35TH" target="_blank"><i class="fas fa-external-link-alt"></i> Colab Link</a>
+      <div class="tag-stack"><span class="tag">R</span><span class="tag">Random Forest</span><span class="tag">dplyr</span></div>
+      <ul class="card-points">
+        <li>ML model predicting F1 race-winning probabilities.</li>
+        <li>Simulated datasets with tyre/fuel conditions.</li>
+        <li>OOB error ≈ 25.75%.</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <div class="card-meta">Aug – Nov 2024 · Web</div>
+      <div class="card-title">Organic Kitchen Gardening Website</div>
+      <a class="card-link" href="https://urban-roots-jr.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
+      <div class="tag-stack"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+      <ul class="card-points">
+        <li>Multi-page website with fruit/vegetable gardening sections.</li>
+        <li>Personalized plant suggestions and optimized UX layout.</li>
+      </ul>
+    </div>
+
   </div>
-
-  <div class="proj-card">
-    <div class="card-meta">2025 · Data Analytics</div>
-    <div class="card-title">DataForge – Stock Market Analytics Dashboard</div>
-    <a class="card-link" href="https://dataforge-jr.streamlit.app" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
-    <div class="tag-stack"><span class="tag">Streamlit</span><span class="tag">Python</span><span class="tag">yfinance</span><span class="tag">Plotly</span></div>
-    <ul class="card-points">
-      <li>Real-time stock price analysis using Yahoo Finance API.</li>
-      <li>Dynamic interactive charts with portfolio-level insights.</li>
-      <li>Deployed on Streamlit Cloud for public access.</li>
-    </ul>
-  </div>
-
-  <div class="proj-card">
-    <div class="card-meta">Jul 2025 – Present · IoT</div>
-    <div class="card-title">Smart Kitchen Gardening – IoT + Organic Learning</div>
-    <a class="card-link" href="https://snack.expo.dev/@jaswanthrathore/smart-garden-iot-system" target="_blank"><i class="fas fa-external-link-alt"></i> Project Link</a>
-    <div class="tag-stack"><span class="tag">ESP8266</span><span class="tag">Firebase</span><span class="tag">Flutter</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
-    <ul class="card-points">
-      <li>Real-time soil moisture, temperature & humidity monitoring.</li>
-      <li>Auto/manual irrigation with cloud logging & alerts.</li>
-      <li>User login, subscriptions, dashboard, and product catalog.</li>
-    </ul>
-  </div>
-
-  <div class="proj-card">
-    <div class="card-meta">Sep – Nov 2025 · Cybersecurity</div>
-    <div class="card-title">URL Safety Checker</div>
-    <a class="card-link" href="https://colab.research.google.com/drive/1oKLhvnJ9Ea6KcbNwUbw6jUnnxGZFCbf3" target="_blank"><i class="fas fa-external-link-alt"></i> Colab Link</a>
-    <div class="tag-stack"><span class="tag">Python</span><span class="tag">WHOIS</span><span class="tag">SSL/TLS</span><span class="tag">Regex</span></div>
-    <ul class="card-points">
-      <li>SSL inspection, WHOIS lookup & phishing-pattern analysis.</li>
-      <li>Safety scores using domain age and suspicious patterns.</li>
-      <li>Optional VirusTotal / GSB API scanning integration.</li>
-    </ul>
-  </div>
-
-  <div class="proj-card">
-    <div class="card-meta">Feb – Mar 2025 · ML</div>
-    <div class="card-title">Spam Detection using Machine Learning</div>
-    <a class="card-link" href="https://colab.research.google.com/drive/1KcVvp4gavg07-NO--TX4UmsJKKwQbYkk" target="_blank"><i class="fas fa-external-link-alt"></i> Colab Link</a>
-    <div class="tag-stack"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">NLTK</span><span class="tag">XGBoost</span></div>
-    <ul class="card-points">
-      <li>NLP preprocessing, tokenization & feature extraction.</li>
-      <li><strong style="color:var(--purple)">94.87% accuracy</strong> using XGBoost / Random Forest.</li>
-      <li>Streamlit app for real-time spam detection.</li>
-    </ul>
-  </div>
-
-  <div class="proj-card">
-    <div class="card-meta">Jun 2025 · FullStack</div>
-    <div class="card-title">Budget Tracker — IEEE 1st Prize Winner</div>
-    <a class="card-link" href="https://expenses-measure.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
-    <div class="tag-stack"><span class="tag">HTML</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">Chart.js</span><span class="tag">Vercel</span></div>
-    <ul class="card-points">
-      <li>Full-stack app to auto-categorize and track expenses.</li>
-      <li>Python pandas + Node.js integration for CSV parsing.</li>
-      <li><strong style="color:var(--purple)">Won 1st Prize</strong> at IEEE Expo.</li>
-    </ul>
-  </div>
-
-  <div class="proj-card">
-    <div class="card-meta">Sep – Oct 2024 · ML</div>
-    <div class="card-title">Formula One Race Winning Probability</div>
-    <a class="card-link" href="https://colab.research.google.com/drive/1p89CSUaefr1hcaLpxWbvjrmqjIvt35TH" target="_blank"><i class="fas fa-external-link-alt"></i> Colab Link</a>
-    <div class="tag-stack"><span class="tag">R</span><span class="tag">Random Forest</span><span class="tag">dplyr</span></div>
-    <ul class="card-points">
-      <li>ML model predicting F1 race-winning probabilities.</li>
-      <li>Simulated datasets with tyre/fuel conditions.</li>
-      <li>Achieved OOB error ≈ 25.75%.</li>
-    </ul>
-  </div>
-
-  <div class="proj-card">
-    <div class="card-meta">Aug – Nov 2024 · Web</div>
-    <div class="card-title">Organic Kitchen Gardening Website</div>
-    <a class="card-link" href="https://urban-roots-jr.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
-    <div class="tag-stack"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-    <ul class="card-points">
-      <li>Multi-page website with fruit/vegetable gardening sections.</li>
-      <li>Personalized plant suggestions and optimized UX layout.</li>
-    </ul>
-  </div>
-
 </div>
 </body>
 </html>
