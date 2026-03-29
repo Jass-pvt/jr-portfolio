@@ -89,4 +89,3 @@ document.querySelectorAll(".card-item, .doing-card, .profile-card, .stat-item").
   el.style.opacity = "0";
   observer.observe(el);
 });
-
