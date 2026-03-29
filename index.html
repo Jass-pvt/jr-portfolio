@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Jaswanth Rathore — Portfolio</title>
   <link rel="stylesheet" href="dummy.css" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,16 +14,16 @@
   <nav>
     <span class="navbar-title">JR.dev</span>
     <ul id="navLinks">
-      <li><a href="#hero">Home</a></li>
+      <li><a href="#hero" onclick="closeMenu()">Home</a></li>
       <li><a href="skill.html">Skills</a></li>
       <li><a href="project.html">Projects</a></li>
       <li><a href="experience.html">Experience</a></li>
       <li><a href="certificate.html">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+      <li><a href="#contact" class="nav-hire" onclick="closeMenu()">Hire Me</a></li>
       <li><button id="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button></li>
     </ul>
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
   </nav>
@@ -35,7 +35,6 @@
 
       <div id="hero-text">
         <div class="hero-tag">Hi, I am</div>
-
         <h1>Jaswanth<br>Rathore</h1>
 
         <div class="hero-role-wrap">
@@ -43,68 +42,48 @@
           <span id="typing"></span>
         </div>
 
-        <p>
-          Passionate about designing and developing clean, modern web applications
-          with a focus on user experience, performance, and scalability.
-        </p>
+        <p>Passionate about designing and developing clean, modern web applications with a focus on user experience, performance, and scalability.</p>
 
-        <!-- Social Icons Row (like the reference image) -->
         <div class="hero-socials">
-          <a href="https://github.com/Jass-pvt" target="_blank" class="social-icon" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/jaswanthrathore/" target="_blank" class="social-icon" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://leetcode.com/u/JaswanthRathore/" target="_blank" class="social-icon" title="LeetCode">
-            <i class="fas fa-code"></i>
-          </a>
-          <a href="https://www.hackerrank.com/profile/rathoresjaswanth" target="_blank" class="social-icon" title="HackerRank">
-            <i class="fas fa-terminal"></i>
-          </a>
-          <a href="mailto:rathoresjaswanth@gmail.com" class="social-icon" title="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
+          <a href="https://github.com/Jass-pvt" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/jaswanthrathore/" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://leetcode.com/u/JaswanthRathore/" target="_blank" class="social-icon" title="LeetCode"><i class="fas fa-code"></i></a>
+          <a href="https://www.hackerrank.com/profile/rathoresjaswanth" target="_blank" class="social-icon" title="HackerRank"><i class="fas fa-terminal"></i></a>
+          <a href="mailto:rathoresjaswanth@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
 
-        <!-- CTA Buttons (Hire Me + Download CV — exactly like reference) -->
         <div class="hero-btns">
-          <a href="#contact" class="btn-primary">
-            <i class="fas fa-paper-plane" style="margin-right:8px;font-size:0.85rem;"></i>Hire Me
-          </a>
+          <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Hire Me</a>
           <button class="btn-outline" onclick="window.open('https://drive.google.com/file/d/1eg9exvmgIs2XI2lWLjA1DSICHyKbehDY/view?usp=sharing','_blank')">
-            <i class="fas fa-download" style="margin-right:8px;font-size:0.85rem;"></i>Download CV
+            <i class="fas fa-download"></i> Download CV
           </button>
         </div>
       </div>
 
-      <!-- Hero Photo -->
       <div class="hero-photo-wrap">
         <div class="hero-photo-ring">
           <div id="hero-photo">
             <img src="https://avatars.githubusercontent.com/u/185932183?v=4" alt="Jaswanth Rathore" />
           </div>
         </div>
-        <div class="photo-badge">
-          <i class="fas fa-star"></i> Open to Work
-        </div>
+        <div class="photo-badge"><i class="fas fa-star"></i> Open to Work</div>
       </div>
 
     </section>
 
-    <!-- ========== STATS BAR ========== -->
+    <!-- ========== STATS ========== -->
     <section id="stats">
       <div class="stat-item">
         <span class="stat-value">Entry</span>
-        <span class="stat-label">Level Experience</span>
+        <span class="stat-label">Level</span>
       </div>
       <div class="stat-item">
         <span class="stat-value">10+</span>
-        <span class="stat-label">Projects Completed</span>
+        <span class="stat-label">Projects Done</span>
       </div>
       <div class="stat-item">
         <span class="stat-value">05</span>
-        <span class="stat-label">Internships & Simulations</span>
+        <span class="stat-label">Internships</span>
       </div>
     </section>
 
@@ -140,21 +119,21 @@
         <div class="card-list">
           <div class="card-item">
             <div class="card-year">Aug 2025</div>
-            <div class="card-role">Cybersecurity Analyst (Job Simulation)</div>
+            <div class="card-role">Cybersecurity Analyst (Simulation)</div>
             <div class="card-place">Tata Consultancy Services · Forage</div>
-            <p>IAM scenarios, cybersecurity best practices, documentation & presentations.</p>
+            <p>IAM, cybersecurity best practices, documentation.</p>
           </div>
           <div class="card-item">
             <div class="card-year">Sep 2025</div>
             <div class="card-role">Cyber Security Virtual Intern</div>
             <div class="card-place">Deloitte Australia · Forage</div>
-            <p>Analyzed web logs, investigated breach scenarios, proposed mitigation strategies.</p>
+            <p>Log analysis, breach investigation, mitigation strategies.</p>
           </div>
           <div class="card-item">
             <div class="card-year">Oct – Nov 2024</div>
             <div class="card-role">Frontend & Python Developer Intern</div>
             <div class="card-place">Asan Innovators Pvt Ltd · Virtual</div>
-            <p>Built responsive UIs, Python scripting, API integration, team collaboration.</p>
+            <p>Responsive UIs, Python scripting, API integration.</p>
           </div>
         </div>
       </div>
@@ -164,31 +143,30 @@
     <!-- ========== WHAT I'M DOING ========== -->
     <section id="doing">
       <div class="sec-title-wrap">
-        <span class="sec-tag">Focus Areas</span>
+        <span class="sec-tag">Focus</span>
         <h2>What I'm Doing</h2>
         <div class="sec-line"></div>
       </div>
-
       <div class="doing-grid">
         <div class="doing-card">
           <div class="doing-icon"><i class="fas fa-code"></i></div>
           <h3>Full-Stack Development</h3>
-          <p>Built end-to-end applications using MERN stack with JWT auth, REST APIs, and CI/CD deployment pipelines.</p>
+          <p>End-to-end MERN stack apps with JWT auth, REST APIs, and CI/CD deployment pipelines.</p>
         </div>
         <div class="doing-card">
           <div class="doing-icon"><i class="fas fa-robot"></i></div>
           <h3>Machine Learning</h3>
-          <p>Scikit-learn, NumPy, Pandas — models including Random Forest, SVM, KNN, Neural Networks with full evaluation pipelines.</p>
+          <p>Scikit-learn, NumPy, Pandas — models with Random Forest, SVM, KNN, Neural Networks.</p>
         </div>
         <div class="doing-card">
           <div class="doing-icon"><i class="fas fa-shield-alt"></i></div>
           <h3>Cybersecurity</h3>
-          <p>Log analysis, breach investigation, IAM controls, and structured incident reports from hands-on simulations.</p>
+          <p>Log analysis, breach investigation, IAM controls, and structured incident reports.</p>
         </div>
         <div class="doing-card">
           <div class="doing-icon"><i class="fas fa-cloud"></i></div>
           <h3>Cloud & DevOps</h3>
-          <p>AWS Cloud Practitioner concepts, CI/CD pipelines, Docker containerization, and Kubernetes fundamentals on GCP.</p>
+          <p>AWS Cloud Practitioner, CI/CD pipelines, Docker, and Kubernetes fundamentals on GCP.</p>
         </div>
       </div>
     </section>
@@ -196,11 +174,10 @@
     <!-- ========== PROFILES ========== -->
     <section id="profiles">
       <div class="sec-title-wrap">
-        <span class="sec-tag">Online Presence</span>
+        <span class="sec-tag">Online</span>
         <h2>Profiles</h2>
         <div class="sec-line"></div>
       </div>
-
       <div class="profile-grid">
         <a href="https://github.com/Jass-pvt" target="_blank" class="profile-card">
           <div class="logo-bg"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" /></div>
@@ -226,10 +203,7 @@
           <div class="logo-bg"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220726175411/GFG.jpg" alt="GFG" /></div>
           <span>GeeksforGeeks</span>
         </a>
-        <a href="https://learn.microsoft.com/en-us/users/jaswanthrathore" target="_blank" class="profile-card">
-          <div class="logo-bg"><img src="https://executrain.com.mx/wp-content/uploads/2023/10/que-es-microsoft-learn.png" alt="MS Learn" /></div>
-          <span>Microsoft Learn</span>
-        </a>
+       
       </div>
     </section>
 
@@ -237,7 +211,6 @@
     <section id="contact">
       <h2>Let's Work <span>Together!</span></h2>
       <p>Open for full-time roles, freelance, and collaborations. Let's connect.</p>
-
       <div class="contact-info">
         <div class="contact-row">
           <div class="contact-row-icon"><i class="fas fa-phone-alt"></i></div>
@@ -251,10 +224,10 @@
           <div class="contact-row-icon"><i class="fas fa-map-marker-alt"></i></div>
           <span class="contact-row-text">Chennai, India</span>
         </div>
-        <div class="contact-row">
+        <a href="https://www.linkedin.com/in/jaswanthrathore/" target="_blank" class="contact-row" style="text-decoration:none;">
           <div class="contact-row-icon"><i class="fab fa-linkedin-in"></i></div>
-          <a class="contact-row-text" href="https://www.linkedin.com/in/jaswanthrathore/" target="_blank" style="color:inherit;">linkedin.com/in/jaswanthrathore</a>
-        </div>
+          <span class="contact-row-text">linkedin.com/in/jaswanthrathore</span>
+        </a>
       </div>
     </section>
 
