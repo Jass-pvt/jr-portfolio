@@ -1,442 +1,603 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>My Certificates & Badges</title>
-
-<link rel="stylesheet" href="subpage-style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Certifications — Jaswanth Rathore</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0b0b14;
+  --card: #111120;
+  --card-hover: #16162a;
+  --border: rgba(139,92,246,0.15);
+  --border-hover: rgba(139,92,246,0.55);
+  --purple: #8b5cf6;
+  --purple2: #a78bfa;
+  --purple3: #6d28d9;
+  --cyan: #22d3ee;
+  --green: #34d399;
+  --orange: #fb923c;
+  --red: #f87171;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --muted2: #94a3b8;
 }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; overflow-x: hidden; }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #fff;
-  text-align: center;
-  line-height: 1.6;
-}
-
-/* ================= HEADER ================= */
-
-header {
-  background: linear-gradient(145deg, #1f1f1f, #181818);
-  padding: 25px 20px 15px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #a855f7;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-/* ================= TAB BUTTONS ================= */
-
-.tab-buttons {
-  margin: 20px 0 25px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.tab-btn {
-  padding: 8px 20px;
-  background: transparent;
-  border: 2px solid #a855f7;
-  color: #a855f7;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 16px;
-}
-
-.tab-btn.active,
-.tab-btn:hover {
-  background: #a855f7;
-  color: white;
-}
-
-.hidden {
-  display: none;
-}
-
-/* ================= GRID ================= */
-
-.cert-container,
-.badges-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 20px 20px 50px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* ================= CARD ================= */
-
-.cert-card,
-.badge-card {
-  background: #1e1e1e;
-  padding: 30px 20px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.6),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  animation: fadeUp 0.6s ease forwards;
-  opacity: 0;
-}
-
-/* Hover Effect */
-.cert-card:hover,
-.badge-card:hover {
-  transform: translateY(-8px);
-  border-color: #a855f7;
-  box-shadow: 0 15px 40px rgba(168, 85, 247, 0.25);
-}
-
-/* ================= IMAGE ================= */
-
-.cert-card img,
-.badge-card img {
-  width: 100%;
-  height: 120px;
-  margin-bottom: 20px;
-  object-fit: contain;
-}
-
-/* ================= TEXT ================= */
-
-h3 {
-  color: #fff;
-  margin-bottom: 12px;
-  font-size: 18px;
-}
-
-.view-link {
-  color: #a855f7;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  margin-top: auto;
-  padding-top: 10px;
-  transition: 0.3s;
-}
-
-.view-link:hover {
-  text-decoration: underline;
-}
-
-/* ================= BACK BUTTON ================= */
+.glow-1, .glow-2 { position: fixed; border-radius: 50%; filter: blur(130px); pointer-events: none; z-index: 0; }
+.glow-1 { width: 700px; height: 700px; background: rgba(109,40,217,0.10); top: -250px; left: -150px; }
+.glow-2 { width: 500px; height: 500px; background: rgba(34,211,238,0.05); bottom: 0; right: -150px; }
 
 .back-btn {
-  position: fixed;
-  top: 120px;
-  right: 30px;
-  padding: 8px 16px;
-  font-size: 16px;
-  background-color: transparent;
-  color: #a855f7;
-  border: 2px solid #a855f7;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 2000;
+  position: fixed; top: 22px; left: 24px; z-index: 200;
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(139,92,246,0.1); border: 1px solid var(--border);
+  color: var(--purple2); padding: 9px 18px; border-radius: 9px;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+  cursor: pointer; backdrop-filter: blur(10px);
+  text-decoration: none; transition: all 0.25s;
+}
+.back-btn:hover { background: rgba(139,92,246,0.22); border-color: var(--purple); color: #fff; transform: translateX(-3px); }
+
+.wrap { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 24px 90px; }
+
+/* HEADER */
+.page-header { padding: 100px 0 44px; text-align: center; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(139,92,246,0.1); border: 1px solid var(--border);
+  color: var(--purple2); font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+}
+.eyebrow-dot { width: 6px; height: 6px; background: var(--purple); border-radius: 50%; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.page-header h1 {
+  font-family: 'Syne', sans-serif; font-size: clamp(34px,6vw,60px); font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, var(--purple2) 55%, var(--cyan) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 12px;
+}
+.page-header p { color: var(--muted2); font-size: 15px; max-width: 440px; margin: 0 auto 36px; }
+
+/* STATS */
+.stats { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 50px; }
+.stat {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 28px; text-align: center; min-width: 120px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.stat:hover { border-color: var(--purple); transform: translateY(-3px); }
+.stat-n { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--purple2); }
+.stat-l { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 3px; }
+
+/* SECTION TABS */
+.section-tabs {
+  display: flex; justify-content: center; gap: 6px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 5px; width: fit-content; margin: 0 auto 32px;
+}
+.sec-tab {
+  padding: 9px 24px; border-radius: 9px; font-size: 13px; font-weight: 600;
+  cursor: pointer; border: none; background: transparent; color: var(--muted2);
+  transition: all 0.22s; display: flex; align-items: center; gap: 7px;
+}
+.sec-tab:hover { color: #fff; }
+.sec-tab.active { background: var(--purple3); color: #fff; box-shadow: 0 4px 14px rgba(109,40,217,0.4); }
+
+/* CONTROLS */
+.controls { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.filter-bar { display: flex; gap: 7px; flex-wrap: wrap; }
+.f-btn {
+  padding: 7px 16px; border-radius: 8px; font-size: 12px; font-weight: 600;
+  cursor: pointer; border: 1px solid var(--border); background: transparent;
+  color: var(--muted2); transition: all 0.2s; letter-spacing: 0.03em;
+}
+.f-btn:hover { border-color: var(--purple2); color: var(--purple2); }
+.f-btn.active { background: rgba(109,40,217,0.3); border-color: var(--purple); color: var(--purple2); }
+
+.search-box { position: relative; display: flex; align-items: center; }
+.search-box i { position: absolute; left: 12px; color: var(--muted); font-size: 13px; }
+.search-box input {
+  background: var(--card); border: 1px solid var(--border); border-radius: 9px;
+  padding: 8px 14px 8px 34px; color: var(--text); font-size: 13px;
+  font-family: 'Inter', sans-serif; width: 200px; transition: border-color 0.2s, width 0.3s; outline: none;
+}
+.search-box input:focus { border-color: var(--purple); width: 240px; }
+.search-box input::placeholder { color: var(--muted); }
+
+.count-label { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+.count-label span { color: var(--purple2); font-weight: 600; }
+
+/* GRID */
+.certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px,1fr)); gap: 18px; }
+
+/* CERT CARD */
+.cert-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px;
+  display: flex; flex-direction: column; position: relative; overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s, background 0.3s;
+  animation: fadeUp 0.5s ease both;
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+.cert-card:hover { transform: translateY(-6px); border-color: var(--border-hover); background: var(--card-hover); box-shadow: 0 16px 40px rgba(109,40,217,0.2), 0 0 0 1px rgba(139,92,246,0.18); }
+.cert-card::after { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent 0%,var(--c,var(--purple)) 50%,transparent 100%); opacity:0; transition:opacity 0.3s; }
+.cert-card:hover::after { opacity:1; }
+
+.card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.cert-logo {
+  width:44px; height:44px; border-radius:10px; object-fit:contain;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);
+  padding:6px; transition:transform 0.3s; flex-shrink:0;
+}
+.cert-card:hover .cert-logo { transform:scale(1.08) rotate(2deg); }
+
+.cert-badge { font-size:10px; font-weight:700; padding:4px 10px; border-radius:6px; text-transform:uppercase; letter-spacing:0.07em; white-space:nowrap; }
+.b-cloud { background:rgba(34,211,238,0.12); color:var(--cyan); border:1px solid rgba(34,211,238,0.25); }
+.b-cyber { background:rgba(248,113,113,0.12); color:var(--red); border:1px solid rgba(248,113,113,0.25); }
+.b-ml { background:rgba(52,211,153,0.12); color:var(--green); border:1px solid rgba(52,211,153,0.25); }
+.b-dev { background:rgba(139,92,246,0.15); color:var(--purple2); border:1px solid rgba(139,92,246,0.25); }
+
+.cert-issuer { font-size:11px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:5px; }
+.cert-title { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; color:#fff; line-height:1.3; margin-bottom:14px; flex:1; }
+
+.cert-meta { font-size:11px; color:var(--muted); margin-bottom:10px; display:flex; align-items:center; gap:5px; }
+.cert-meta i { font-size:10px; color:var(--purple); }
+
+.cert-skills { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:14px; }
+.skill-tag {
+  font-size:10px; padding:3px 8px; border-radius:5px;
+  background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08);
+  color:var(--muted2);
 }
 
-.back-btn:hover {
-  background-color: #a855f7;
-  color: white;
+.card-footer { display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(255,255,255,0.05); padding-top:14px; margin-top:auto; }
+.view-link { display:inline-flex; align-items:center; gap:6px; color:var(--purple2); font-size:12.5px; font-weight:600; text-decoration:none; transition:gap 0.2s, color 0.2s; }
+.view-link:hover { color:#fff; gap:9px; }
+.verify-icon { color:var(--green); font-size:13px; }
+
+.no-results { grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--muted); font-size:15px; display:none; }
+.no-results i { font-size:36px; margin-bottom:14px; display:block; color:var(--purple3); }
+
+/* ── BADGES ── bigger size */
+.badges-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:22px; }
+.badge-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 38px 24px 30px;
+  display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center;
+  transition: all 0.3s; animation: fadeUp 0.5s ease both; position: relative; overflow: hidden;
+}
+.badge-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 25%, rgba(139,92,246,0.1), transparent 65%);
+  opacity: 0; transition: opacity 0.3s;
+}
+.badge-card:hover { transform: translateY(-7px); border-color: var(--purple); box-shadow: 0 18px 44px rgba(109,40,217,0.25); }
+.badge-card:hover::before { opacity: 1; }
+
+.badge-img-wrap {
+  width: 130px; height: 130px; display: flex; align-items: center; justify-content: center;
+  background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 50%; padding: 12px; transition: transform 0.3s, box-shadow 0.3s;
+}
+.badge-card:hover .badge-img-wrap {
+  transform: scale(1.08);
+  box-shadow: 0 0 28px rgba(139,92,246,0.35);
+}
+.badge-img-wrap img {
+  width: 100%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(139,92,246,0.3));
 }
 
-.filter-buttons {
-  margin: 10px 0 20px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
+.badge-title { font-family:'Syne',sans-serif; font-size:14.5px; font-weight:700; color:#fff; line-height:1.3; }
+.badge-src { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; }
+.badge-id { font-size:10.5px; color:var(--purple2); background:rgba(139,92,246,0.1); padding:3px 10px; border-radius:5px; border:1px solid rgba(139,92,246,0.2); }
 
-
-/* ================= ANIMATIONS ================= */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================= RESPONSIVE ================= */
+.section { display:none; }
+.section.active { display:block; }
 
 @media (max-width: 600px) {
-  .back-btn {
-    top: 90px;
-    right: 15px;
-    font-size: 14px;
-    padding: 6px 12px;
-  }
+  .controls { flex-direction:column; align-items:flex-start; }
+  .search-box input { width:100%; }
+  .certs-grid { grid-template-columns:1fr; }
+  .section-tabs { width:100%; }
+  .sec-tab { flex:1; justify-content:center; }
+  .badges-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-@media (max-width: 480px) {
-  .cert-container,
-  .badges-container {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 400px) {
+  .badges-grid { grid-template-columns: 1fr; }
 }
 </style>
-
 </head>
-
 <body>
 
-<header>
-  Portfolio Assets
-  <div class="tab-buttons">
-    <button class="tab-btn active" onclick="showSection('certificates', event)">Certificates</button>
-    <button class="tab-btn" onclick="showSection('badges', event)">Badges</button>
-    <button class="back-btn" onclick="window.location.href='index.html'">Back</button>
+<div class="glow-1"></div>
+<div class="glow-2"></div>
 
-  </div>
-  <p>
+<a class="back-btn" href="index.html"><i class="fas fa-arrow-left"></i> Back</a>
 
-  </p>
-</header> 
-    <!-- FILTER BUTTONS -->
- 
+<div class="wrap">
 
-
-<div id="certificates">
-   <div class="filter-buttons">
-    <button class="tab-btn active" onclick="filterCards('all', event)">All</button>
-    <button class="tab-btn" onclick="filterCards('cloud', event)">Cloud</button>
-    <button class="tab-btn" onclick="filterCards('cyber', event)">Cybersecurity</button>
-    <button class="tab-btn" onclick="filterCards('ml', event)">Machine Learning</button>
-    <button class="tab-btn" onclick="filterCards('dev', event)">Development</button>
-  </div>
-    <div class="cert-container">
-
-    <div class="cert-card" data-category="dev">
-      <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Extra-Large.jpg" alt="Unstop">
-      <h3>Open Source Competition</h3>
-      <a class="view-link" href="https://unstop.com/certificate-preview/b71ee1b5-c367-4603-a82e-53fd8d073b78" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="dev">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png" alt="HackerRank">
-      <h3>Software Engineer Intern</h3>
-      <a class="view-link" href="https://www.hackerrank.com/certificates/ccad183b59dd" target="_blank">Verify on HackerRank →</a>
-    </div>
-
-     <div class="cert-card" data-category="ml">
-      <img src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/06/Logo-google-cloud-icon-vector-PNG.png" alt="Google">
-      <h3>Gen AI Academy 2.0</h3>
-      <a class="view-link" href="https://certificate.hack2skill.com/user/genai2security/2025H2S10GENAI-SE00118" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="dev">
-      <img src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt="Forage">
-      <h3>J.P. Morgan Job Simulation</h3>
-      <a class="view-link" href="https://www.theforage.com/completion-certificates/Sj7temL583QAYpHXD/E6McHJDKsQYh79moz_Sj7temL583QAYpHXD_dZ76qiwSHJv9FN86d_1760359417152_completion_certificate.pdf" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="cloud">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
-      <h3>AWS Cloud Practitioner</h3>
-      <a class="view-link" href="https://drive.google.com/file/d/1JXg4KwGq0B7KhCgvbHmPLML9T_A1SI9E/view?usp=sharing" target="_blank">Verified by AWS →</a>
-    </div>
-
-    <div class="cert-card" data-category="cyber">
-      <img src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt="Forage">
-      <h3>Deloitte Cyber Simulation</h3>
-      <a class="view-link" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_dZ76qiwSHJv9FN86d_1756811600853_completion_certificate.pdf" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="cloud">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
-      <h3>Intro to Generative AI</h3>
-      <a class="view-link" href="https://drive.google.com/file/d/1ZA8XV_Xk-NSVrQrj4XrvwpH7pwvs_xNR/view?usp=sharing" target="_blank">AWS Training →</a>
-    </div>
-
-    <div class="cert-card" data-category="dev">
-      <img src="https://graduan.sgp1.cdn.digitaloceanspaces.com/media/460632/w770/cbfdc54e-9fa3-426e-b58b-fc42433324fa-NDYwNjMy.png" alt="Nestle">
-      <h3>Nestlé Resilience Training</h3>
-      <a class="view-link" href="https://drive.google.com/file/d/16ZeDewWNswrTC8Dqu4r4LlMLjtwy3a9y/view?usp=sharing" target="_blank">Verified by Nestle →</a>
-    </div>
-
-    <div class="cert-card" data-category="cyber">
-      <img src="https://img.freepik.com/premium-vector/google-app-icon_1273375-1571.jpg?semt=ais_hybrid&w=740&q=80" alt="Google">
-      <h3>Manage Security Risks</h3>
-      <a class="view-link" href="https://www.coursera.org/account/accomplishments/verify/CHS45LWX299L" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="dev">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
-      <h3>SQL & Relational DBs 101</h3>
-      <a class="view-link" href="https://courses.cognitiveclass.ai/certificates/5dfa47dbae7b48c6b2b0227465f731a9" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="cyber">
-      <img src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt="Forage">
-      <h3>Tata Cyber Job Simulation</h3>
-      <a class="view-link" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_dZ76qiwSHJv9FN86d_1756451329381_completion_certificate.pdf" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="cyber">
-      <img src="https://img.freepik.com/premium-vector/google-app-icon_1273375-1571.jpg?semt=ais_hybrid&w=740&q=80" alt="Google">
-      <h3>Foundations of Cybersecurity</h3>
-      <a class="view-link" href="https://www.coursera.org/account/accomplishments/records/GB53UN51LU2A" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="dev">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
-      <h3>Python for Everybody</h3>
-      <a class="view-link" href="https://www.coursera.org/account/accomplishments/verify/XX9EZIC7Z2V8" target="_blank">Verify on Coursera →</a>
-    </div>
-
-    <div class="cert-card" data-category="cyber">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/W3Schools_logo.svg" alt="W3Schools">
-      <h3>Cyber Security Tutorial</h3>
-      <a class="view-link" href="https://www.coursera.org/account/accomplishments/verify/R5SCQ6J64HN2" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="dev">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys">
-      <h3>Front End Development</h3>
-      <a class="view-link" href="https://drive.google.com/file/d/17AaAG-exZjTZN33gWKh91GzuL89AQROb/view?usp=sharing" target="_blank">[ View Certificate ]
-       →</a>
-    </div>
-
-   <div class="cert-card" data-category="cyber">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
-      <h3>Fundamentals of Encryption</h3>
-      <a class="view-link" href="https://courses.cognitiveclass.ai/certificates/9994dff1473d4ab8ba283818f7b87124" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="dev">
-      <img src="https://wadhwanifoundation.org/wp-content/uploads/2023/10/Wadhwani-Foundation-Logo.png" alt="Business">
-      <h3>IGNITE 3.4 Business Modeling</h3>
-      <a class="view-link" href="https://web.certificate.wfglobal.org/en/certificate?certificateId=67fdf5a6eeacc2785e22de56" target="_blank">Show Credential →</a>
-    </div>
-
-    <div class="cert-card" data-category="ml">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
-      <h3>ML - Dimensionality Reduction</h3>
-      <a class="view-link" href="https://courses.cognitiveclass.ai/certificates/be9146ea2d954f4092b69c55d89fc7c9" target="_blank">IBM Course →</a>
-    </div>
-
-    <div class="cert-card" data-category="ml">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
-      <h3>Data Visualization with R</h3>
-      <a class="view-link" href="https://courses.cognitiveclass.ai/certificates/7f093b6eb7634ea3a61deea9232568ca" target="_blank">IBM Course →</a>
-    </div>
-
-    <div class="cert-card" data-category="cyber">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_sRo5NEMP5zaR3_zi3vhtirpmKTSCHrGTw&s" alt="NPTEL">
-      <h3>Blockchain and Applications</h3>
-      <a class="view-link" href="https://drive.google.com/file/d/1drf8VXjJADCwl3JwzXqXxfSH8DmrBXUH/view?usp=sharing" target="_blank">[ View Certificate ]
-       →</a>
-    </div>
-
-    <div class="cert-card" data-category="cloud">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
-      <h3>OCI Foundations Associate</h3>
-      <a class="view-link" href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=53E5D1DFEBEC9BFC2A48EB6DB6A291AC4EDE4CE46CABDE0219F117B0AE0C2D27" target="_blank">Oracle Certified →</a>
-    </div>
-
-    <div class="cert-card" data-category="ml">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="MATLAB">
-      <h3>MATLAB Fundamentals</h3>
-      <a class="view-link" href="https://drive.google.com/file/d/1lE6q5YVAZrFP6nMxhwMLuI-Fe-m0y4H1/view?usp=sharing" target="_blank">[ View Certificate ]
-        →</a>
-    </div>
-
-    <div class="cert-card" data-category="ml">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="MATLAB">
-      <h3>MATLAB OPP's Onramp</h3>
-      <a class="view-link" href="https://drive.google.com/file/d/1dEFyEPGSvKHAOoLDl9Ght7clnZLtBMYp/view?usp=sharing" target="_blank">[ View Certificate ]
-        →</a>
-    </div>
-
-  </div>
-</div>
-
-<div id="badges" class="hidden">
-  <div class="badges-container">
-    <div class="badge-card">
-      <img src="https://cdn.qwiklabs.com/cvlKiwTmMaAxKvg6WtIWiLqQxgaCE7quUGFis58p4L4%3D" alt="Badge">
-      <h3>Sensitive Data Protections</h3>
-    </div>
-    <div class="badge-card">
-      <img src="https://cdn.qwiklabs.com/2eCgxHJlfp6Tp7kRPDeHUgBf3tr1i%2F3Tp%2Fw6V1XBOtM%3D" alt="Badge">
-      <h3>Secure Data Lake</h3>
-    </div>
-    <div class="badge-card">
-      <img src="https://cdn.qwiklabs.com/ILGsQETWEN7miD1CnJQhw6Guhnbq%2BVNkaLWBw4wNnac%3D" alt="Badge">
-      <h3>Digital Transformation</h3>
-    </div>
-    <div class="badge-card">
-      <img src="https://images.credly.com/size/680x680/images/7f5dae04-e6dc-4ab6-8a6e-b77728c4ac9e/blob" alt="Badge">
-      <h3>Data Visualization with R</h3>
+  <div class="page-header">
+    <div class="eyebrow"><span class="eyebrow-dot"></span> Portfolio Assets</div>
+    <h1>Certifications &amp; Badges</h1>
+    <p>Verified credentials across Cloud, Cybersecurity, ML &amp; Development</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">26</div><div class="stat-l">Total Certs</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Domains</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Badges</div></div>
+      <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Issuers</div></div>
     </div>
   </div>
-</div>
+
+  <div class="section-tabs">
+    <button class="sec-tab active" onclick="switchSection('certs',this)"><i class="fas fa-certificate"></i> Certificates</button>
+    <button class="sec-tab" onclick="switchSection('badges',this)"><i class="fas fa-shield-halved"></i> Badges</button>
+  </div>
+
+  <!-- ══════════════ CERTIFICATES ══════════════ -->
+  <div id="certs" class="section active">
+    <div class="controls">
+      <div class="filter-bar">
+        <button class="f-btn active" onclick="filter('all',this)">All</button>
+        <button class="f-btn" onclick="filter('cloud',this)">☁️ Cloud</button>
+        <button class="f-btn" onclick="filter('cyber',this)">🛡️ Cybersecurity</button>
+        <button class="f-btn" onclick="filter('ml',this)">🤖 ML / AI</button>
+        <button class="f-btn" onclick="filter('dev',this)">⚡ Development</button>
+      </div>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Search certs…" oninput="applyFilters()" />
+      </div>
+    </div>
+    <div class="count-label">Showing <span id="shown-count">26</span> certificates</div>
+
+    <div class="certs-grid" id="certs-grid">
+
+      <!-- 1 -->
+      <div class="cert-card" data-cat="ml" data-title="introduction data science infosys springboard" style="--c:#34d399;animation-delay:.02s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys"><span class="cert-badge b-ml">ML / AI</span></div>
+        <div class="cert-issuer">Infosys Springboard</div>
+        <div class="cert-title">Introduction to Data Science</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Apr 2026</div>
+        <div class="cert-skills"><span class="skill-tag">Data Science</span><span class="skill-tag">Machine Learning</span></div>
+        <div class="card-footer"><span class="view-link" style="opacity:.45;cursor:default;">Certificate on File</span><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 2 -->
+      <div class="cert-card" data-cat="ml" data-title="introduction natural language processing nlp infosys springboard" style="--c:#34d399;animation-delay:.04s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys"><span class="cert-badge b-ml">ML / AI</span></div>
+        <div class="cert-issuer">Infosys Springboard</div>
+        <div class="cert-title">Introduction to Natural Language Processing</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Apr 2026</div>
+        <div class="cert-skills"><span class="skill-tag">NLP</span><span class="skill-tag">Text Analysis</span></div>
+        <div class="card-footer"><span class="view-link" style="opacity:.45;cursor:default;">Certificate on File</span><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 3 -->
+      <div class="cert-card" data-cat="dev" data-title="elite coders winter of code campus representative contributor open source" style="--c:#8b5cf6;animation-delay:.06s">
+        <div class="card-top">
+          <div style="width:44px;height:44px;border-radius:10px;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">💻</div>
+          <span class="cert-badge b-dev">Development</span>
+        </div>
+        <div class="cert-issuer">Elite Coders</div>
+        <div class="cert-title">Winter of Code – Campus Rep &amp; Contributor</div>
+        <div class="cert-skills"><span class="skill-tag">Open Source</span><span class="skill-tag">Problem Solving</span></div>
+        <div class="card-footer"><span class="view-link" style="opacity:.45;cursor:default;">Certificate on File</span><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 4 -->
+      <div class="cert-card" data-cat="dev" data-title="open source competition unstop" style="--c:#8b5cf6;animation-delay:.08s">
+        <div class="card-top"><img class="cert-logo" src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Extra-Large.jpg" alt="Unstop"><span class="cert-badge b-dev">Development</span></div>
+        <div class="cert-issuer">Unstop</div>
+        <div class="cert-title">Certificate of Participation – Open Source Competition</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Jan 2026 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> b71ee1b5</div>
+        <div class="card-footer"><a class="view-link" href="https://unstop.com/certificate-preview/b71ee1b5-c367-4603-a82e-53fd8d073b78" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 5 -->
+      <div class="cert-card" data-cat="dev" data-title="software engineer intern hackerrank python sql" style="--c:#34d399;animation-delay:.10s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png" alt="HackerRank"><span class="cert-badge b-dev">Development</span></div>
+        <div class="cert-issuer">HackerRank</div>
+        <div class="cert-title">Software Engineer Intern</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Jan 2026</div>
+        <div class="cert-skills"><span class="skill-tag">Python</span><span class="skill-tag">SQL</span></div>
+        <div class="card-footer"><a class="view-link" href="https://www.hackerrank.com/certificates/ccad183b59dd" target="_blank">Verify Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 6 -->
+      <div class="cert-card" data-cat="ml" data-title="gen ai academy 2.0 security learning track google cloud hack2skill" style="--c:#22d3ee;animation-delay:.12s">
+        <div class="card-top"><img class="cert-logo" src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/06/Logo-google-cloud-icon-vector-PNG.png" alt="Google Cloud"><span class="cert-badge b-ml">ML / AI</span></div>
+        <div class="cert-issuer">Google Cloud Security · Hack2Skill</div>
+        <div class="cert-title">Gen AI Academy 2.0 – Security Learning Track</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Dec 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> SE00118</div>
+        <div class="cert-skills"><span class="skill-tag">Cloud Security</span><span class="skill-tag">GCP</span><span class="skill-tag">Generative AI</span></div>
+        <div class="card-footer"><a class="view-link" href="https://certificate.hack2skill.com/user/genai2security/2025H2S10GENAI-SE00118" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 7 -->
+      <div class="cert-card" data-cat="dev" data-title="jp morgan software engineering job simulation forage" style="--c:#fb923c;animation-delay:.14s">
+        <div class="card-top"><img class="cert-logo" src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt="Forage"><span class="cert-badge b-dev">Development</span></div>
+        <div class="cert-issuer">J.P. Morgan · Forage</div>
+        <div class="cert-title">Software Engineering Job Simulation</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Oct 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> 4Dq6pKK4</div>
+        <div class="card-footer"><a class="view-link" href="https://www.theforage.com/completion-certificates/Sj7temL583QAYpHXD/E6McHJDKsQYh79moz_Sj7temL583QAYpHXD_dZ76qiwSHJv9FN86d_1760359417152_completion_certificate.pdf" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 8 -->
+      <div class="cert-card" data-cat="cloud" data-title="aws cloud practitioner essentials amazon web services" style="--c:#fb923c;animation-delay:.16s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS"><span class="cert-badge b-cloud">Cloud</span></div>
+        <div class="cert-issuer">Amazon Web Services</div>
+        <div class="cert-title">AWS Cloud Practitioner Essentials</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Sep 2025</div>
+        <div class="cert-skills"><span class="skill-tag">Cloud Computing</span><span class="skill-tag">AWS Core Services</span></div>
+        <div class="card-footer"><a class="view-link" href="https://drive.google.com/file/d/1JXg4KwGq0B7KhCgvbHmPLML9T_A1SI9E/view?usp=sharing" target="_blank">Verified by AWS <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 9 -->
+      <div class="cert-card" data-cat="cyber" data-title="deloitte australia cyber job simulation forage" style="--c:#f87171;animation-delay:.18s">
+        <div class="card-top"><img class="cert-logo" src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt="Forage"><span class="cert-badge b-cyber">Cybersecurity</span></div>
+        <div class="cert-issuer">Deloitte Australia · Forage</div>
+        <div class="cert-title">Cyber Job Simulation</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Sep 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> SJxDn5Cn</div>
+        <div class="cert-skills"><span class="skill-tag">Web App Security</span><span class="skill-tag">Networking</span></div>
+        <div class="card-footer"><a class="view-link" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_dZ76qiwSHJv9FN86d_1756811600853_completion_certificate.pdf" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 10 -->
+      <div class="cert-card" data-cat="cloud" data-title="aws introduction generative ai art of possible amazon" style="--c:#fb923c;animation-delay:.20s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS"><span class="cert-badge b-cloud">Cloud</span></div>
+        <div class="cert-issuer">Amazon Web Services</div>
+        <div class="cert-title">Introduction to Generative AI – Art of the Possible</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Sep 2025</div>
+        <div class="cert-skills"><span class="skill-tag">Generative AI</span><span class="skill-tag">ML Algorithms</span></div>
+        <div class="card-footer"><a class="view-link" href="https://drive.google.com/file/d/1ZA8XV_Xk-NSVrQrj4XrvwpH7pwvs_xNR/view?usp=sharing" target="_blank">AWS Training <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 11 -->
+      <div class="cert-card" data-cat="dev" data-title="nestle resilience e-learning india time stress management" style="--c:#8b5cf6;animation-delay:.22s">
+        <div class="card-top"><img class="cert-logo" src="https://graduan.sgp1.cdn.digitaloceanspaces.com/media/460632/w770/cbfdc54e-9fa3-426e-b58b-fc42433324fa-NDYwNjMy.png" alt="Nestle"><span class="cert-badge b-dev">Development</span></div>
+        <div class="cert-issuer">Nestlé India</div>
+        <div class="cert-title">Nestlé E-Learning 2025 – Resilience</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Sep 2025</div>
+        <div class="cert-skills"><span class="skill-tag">Time Management</span><span class="skill-tag">Stress Management</span></div>
+        <div class="card-footer"><a class="view-link" href="https://drive.google.com/file/d/16ZeDewWNswrTC8Dqu4r4LlMLjtwy3a9y/view?usp=sharing" target="_blank">Verified by Nestlé <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 12 -->
+      <div class="cert-card" data-cat="dev" data-title="sql relational databases 101 ibm cognitive class" style="--c:#22d3ee;animation-delay:.24s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM"><span class="cert-badge b-dev">Development</span></div>
+        <div class="cert-issuer">IBM · Cognitive Class</div>
+        <div class="cert-title">SQL &amp; Relational Databases 101</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Sep 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> 5dfa47db</div>
+        <div class="cert-skills"><span class="skill-tag">SQL</span></div>
+        <div class="card-footer"><a class="view-link" href="https://courses.cognitiveclass.ai/certificates/5dfa47dbae7b48c6b2b0227465f731a9" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 13 -->
+      <div class="cert-card" data-cat="cyber" data-title="play it safe manage security risks google coursera" style="--c:#f87171;animation-delay:.26s">
+        <div class="card-top"><img class="cert-logo" src="https://img.freepik.com/premium-vector/google-app-icon_1273375-1571.jpg?w=740" alt="Google"><span class="cert-badge b-cyber">Cybersecurity</span></div>
+        <div class="cert-issuer">Google · Coursera</div>
+        <div class="cert-title">Play It Safe: Manage Security Risks</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Sep 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> CHS45LWX</div>
+        <div class="cert-skills"><span class="skill-tag">Cybersecurity</span><span class="skill-tag">Risk Analysis</span></div>
+        <div class="card-footer"><a class="view-link" href="https://www.coursera.org/account/accomplishments/verify/CHS45LWX299L" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 14 -->
+      <div class="cert-card" data-cat="cyber" data-title="tata cybersecurity analyst job simulation forage" style="--c:#f87171;animation-delay:.28s">
+        <div class="card-top"><img class="cert-logo" src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt="Forage"><span class="cert-badge b-cyber">Cybersecurity</span></div>
+        <div class="cert-issuer">Tata Group · Forage</div>
+        <div class="cert-title">Cybersecurity Analyst Job Simulation</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Aug 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> 8LEpBL35</div>
+        <div class="cert-skills"><span class="skill-tag">Communication</span><span class="skill-tag">Problem Solving</span></div>
+        <div class="card-footer"><a class="view-link" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_dZ76qiwSHJv9FN86d_1756451329381_completion_certificate.pdf" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 15 -->
+      <div class="cert-card" data-cat="cyber" data-title="foundations cybersecurity google coursera" style="--c:#f87171;animation-delay:.30s">
+        <div class="card-top"><img class="cert-logo" src="https://img.freepik.com/premium-vector/google-app-icon_1273375-1571.jpg?w=740" alt="Google"><span class="cert-badge b-cyber">Cybersecurity</span></div>
+        <div class="cert-issuer">Google · Coursera</div>
+        <div class="cert-title">Foundations of Cybersecurity</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Jun 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> GB53UN51</div>
+        <div class="cert-skills"><span class="skill-tag">Cybersecurity</span></div>
+        <div class="card-footer"><a class="view-link" href="https://www.coursera.org/account/accomplishments/records/GB53UN51LU2A" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 16 -->
+      <div class="cert-card" data-cat="dev" data-title="python everybody university michigan coursera programming" style="--c:#34d399;animation-delay:.32s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"><span class="cert-badge b-dev">Development</span></div>
+        <div class="cert-issuer">University of Michigan · Coursera</div>
+        <div class="cert-title">Programming for Everybody (Python)</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Jun 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> XX9EZIC7</div>
+        <div class="cert-skills"><span class="skill-tag">Python</span></div>
+        <div class="card-footer"><a class="view-link" href="https://www.coursera.org/account/accomplishments/verify/XX9EZIC7Z2V8" target="_blank">Verify Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 17 -->
+      <div class="cert-card" data-cat="dev" data-title="front end development infosys springboard html css" style="--c:#8b5cf6;animation-delay:.34s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys"><span class="cert-badge b-dev">Development</span></div>
+        <div class="cert-issuer">Infosys Springboard</div>
+        <div class="cert-title">Front End Development</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Apr 2025</div>
+        <div class="cert-skills"><span class="skill-tag">HTML5</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span></div>
+        <div class="card-footer"><a class="view-link" href="https://drive.google.com/file/d/17AaAG-exZjTZN33gWKh91GzuL89AQROb/view?usp=sharing" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 18 -->
+      <div class="cert-card" data-cat="cyber" data-title="fundamentals encryption ibm cognitive class" style="--c:#f87171;animation-delay:.36s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM"><span class="cert-badge b-cyber">Cybersecurity</span></div>
+        <div class="cert-issuer">IBM · Cognitive Class</div>
+        <div class="cert-title">Fundamentals of Encryption</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Apr 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> 9994dff1</div>
+        <div class="cert-skills"><span class="skill-tag">Encryption</span><span class="skill-tag">Cybersecurity</span></div>
+        <div class="card-footer"><a class="view-link" href="https://courses.cognitiveclass.ai/certificates/9994dff1473d4ab8ba283818f7b87124" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 19 -->
+      <div class="cert-card" data-cat="ml" data-title="machine learning dimensionality reduction ibm cognitive" style="--c:#34d399;animation-delay:.38s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM"><span class="cert-badge b-ml">ML / AI</span></div>
+        <div class="cert-issuer">IBM · Cognitive Class</div>
+        <div class="cert-title">Machine Learning – Dimensionality Reduction</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Apr 2025</div>
+        <div class="cert-skills"><span class="skill-tag">Machine Learning</span></div>
+        <div class="card-footer"><a class="view-link" href="https://courses.cognitiveclass.ai/certificates/be9146ea2d954f4092b69c55d89fc7c9" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 20 -->
+      <div class="cert-card" data-cat="dev" data-title="ignite ideation prototyping business modeling financial planning wadhwani foundation" style="--c:#8b5cf6;animation-delay:.40s">
+        <div class="card-top"><img class="cert-logo" src="https://wadhwanifoundation.org/wp-content/uploads/2023/10/Wadhwani-Foundation-Logo.png" alt="Wadhwani"><span class="cert-badge b-dev">Development</span></div>
+        <div class="cert-issuer">Wadhwani Foundation</div>
+        <div class="cert-title">IGNITE 3.4 – Ideation, Prototyping &amp; Business Modeling</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Apr 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> 67fdf5a6</div>
+        <div class="cert-skills"><span class="skill-tag">Business Modeling</span><span class="skill-tag">Prototyping</span></div>
+        <div class="card-footer"><a class="view-link" href="https://web.certificate.wfglobal.org/en/certificate?certificateId=67fdf5a6eeacc2785e22de56" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 21 -->
+      <div class="cert-card" data-cat="cyber" data-title="blockchain applications nptel iit" style="--c:#f87171;animation-delay:.42s">
+        <div class="card-top"><img class="cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_sRo5NEMP5zaR3_zi3vhtirpmKTSCHrGTw&s" alt="NPTEL"><span class="cert-badge b-cyber">Cybersecurity</span></div>
+        <div class="cert-issuer">NPTEL · IIT</div>
+        <div class="cert-title">Blockchain and its Applications</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Jan 2025</div>
+        <div class="cert-skills"><span class="skill-tag">Blockchain</span></div>
+        <div class="card-footer"><a class="view-link" href="https://drive.google.com/file/d/1drf8VXjJADCwl3JwzXqXxfSH8DmrBXUH/view?usp=sharing" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 22 -->
+      <div class="cert-card" data-cat="ml" data-title="data visualization r ibm cognitive class" style="--c:#34d399;animation-delay:.44s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM"><span class="cert-badge b-ml">ML / AI</span></div>
+        <div class="cert-issuer">IBM · Cognitive Class</div>
+        <div class="cert-title">Data Visualization with R</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Mar 2025</div>
+        <div class="cert-skills"><span class="skill-tag">Data Visualization</span><span class="skill-tag">R</span></div>
+        <div class="card-footer"><a class="view-link" href="https://courses.cognitiveclass.ai/certificates/7f093b6eb7634ea3a61deea9232568ca" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 23 -->
+      <div class="cert-card" data-cat="cyber" data-title="cyber security tutorial w3schools" style="--c:#f87171;animation-delay:.46s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/W3Schools_logo.svg" alt="W3Schools"><span class="cert-badge b-cyber">Cybersecurity</span></div>
+        <div class="cert-issuer">W3Schools · Coursera</div>
+        <div class="cert-title">Cyber Security Tutorial</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> May 2025 &nbsp;·&nbsp; <i class="fas fa-fingerprint"></i> R5SCQ6J6</div>
+        <div class="cert-skills"><span class="skill-tag">Cybersecurity</span></div>
+        <div class="card-footer"><a class="view-link" href="https://www.coursera.org/account/accomplishments/verify/R5SCQ6J64HN2" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 24 -->
+      <div class="cert-card" data-cat="cloud" data-title="oracle cloud infrastructure oci foundations associate certified" style="--c:#fb923c;animation-delay:.48s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle"><span class="cert-badge b-cloud">Cloud</span></div>
+        <div class="cert-issuer">Oracle</div>
+        <div class="cert-title">OCI 2023 Certified Foundations Associate</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Mar 2024 &nbsp;·&nbsp; <i class="fas fa-hourglass-end" style="color:var(--orange)"></i> Expires Mar 2026</div>
+        <div class="cert-skills"><span class="skill-tag">Cloud Computing</span><span class="skill-tag">Cloud Infrastructure</span></div>
+        <div class="card-footer"><a class="view-link" href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=53E5D1DFEBEC9BFC2A48EB6DB6A291AC4EDE4CE46CABDE0219F117B0AE0C2D27" target="_blank">Oracle Certified <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 25 -->
+      <div class="cert-card" data-cat="ml" data-title="matlab fundamentals mathworks programming" style="--c:#34d399;animation-delay:.50s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="MATLAB"><span class="cert-badge b-ml">ML / AI</span></div>
+        <div class="cert-issuer">MathWorks</div>
+        <div class="cert-title">MATLAB Fundamentals</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Jan 2024</div>
+        <div class="cert-skills"><span class="skill-tag">MATLAB</span></div>
+        <div class="card-footer"><a class="view-link" href="https://drive.google.com/file/d/1lE6q5YVAZrFP6nMxhwMLuI-Fe-m0y4H1/view?usp=sharing" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <!-- 26 -->
+      <div class="cert-card" data-cat="ml" data-title="matlab programming techniques mathworks oop" style="--c:#34d399;animation-delay:.52s">
+        <div class="card-top"><img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="MATLAB"><span class="cert-badge b-ml">ML / AI</span></div>
+        <div class="cert-issuer">MathWorks</div>
+        <div class="cert-title">MATLAB Programming Techniques</div>
+        <div class="cert-meta"><i class="fas fa-calendar"></i> Dec 2023</div>
+        <div class="cert-skills"><span class="skill-tag">MATLAB</span></div>
+        <div class="card-footer"><a class="view-link" href="https://drive.google.com/file/d/1dEFyEPGSvKHAOoLDl9Ght7clnZLtBMYp/view?usp=sharing" target="_blank">Show Credential <i class="fas fa-arrow-right"></i></a><i class="fas fa-circle-check verify-icon"></i></div>
+      </div>
+
+      <div class="no-results" id="no-results">
+        <i class="fas fa-search"></i>
+        No certificates found. Try a different filter or search term.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ BADGES ══════════════ -->
+  <div id="badges" class="section">
+    <div class="badges-grid">
+
+      <div class="badge-card" style="animation-delay:.04s">
+        <div class="badge-img-wrap">
+          <img src="https://cdn.qwiklabs.com/cvlKiwTmMaAxKvg6WtIWiLqQxgaCE7quUGFis58p4L4%3D" alt="Badge">
+        </div>
+        <div class="badge-title">Sensitive Data Protection</div>
+        <div class="badge-src">Google Cloud · Qwiklabs</div>
+        <div class="badge-id">ID: 20540492</div>
+      </div>
+
+      <div class="badge-card" style="animation-delay:.08s">
+        <div class="badge-img-wrap">
+          <img src="https://cdn.qwiklabs.com/2eCgxHJlfp6Tp7kRPDeHUgBf3tr1i%2F3Tp%2Fw6V1XBOtM%3D" alt="Badge">
+        </div>
+        <div class="badge-title">Create a Secure Data Lake on Cloud Storage</div>
+        <div class="badge-src">Google Cloud · Qwiklabs</div>
+        <div class="badge-id">ID: 20541689</div>
+      </div>
+
+      <div class="badge-card" style="animation-delay:.12s">
+        <div class="badge-img-wrap">
+          <img src="https://cdn.qwiklabs.com/ILGsQETWEN7miD1CnJQhw6Guhnbq%2BVNkaLWBw4wNnac%3D" alt="Badge">
+        </div>
+        <div class="badge-title">Digital Transformation with Google Cloud</div>
+        <div class="badge-src">Google Cloud Community India</div>
+        <div class="badge-id">ID: 20343581</div>
+      </div>
+
+      <div class="badge-card" style="animation-delay:.16s">
+        <div class="badge-img-wrap">
+          <img src="https://images.credly.com/size/680x680/images/7f5dae04-e6dc-4ab6-8a6e-b77728c4ac9e/blob" alt="Badge">
+        </div>
+        <div class="badge-title">Data Visualization with R</div>
+        <div class="badge-src">IBM · Credly</div>
+        <div class="badge-id">Credly Verified</div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /wrap -->
 
 <script>
-function showSection(section, event) {
-  document.getElementById("certificates").classList.add("hidden");
-  document.getElementById("badges").classList.add("hidden");
-  document.getElementById(section).classList.remove("hidden");
-
-  document.querySelectorAll(".tab-btn").forEach(btn =>
-    btn.classList.remove("active")
-  );
-
-  event.currentTarget.classList.add("active");
+function switchSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.sec-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
 }
 
-function filterCards(category, event) {
-  const cards = document.querySelectorAll(".cert-card");
+let currentCat = 'all';
+function filter(cat, btn) {
+  currentCat = cat;
+  document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
 
+function applyFilters() {
+  const q = document.getElementById('search-input').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('#certs-grid .cert-card');
+  let shown = 0;
   cards.forEach(card => {
-    if (category === "all") {
-      card.style.display = "flex";
-    } else {
-      if (card.getAttribute("data-category") === category) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
-    }
+    const catOk = currentCat === 'all' || card.dataset.cat === currentCat;
+    const qOk   = !q || card.dataset.title.includes(q);
+    const vis   = catOk && qOk;
+    card.style.display = vis ? 'flex' : 'none';
+    if (vis) shown++;
   });
-
-  document.querySelectorAll(".filter-buttons .tab-btn").forEach(btn =>
-    btn.classList.remove("active")
-  );
-
-  event.currentTarget.classList.add("active");
+  document.getElementById('shown-count').textContent = shown;
+  document.getElementById('no-results').style.display = shown === 0 ? 'block' : 'none';
 }
 </script>
-
-
-
-
-
-
-
 </body>
 </html>
