@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <title>My Skills</title>
 
-<!-- Font Awesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
 <link rel="stylesheet" href="subpage-style.css" />
 <style>
@@ -32,7 +32,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(16, 16, 16, 0.8);
+        background: rgba(16, 16, 16, 0.88);
         z-index: -1;
     }
 
@@ -57,94 +57,64 @@
 
     #main-content {
         padding-top: 100px;
+        padding-bottom: 60px;
         text-align: center;
         animation: fadeIn 0.8s ease-in-out;
     }
 
     .section-title {
-        font-size: 22px;
-        margin: 30px 0 10px;
+        font-size: 20px;
+        margin: 45px 0 15px;
         color: #a855f7;
         text-transform: uppercase;
-        text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+        text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
     }
 
     .skills-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        padding: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 16px;
+        padding: 15px;
+        max-width: 1300px;
+        margin: 0 auto;
     }
 
+    /* Sleek Dark Tech Cards matching your layout */
     .skill-card {
-        background: rgba(30, 30, 30, 0.9);
-        padding: 20px;
+        background: #11141a;
+        border: 1px solid #1e2330;
+        padding: 18px 12px;
         border-radius: 12px;
-        box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        animation: fadeUp 0.8s ease forwards;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .skill-card i {
-        font-size: 35px;
-        margin-bottom: 10px;
-        color: #a855f7;
+        font-size: 40px;
+        margin-bottom: 12px;
         display: block;
     }
 
     .skill-card h3 {
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #e2e8f0;
+        line-height: 1.3;
     }
 
     .skill-card:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+        transform: translateY(-4px);
+        border-color: #a855f7;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
     }
-
-    .tech-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 24px;
-        margin-top: 30px;
-        }
-
-        .tech-card {
-        background: linear-gradient(145deg, #1e1e1e, #252525);
-        border-radius: 18px;
-        padding: 22px;
-        text-align: center;
-        transition: all 0.35s ease;
-        box-shadow: 0 0 0 rgba(138, 43, 226, 0);
-        }
-
-        .tech-card i {
-        font-size: 34px;
-        color: #9b5cff;
-        margin-bottom: 12px;
-        }
-
-        .tech-card h3 {
-        font-size: 18px;
-        margin-bottom: 6px;
-        color: #ffffff;
-        }
-
-        .tech-card p {
-        font-size: 14px;
-        color: #cfcfcf;
-        line-height: 1.5;
-        }
-
-        .tech-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 0 25px rgba(155, 92, 255, 0.35);
-}
-
-
 
     .back-btn {
         position: fixed;
-        top: 120px;
+        top: 12px;
         right: 30px;
         padding: 8px 16px;
         font-size: 16px;
@@ -167,20 +137,11 @@
         to { opacity: 1; }
     }
 
-    @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
     @media (max-width: 600px) {
-        nav .logo {
-            font-size: 18px;
-        }
-        .skill-card i {
-            font-size: 28px;
-        }
+        nav .logo { font-size: 18px; }
+        .skill-card i { font-size: 32px; }
         .back-btn {
-            top: 90px;
+            top: 12px;
             right: 15px;
             font-size: 14px;
             padding: 6px 12px;
@@ -196,137 +157,125 @@
 </nav>
 
 <div id="main-content">
-    <h2 class="section-title">Current Focus</h2>
+
+    <h2 class="section-title">Programming Languages</h2>
     <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-code"></i><h3>Full Stack Development</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-brain"></i><h3>AI Agents</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-database"></i><h3>Backend Systems</h3></div>
-    </div>
-
-    <h2 class="section-title">Programming Skills</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="fa-brands fa-python"></i><h3>Python</h3></div>
-        <div class="skill-card"><i class="fa-brands fa-html5"></i><h3>HTML5</h3></div>
-        <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><h3>CSS</h3></div>
-        <div class="skill-card"><i class="fa-brands fa-js"></i><h3>JavaScript</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-r"></i><h3>R Programming</h3></div>
-        <div class="skill-card"><i class="fa-brands fa-react"></i><h3>React </h3></div>
-        <div class="skill-card"><i class="fa-solid fa-server"></i><h3>FastAPI</h3></div>
-    </div>
-
-    <h2 class="section-title">Soft Skills</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-people-group"></i><h3>Teamwork</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-lightbulb"></i><h3>Problem-Solving</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-clock"></i><h3>Time Management</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-bolt"></i><h3>Quick Learning</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-comments"></i><h3>Effective Communication</h3></div>
-    </div>
-
-    <h2 class="section-title">Languages</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>Hindi - Native</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>English - Professional</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>Rajasthani - Fluent</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>Marwadi - Fluent</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-language"></i><h3>Tamil - Conversational</h3></div>
-    </div>
-
-    <h2 class="section-title">Technologies</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-code"></i><h3>Full Stack Development</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-gears"></i><h3>DevOps </h3></div>
-        <div class="skill-card"><i class="fa-solid fa-shield-halved"></i><h3>Cyber Security</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-cloud"></i><h3>Cloud Computing</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-robot"></i><h3>Machine Learning</h3></div>
-
-
-    </div>
-
-    <h2 class="section-title">Tools & Platforms</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-code"></i><h3>VS Code</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-chart-column"></i><h3>Power BI</h3></div>
-        <div class="skill-card"><i class="fa-brands fa-github"></i><h3>Git, GitHub</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-book"></i><h3>Jupyter Notebook</h3></div>
-        <div class="skill-card">  <i class="fa-brands fa-python"></i>  <h3>Python IDLE</h3></div>
-        <div class="skill-card">  <i class="fa-solid fa-flask"></i>  <h3>Google Colab</h3></div>
-        <div class="skill-card">  <i class="fab fa-r-project skill-icon"></i>   <h3>R</h3></div>
-    </div>
-
-    <h2 class="section-title">Databases & APIs</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-database"></i><h3>PostgreSQL</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-database"></i><h3>MongoDB</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-database"></i><h3>MySQL</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-network-wired"></i><h3>REST APIs, JSON</h3></div>
-    </div>
-
-    <h2 class="section-title">Frameworks & Libraries</h2>
-
-   
-        <div class="tech-grid">
-
-        <div class="tech-card">
-            <i class="fa-solid fa-layer-group"></i>
-            <h3>Frameworks</h3>
-            <p>Streamlit, React,Fast api, Express.js</p>
-        </div>
-
-        <div class="tech-card">
-            <i class="fa-solid fa-database"></i>
-            <h3>Data Science</h3>
-            <p>Pandas, NumPy</p>
-        </div>
-
-        <div class="tech-card">
-            <i class="fa-solid fa-chart-line"></i>
-            <h3>Visualization</h3>
-            <p>Matplotlib, Seaborn, Plotly, Cufflinks</p>
-        </div>
-
-        <div class="tech-card">
-            <i class="fa-solid fa-brain"></i>
-            <h3>Machine Learning</h3>
-            <p>Scikit-learn, Random Forest, OpenCV</p>
-        </div>
-
-        <div class="tech-card">
-            <i class="fa-solid fa-language"></i>
-            <h3>NLP</h3>
-            <p>NLTK, Regex</p>
-        </div>
-
-        <div class="tech-card">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h3>Networking & Security</h3>
-            <p>Requests, WHOIS, tldextract, SSL/TLS</p>
-        </div>
-
+        <div class="skill-card"><i class="devicon-python-plain colored"></i><h3>Python</h3></div>
+        <div class="skill-card"><i class="devicon-javascript-plain colored"></i><h3>JavaScript<br><span style="font-size:10px; color:#aaa;">(ES5 / ES6)</span></h3></div>
+        <div class="skill-card"><i class="devicon-typescript-plain colored"></i><h3>TypeScript</h3></div>
+        <div class="skill-card"><i class="devicon-r-plain colored"></i><h3>R Language</h3></div>
         
+        <div class="skill-card"><i class="devicon-bash-plain colored"></i><h3>Bash / Shell</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-code" style="color:#e44d26;"></i><h3>MATLAB</h3></div>
+    </div>
 
+    <h2 class="section-title">Frontend & Web Systems</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="devicon-react-original colored"></i><h3>React.js</h3></div>
+        <div class="skill-card"><i class="devicon-html5-plain colored"></i><h3>HTML5</h3></div>
+        <div class="skill-card"><i class="devicon-css3-plain colored"></i><h3>CSS3</h3></div>
+        <div class="skill-card"><i class="devicon-tailwindcss-plain colored"></i><h3>Tailwind CSS</h3></div>
+        <div class="skill-card"><i class="devicon-bootstrap-plain colored"></i><h3>Bootstrap</h3></div>
+        <div class="skill-card"><i class="devicon-materialui-plain colored"></i><h3>Material UI</h3></div>
+        <div class="skill-card"><i class="devicon-electron-original colored"></i><h3>Electron</h3></div>
+        
+    </div>
+
+    <h2 class="section-title">Backend & APIs</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="devicon-nodejs-plain colored"></i><h3>Node.js</h3></div>
+        <div class="skill-card"><i class="devicon-express-original colored"></i><h3>Express.js</h3></div>
+        <div class="skill-card"><i class="devicon-fastapi-plain colored"></i><h3>FastAPI</h3></div>
+        <div class="skill-card"><i class="devicon-django-plain colored"></i><h3>Django</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-network-wired" style="color:#00bcbc;"></i><h3>REST APIs</h3></div>
+    </div>
+
+    <h2 class="section-title">Databases & Querying</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="devicon-postgresql-plain colored"></i><h3>PostgreSQL</h3></div>
+        <div class="skill-card"><i class="devicon-mongodb-plain colored"></i><h3>MongoDB</h3></div>
+        <div class="skill-card"><i class="devicon-mysql-plain colored"></i><h3>MySQL / SQL</h3></div>
+        <div class="skill-card"><i class="devicon-firebase-plain colored"></i><h3>Firebase</h3></div>
+        <div class="skill-card"><i class="devicon-graphql-plain colored"></i><h3>GraphQL</h3></div>
+    </div>
+
+    <h2 class="section-title">DevOps & Cloud Infrastructure</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="devicon-docker-plain colored"></i><h3>Docker / Compose</h3></div>
+        <div class="skill-card"><i class="devicon-kubernetes-plain colored"></i><h3>Kubernetes</h3></div>
+        <div class="skill-card"><i class="devicon-terraform-plain colored"></i><h3>Terraform</h3></div>
+        <div class="skill-card"><i class="devicon-amazonwebservices-original colored"></i><h3>AWS Core Services(Basics)</h3></div>
+        <div class="skill-card"><i class="devicon-googlecloud-plain colored"></i><h3>Google Cloud (GCP)</h3></div>
+       
+        <div class="skill-card"><i class="devicon-linux-plain colored"></i><h3>Linux OS</h3></div>
+        <div class="skill-card"><i class="devicon-github-original colored"></i><h3>GitHub CI/CD</h3></div>
+    </div>
+
+    <h2 class="section-title">Data Science & Agentic AI</h2>
+        <div class="skills-container">
+            <div class="skill-card"><i class="fa-solid fa-diagram-project" style="color:#38bdf8;"></i><h3>LangGraph<br><span style="font-size:10px; color:#94a3b8;">(Agentic AI)</span></h3></div>
+            <div class="skill-card"><i class="fa-solid fa-robot" style="color:#ff6f00;"></i><h3>Generative AI (GenAI)</h3></div>
+            <div class="skill-card"><i class="fa-solid fa-calculator" style="color:#03a9f4;"></i><h3>Probability & Stats</h3></div>
+            <div class="skill-card"><i class="fa-solid fa-language" style="color:#4caf50;"></i><h3>NLP & Text Analysis</h3></div>
+            <div class="skill-card"><i class="devicon-tensorflow-original colored"></i><h3>TensorFlow & Keras</h3></div>
+            <div class="skill-card"><i class="devicon-pytorch-plain colored"></i><h3>PyTorch</h3></div>
+            <div class="skill-card"><i class="devicon-scikitlearn-plain colored"></i><h3>Scikit-Learn / ML Algos</h3></div>
+            <div class="skill-card"><i class="devicon-pandas-plain colored"></i><h3>Pandas</h3></div>
+            <div class="skill-card"><i class="devicon-numpy-plain colored"></i><h3>NumPy</h3></div>
+            <div class="skill-card"><i class="fa-solid fa-tree" style="color:#8bc34a;"></i><h3>Random Forest / XGBoost</h3></div>
+            <div class="skill-card"><i class="fa-solid fa-chart-line" style="color:#3f51b5;"></i><h3>Data Viz (Plotly/Seaborn)</h3></div>
+            <div class="skill-card"><i class="fa-solid fa-magnifying-glass-chart" style="color:#e91e63;"></i><h3>Data Manipulation</h3></div>
         </div>
 
-
-
-    <h2 class="section-title">Operating Systems</h2>
+    <h2 class="section-title">Cybersecurity & Network Engineering</h2>
     <div class="skills-container">
-        <div class="skill-card"><i class="fa-brands fa-windows"></i><h3>Windows</h3></div>
-        <div class="skill-card"><i class="fa-brands fa-linux"></i><h3>Linux</h3></div>
-
+        <div class="skill-card"><i class="fa-solid fa-shield-halved" style="color:#00e676;"></i><h3>Cloud Security Architecture</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-user-shield" style="color:#ffc107;"></i><h3>Vulnerability Mgmt</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-key" style="color:#03a9f4;"></i><h3>Fundamental Encryption</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-user-lock" style="color:#ff5722;"></i><h3>Sensitive Data Protection</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-network-wired" style="color:#9c27b0;"></i><h3>Computer Networking</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-bug" style="color:#f44336;"></i><h3>Web Application Security</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-fingerprint" style="color:#e91e63;"></i><h3>SSL/TLS, WHOIS, Regex</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-triangle-exclamation" style="color:#ffcc00;"></i><h3>Risk Analysis</h3></div>
     </div>
 
-    <h2 class="section-title">Productivity Tools</h2>
+    <h2 class="section-title">Platforms & Tools</h2>
     <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-file-word"></i><h3>Microsoft Office</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-users"></i><h3>Google Workspace</h3></div>
+        <div class="skill-card"><i class="devicon-git-plain colored"></i><h3>Git & GitHub Pages</h3></div>
+        <div class="skill-card"><i class="devicon-gitlab-plain colored"></i><h3>GitLab</h3></div>
+        <div class="skill-card"><i class="devicon-vscode-plain colored"></i><h3>VS Code</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-rocket" style="color:#000; background:#fff; border-radius:50%; width:40px; height:40px; line-height:40px;"></i><h3>Vercel</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-bolt" style="color:#ffbd14;"></i><h3>Streamlit</h3></div>
+        <div class="skill-card"><i class="devicon-jupyter-plain colored"></i><h3>Jupyter / Colab</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-envelope-open-text" style="color:#ff6c37;"></i><h3>Postman</h3></div>
+        <div class="skill-card"><i class="devicon-jira-plain colored"></i><h3>Jira / Issue Tracking</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-chart-column" style="color:#f2c811;"></i><h3>Power BI</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-microchip" style="color:#00979d;"></i><h3>ESP8266 IoT</h3></div>
+        <div class="skill-card"><i class="devicon-figma-plain colored"></i><h3>Figma</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-chart-area" style="color:#ff4081;"></i><h3>yfinance</h3></div>
     </div>
 
+    <h2 class="section-title">Strategy & Emerging Tech</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-solid fa-lightbulb" style="color:#ffeb3b;"></i><h3>Ideation & Prototyping</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-briefcase" style="color:#8bc34a;"></i><h3>Business Modeling & Design</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-coins" style="color:#009688;"></i><h3>Financial Planning</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-rocket" style="color:#03a9f4;"></i><h3>Entrepreneurship</h3></div>
+    </div>
 
- 
-    
+    <h2 class="section-title">Languages & Core Competencies</h2>
+    <div class="skills-container">
+        <div class="skill-card"><i class="fa-solid fa-language" style="color:#a855f7;"></i><h3>Hindi /Marwadi / English / Tamil</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-comments" style="color:#a855f7;"></i><h3>Professional Communication</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-people-group" style="color:#a855f7;"></i><h3>Teamwork & Open Source</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-screwdriver-wrench" style="color:#a855f7;"></i><h3>Debugging & Problem Solving</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-clock" style="color:#a855f7;"></i><h3>Time Management</h3></div>
+        <div class="skill-card"><i class="fa-solid fa-seedling" style="color:#a855f7;"></i><h3>Stress Management & Resilience</h3></div>
+    </div>
+
 </div>
- <script>
+
+<script>
 function goBack() {
     window.location.href = "index.html";
 }
