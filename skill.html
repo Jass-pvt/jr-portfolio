@@ -1,284 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-<title>My Skills</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical Capabilities</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-<link rel="stylesheet" href="subpage-style.css" />
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+:root {
+  --bg:           #0b0b14;
+  --card:         #111120;
+  --card-hover:   #16162a;
+  --border:       rgba(139,92,246,0.15);
+  --border-hover: rgba(139,92,246,0.55);
+  --purple:       #8b5cf6;
+  --purple2:      #a78bfa;
+  --purple3:      #6d28d9;
+  --cyan:         #22d3ee;
+  --green:        #34d399;
+  --orange:       #fb923c;
+  --red:          #f87171;
+  --text:         #e2e8f0;
+  --muted:        #64748b;
+  --muted2:       #94a3b8;
 
-    body {
-        font-family: Arial, sans-serif;
-        color: #fff;
-        background: url("background.jpg") no-repeat center center fixed;
-        background-size: cover;
-        position: relative;
-    }
+  --ff-d: 'Fraunces', Georgia, serif;
+  --ff-m: 'IBM Plex Mono', monospace;
+  --ff-b: 'DM Sans', sans-serif;
+}
 
-    /* Overlay for readability */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(16, 16, 16, 0.88);
-        z-index: -1;
-    }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(31, 31, 31, 0.95);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 40px;
-        z-index: 1000;
-    }
+body {
+  font-family: var(--ff-b);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-    nav .logo {
-        color: #a855f7;
-        font-size: 22px;
-        font-weight: bold;
-    }
+/* subtle overlay design textures using portfolio tokens */
+body::after {
+  content:'';
+  position:fixed; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+  opacity:0.015; pointer-events:none; z-index:9998;
+}
+body::before {
+  content:''; position:fixed; inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.12) 3px,rgba(0,0,0,0.12) 4px);
+  pointer-events:none; z-index:9997;
+}
 
-    #main-content {
-        padding-top: 100px;
-        padding-bottom: 60px;
-        text-align: center;
-        animation: fadeIn 0.8s ease-in-out;
-    }
+/* background light source styling using your purples */
+.orb { position:fixed; border-radius:50%; filter:blur(140px); pointer-events:none; z-index:0; }
+.orb-a { width:650px; height:650px; background:rgba(109,40,217,0.18); top:-200px; left:-150px; }
+.orb-b { width:450px; height:450px; background:rgba(139,92,246,0.08); bottom:-120px; right:-120px; }
 
-    .section-title {
-        font-size: 20px;
-        margin: 45px 0 15px;
-        color: #a855f7;
-        text-transform: uppercase;
-        text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
-    }
+/* MAIN CONTAINER */
+#wrap {
+  position:relative; z-index:1;
+  max-width:980px; margin:0 auto;
+  padding:56px 28px 96px;
+}
 
-    .skills-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-        gap: 16px;
-        padding: 15px;
-        max-width: 1300px;
-        margin: 0 auto;
-    }
+/* RETURN BUTTON HEADER ZONE */
+.action-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: riseIn .5s ease forwards;
+}
+.back-btn {
+  font-family: var(--ff-m); font-size: 11px; letter-spacing: 0.1em;
+  color: var(--text); background: transparent;
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 7px 18px; cursor: pointer;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.back-btn:hover { color: var(--purple2); border-color: var(--border-hover); background: var(--card); }
 
-    /* Sleek Dark Tech Cards matching your layout */
-    .skill-card {
-        background: #11141a;
-        border: 1px solid #1e2330;
-        padding: 18px 12px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+/* PAGE HEADER */
+.page-head {
+  margin-bottom:68px;
+  opacity:0; animation:riseIn .75s .05s ease forwards;
+}
+.head-kicker { display:flex; align-items:center; gap:14px; margin-bottom:22px; }
+.kicker-bar  { height:1px; width:28px; background:linear-gradient(90deg, var(--purple), transparent); }
+.kicker-text {
+  font-family:var(--ff-m); font-size:10.5px;
+  color:var(--purple2); letter-spacing:0.18em; text-transform:uppercase;
+}
+.page-title {
+  font-family:var(--ff-d);
+  font-size:clamp(34px,5.5vw,58px);
+  font-weight:900; line-height:1.05;
+  letter-spacing:-2px; color:var(--text);
+  margin-bottom:22px;
+}
+.gradient-word {
+  background:linear-gradient(105deg, var(--purple2) 0%, var(--cyan) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.domain-chips { display:flex; flex-wrap:wrap; gap:8px; }
+.chip {
+  font-family:var(--ff-m); font-size:10px;
+  letter-spacing:0.1em; text-transform:uppercase;
+  padding:5px 13px; border-radius:20px; border:1px solid var(--border);
+  background:rgba(11,11,20,0.6);
+}
+.ch1 { color:var(--purple2); }
+.ch2 { color:var(--orange); }
+.ch3 { color:var(--cyan); }
+.ch4 { color:var(--green); }
 
-    .skill-card i {
-        font-size: 40px;
-        margin-bottom: 12px;
-        display: block;
-    }
+/* LAYOUT CARDS */
+.cards { display:flex; flex-direction:column; gap:16px; }
 
-    .skill-card h3 {
-        font-size: 14px;
-        font-weight: 500;
-        color: #e2e8f0;
-        line-height: 1.3;
-    }
+.card {
+  position:relative;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:34px 40px 30px 50px;
+  overflow:hidden;
+  opacity:0; transform:translateY(26px);
+  transition:border-color .35s, background-color .35s, box-shadow .35s, transform .35s;
+  will-change:transform;
+}
 
-    .skill-card:hover {
-        transform: translateY(-4px);
-        border-color: #a855f7;
-        box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
-    }
+/* structural accent indicator using targeted theme colors */
+.card::before {
+  content:''; position:absolute; left:0; top:20%; bottom:20%;
+  width:3px; border-radius:0 3px 3px 0;
+  transition:top .3s, bottom .3s;
+}
+.card:hover::before { top:8%; bottom:8%; }
+.card:hover { border-color:var(--border-hover); background:var(--card-hover); transform:translateY(-3px) !important; }
 
-    .back-btn {
-        position: fixed;
-        top: 12px;
-        right: 30px;
-        padding: 8px 16px;
-        font-size: 16px;
-        background-color: transparent;
-        color: #a855f7;
-        border: 2px solid #a855f7;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 2000;
-    }
+.c1::before { background:linear-gradient(180deg, var(--purple2), transparent); }
+.c2::before { background:linear-gradient(180deg, var(--orange), transparent); }
+.c3::before { background:linear-gradient(180deg, var(--cyan), transparent); }
+.c4::before { background:linear-gradient(180deg, var(--green), transparent); }
 
-    .back-btn:hover {
-        background-color: #a855f7;
-        color: white;
-    }
+.c1:hover { box-shadow:0 24px 48px rgba(0,0,0,0.5), 0 0 30px rgba(139,92,246,0.08); }
+.c2:hover { box-shadow:0 24px 48px rgba(0,0,0,0.5), 0 0 30px rgba(251,146,60,0.06); }
+.c3:hover { box-shadow:0 24px 48px rgba(0,0,0,0.5), 0 0 30px rgba(34,211,238,0.06); }
+.c4:hover { box-shadow:0 24px 48px rgba(0,0,0,0.5), 0 0 30px rgba(52,211,153,0.06); }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+.card.visible {
+  opacity:1; transform:translateY(0);
+  transition:opacity .6s ease, transform .6s ease, border-color .35s, background-color .35s, box-shadow .35s;
+}
 
-    @media (max-width: 600px) {
-        nav .logo { font-size: 18px; }
-        .skill-card i { font-size: 32px; }
-        .back-btn {
-            top: 12px;
-            right: 15px;
-            font-size: 14px;
-            padding: 6px 12px;
-        }
-    }
+.card-idx {
+  position:absolute; top:28px; right:34px;
+  font-family:var(--ff-m); font-size:11px;
+  color:var(--muted); letter-spacing:0.08em;
+}
+
+.card-top { margin-bottom:18px; }
+.card-label {
+  display:inline-block; font-family:var(--ff-m);
+  font-size:10px; letter-spacing:0.16em; text-transform:uppercase;
+  padding:3px 10px; border-radius:4px; margin-bottom:9px;
+  background:var(--bg);
+}
+.lb1 { color:var(--purple2); border:1px solid rgba(139,92,246,0.2); }
+.lb2 { color:var(--orange);  border:1px solid rgba(251,146,60,0.2); }
+.lb3 { color:var(--cyan);    border:1px solid rgba(34,211,238,0.2); }
+.lb4 { color:var(--green);   border:1px solid rgba(52,211,153,0.2); }
+
+.card-title {
+  font-family:var(--ff-d);
+  font-size:23px; font-weight:700;
+  color:var(--text); letter-spacing:-0.4px; line-height:1.2;
+}
+
+/* ACCELERATOR TECH PILLS */
+.pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+.pill {
+  display:inline-flex; align-items:center; gap:7px;
+  background:var(--bg); border:1px solid var(--border);
+  border-radius:8px; padding:7px 13px;
+  font-size:12.5px; font-weight:500; color:var(--text);
+  transition:border-color .2s, background-color .2s;
+  white-space:nowrap;
+}
+.pill:hover { border-color:var(--border-hover); background:var(--card-hover); }
+
+/* SEPARATOR LINES */
+.card-sep {
+  height:1px;
+  background:linear-gradient(90deg, var(--border-hover), transparent 70%);
+  margin-bottom:20px;
+}
+
+/* LIST COMPOSITION */
+.bullets { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.bullets li {
+  display:flex; align-items:flex-start; gap:13px;
+  font-size:13.5px; line-height:1.68; color:var(--muted2);
+}
+.bullets li::before {
+  content:''; display:block;
+  width:5px; height:5px; border-radius:50%;
+  margin-top:8px; flex-shrink:0;
+}
+.c1 .bullets li::before { background:var(--purple2); }
+.c2 .bullets li::before { background:var(--orange); }
+.c3 .bullets li::before { background:var(--cyan); }
+.c4 .bullets li::before { background:var(--green); }
+.bullets li span { color:var(--muted2); }
+.bullets li b    { color:var(--text); font-weight:600; }
+
+/* PAGE FOOTER */
+.page-foot {
+  margin-top:60px; padding-top:24px;
+  border-top:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between;
+  opacity:0; animation:riseIn .5s 1.4s ease forwards;
+}
+.foot-note { font-family:var(--ff-m); font-size:11px; color:var(--muted); letter-spacing:0.06em; }
+.status-dot {
+  width:7px; height:7px; border-radius:50%;
+  background:var(--green); box-shadow:0 0 10px var(--green);
+  animation:blink 2.5s ease-in-out infinite;
+}
+
+@keyframes blink  { 0%,100%{opacity:1;} 50%{opacity:.35;} }
+@keyframes riseIn { from{opacity:0;transform:translateY(18px);} to{opacity:1;transform:translateY(0);} }
+
+@media(max-width:660px){
+  #wrap { padding:32px 16px 72px; }
+  .action-row { margin-bottom: 24px; }
+  .card { padding:26px 20px 24px 32px; }
+  .card-title { font-size:19px; }
+  .page-title { letter-spacing:-1px; }
+  .card-idx   { display:none; }
+}
 </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">My Skills</div>
-    <button class="back-btn" onclick="goBack()">Back</button>
-</nav>
+<div class="orb orb-a"></div>
+<div class="orb orb-b"></div>
 
-<div id="main-content">
+<div id="wrap">
 
-    <h2 class="section-title">Programming Languages</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="devicon-python-plain colored"></i><h3>Python</h3></div>
-        <div class="skill-card"><i class="devicon-javascript-plain colored"></i><h3>JavaScript<br><span style="font-size:10px; color:#aaa;">(ES5 / ES6)</span></h3></div>
-        <div class="skill-card"><i class="devicon-typescript-plain colored"></i><h3>TypeScript</h3></div>
-        <div class="skill-card"><i class="devicon-r-plain colored"></i><h3>R Language</h3></div>
-        
-        <div class="skill-card"><i class="devicon-bash-plain colored"></i><h3>Bash / Shell</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-code" style="color:#e44d26;"></i><h3>MATLAB</h3></div>
+  <!-- RETURN POSITIONED IN DOCUMENT STREAM -->
+  <div class="action-row">
+    <button class="back-btn" onclick="window.location.href='index.html'">← return</button>
+  </div>
+
+  <!-- HEADER -->
+  <header class="page-head">
+    <div class="head-kicker">
+      <div class="kicker-bar"></div>
+      <span class="kicker-text">Technical Profile</span>
     </div>
-
-    <h2 class="section-title">Frontend & Web Systems</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="devicon-react-original colored"></i><h3>React.js</h3></div>
-        <div class="skill-card"><i class="devicon-html5-plain colored"></i><h3>HTML5</h3></div>
-        <div class="skill-card"><i class="devicon-css3-plain colored"></i><h3>CSS3</h3></div>
-        <div class="skill-card"><i class="devicon-tailwindcss-plain colored"></i><h3>Tailwind CSS</h3></div>
-        <div class="skill-card"><i class="devicon-bootstrap-plain colored"></i><h3>Bootstrap</h3></div>
-        <div class="skill-card"><i class="devicon-materialui-plain colored"></i><h3>Material UI</h3></div>
-        <div class="skill-card"><i class="devicon-electron-original colored"></i><h3>Electron</h3></div>
-        
+    <h1 class="page-title">My Technical<br><span class="gradient-word">Capabilities</span></h1>
+    <div class="domain-chips">
+      <span class="chip ch1">AI &amp; Data Science</span>
+      <span class="chip ch2">Full-Stack &amp; Databases</span>
+      <span class="chip ch3">DevOps Infrastructure</span>
+      <span class="chip ch4">DevSecOps &amp; Cyber</span>
     </div>
+  </header>
 
-    <h2 class="section-title">Backend & APIs</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="devicon-nodejs-plain colored"></i><h3>Node.js</h3></div>
-        <div class="skill-card"><i class="devicon-express-original colored"></i><h3>Express.js</h3></div>
-        <div class="skill-card"><i class="devicon-fastapi-plain colored"></i><h3>FastAPI</h3></div>
-        <div class="skill-card"><i class="devicon-django-plain colored"></i><h3>Django</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-network-wired" style="color:#00bcbc;"></i><h3>REST APIs</h3></div>
-    </div>
+  <div class="cards">
 
-    <h2 class="section-title">Databases & Querying</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="devicon-postgresql-plain colored"></i><h3>PostgreSQL</h3></div>
-        <div class="skill-card"><i class="devicon-mongodb-plain colored"></i><h3>MongoDB</h3></div>
-        <div class="skill-card"><i class="devicon-mysql-plain colored"></i><h3>MySQL / SQL</h3></div>
-        <div class="skill-card"><i class="devicon-firebase-plain colored"></i><h3>Firebase</h3></div>
-        <div class="skill-card"><i class="devicon-graphql-plain colored"></i><h3>GraphQL</h3></div>
-    </div>
+    <!-- 01 · DATA SCIENCE & AGENTIC AI -->
+    <article class="card c1" data-delay="0">
+      <span class="card-idx">01</span>
+      <div class="card-top">
+        <div class="card-label lb1">Flagship Focus</div>
+        <h2 class="card-title">Data Science &amp; Agentic AI</h2>
+      </div>
+      <div class="pills">
+        <span class="pill" style="color:var(--cyan);"><i class="fa-solid fa-diagram-project"></i> LangGraph</span>
+        <span class="pill" style="color:var(--orange);"><i class="fa-solid fa-robot"></i> Generative AI</span>
+        <span class="pill"><i class="devicon-python-plain colored"></i> Python</span>
+        <span class="pill"><i class="devicon-r-plain colored"></i> R Language</span>
+        <span class="pill" style="color:var(--red);"><i class="fa-solid fa-code"></i> MATLAB</span>
+        <span class="pill"><i class="devicon-tensorflow-original colored"></i> TensorFlow / Keras</span>
+        <span class="pill"><i class="devicon-pytorch-plain colored"></i> PyTorch</span>
+        <span class="pill"><i class="devicon-scikitlearn-plain colored"></i> Scikit-Learn</span>
+        <span class="pill"><i class="devicon-pandas-plain colored"></i> Pandas</span>
+        <span class="pill"><i class="devicon-numpy-plain colored"></i> NumPy</span>
+        <span class="pill" style="color:var(--green);"><i class="fa-solid fa-tree"></i> XGBoost / Random Forest</span>
+        <span class="pill" style="color:var(--purple2);"><i class="fa-solid fa-language"></i> NLP &amp; Text Analysis</span>
+        <span class="pill" style="color:var(--cyan);"><i class="fa-solid fa-chart-line"></i> Plotly / Seaborn</span>
+        <span class="pill" style="color:var(--cyan);"><i class="fa-solid fa-calculator"></i> Probability &amp; Stats</span>
+        <span class="pill" style="color:var(--red);"><i class="fa-solid fa-chart-area"></i> yfinance</span>
+        <span class="pill"><i class="devicon-jupyter-plain colored"></i> Jupyter / Colab</span>
+      </div>
+      <div class="card-sep"></div>
+      <ul class="bullets">
+        <li><span>Built <b>multi-agent LangGraph pipelines</b> — stateful graph loops handling execution parsing and structured GenAI LLM data validation.</span></li>
+        <li><span>Engineered mathematical predictive algorithms leveraging <b>MATLAB, PyTorch, and Scikit-Learn</b> for specialized pattern training and extraction.</span></li>
+        <li><span>Executed complex <b>data manipulation, analytics, and probability modeling</b> workflows on financial time-series with yfinance, Pandas, and Plotly.</span></li>
+      </ul>
+    </article>
 
-    <h2 class="section-title">DevOps & Cloud Infrastructure</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="devicon-docker-plain colored"></i><h3>Docker / Compose</h3></div>
-        <div class="skill-card"><i class="devicon-kubernetes-plain colored"></i><h3>Kubernetes</h3></div>
-        <div class="skill-card"><i class="devicon-terraform-plain colored"></i><h3>Terraform</h3></div>
-        <div class="skill-card"><i class="devicon-amazonwebservices-original colored"></i><h3>AWS Core Services(Basics)</h3></div>
-        <div class="skill-card"><i class="devicon-googlecloud-plain colored"></i><h3>Google Cloud (GCP)</h3></div>
-       
-        <div class="skill-card"><i class="devicon-linux-plain colored"></i><h3>Linux OS</h3></div>
-        <div class="skill-card"><i class="devicon-github-original colored"></i><h3>GitHub CI/CD</h3></div>
-    </div>
+    <!-- 02 · FULL STACK ENGINEERING & DATABASES -->
+    <article class="card c2" data-delay="120">
+      <span class="card-idx">02</span>
+      <div class="card-top">
+        <div class="card-label lb2">Application Architecture</div>
+        <h2 class="card-title">Full-Stack Engineering &amp; Databases</h2>
+      </div>
+      <div class="pills">
+        <span class="pill"><i class="devicon-react-original colored"></i> React.js</span>
+        <span class="pill"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+        <span class="pill"><i class="devicon-javascript-plain colored"></i> JavaScript (ES6+)</span>
+        <span class="pill"><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
+        <span class="pill"><i class="devicon-django-plain colored"></i> Django</span>
+        <span class="pill"><i class="devicon-nodejs-plain colored"></i> Node.js / Express</span>
+        <span class="pill"><i class="devicon-electron-original colored"></i> Electron</span>
+        <span class="pill"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+        <span class="pill"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+        <span class="pill"><i class="devicon-mysql-plain colored"></i> MySQL / SQL</span>
+        <span class="pill"><i class="devicon-firebase-plain colored"></i> Firebase</span>
+        <span class="pill"><i class="devicon-graphql-plain colored"></i> GraphQL</span>
+        <span class="pill"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</span>
+        <span class="pill"><i class="devicon-bootstrap-plain colored"></i> Bootstrap / MUI</span>
+        <span class="pill" style="color:var(--orange);"><i class="fa-solid fa-bolt"></i> Streamlit</span>
+        <span class="pill" style="color:var(--purple2);"><i class="fa-solid fa-rocket"></i> Vercel</span>
+        <span class="pill" style="color:var(--orange);"><i class="fa-solid fa-envelope-open-text"></i> Postman</span>
+        <span class="pill"><i class="devicon-figma-plain colored"></i> Figma</span>
+      </div>
+      <div class="card-sep"></div>
+      <ul class="bullets">
+        <li><span>Developed decoupled client-server systems using <b>React, TypeScript, Tailwind, and Material UI</b> to match design constraints modeled in Figma.</span></li>
+        <li><span>Built custom internal tool interfaces utilizing <b>FastAPI, Django, and Node.js</b> alongside structured GraphQL data backplanes.</span></li>
+        <li><span>Constructed robust architectures managing <b>PostgreSQL relational schemas, MongoDB documents, and MySQL querying optimization</b> tasks under heavy data reads.</span></li>
+      </ul>
+    </article>
 
-    <h2 class="section-title">Data Science & Agentic AI</h2>
-        <div class="skills-container">
-            <div class="skill-card"><i class="fa-solid fa-diagram-project" style="color:#38bdf8;"></i><h3>LangGraph<br><span style="font-size:10px; color:#94a3b8;">(Agentic AI)</span></h3></div>
-            <div class="skill-card"><i class="fa-solid fa-robot" style="color:#ff6f00;"></i><h3>Generative AI (GenAI)</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-calculator" style="color:#03a9f4;"></i><h3>Probability & Stats</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-language" style="color:#4caf50;"></i><h3>NLP & Text Analysis</h3></div>
-            <div class="skill-card"><i class="devicon-tensorflow-original colored"></i><h3>TensorFlow & Keras</h3></div>
-            <div class="skill-card"><i class="devicon-pytorch-plain colored"></i><h3>PyTorch</h3></div>
-            <div class="skill-card"><i class="devicon-scikitlearn-plain colored"></i><h3>Scikit-Learn / ML Algos</h3></div>
-            <div class="skill-card"><i class="devicon-pandas-plain colored"></i><h3>Pandas</h3></div>
-            <div class="skill-card"><i class="devicon-numpy-plain colored"></i><h3>NumPy</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-tree" style="color:#8bc34a;"></i><h3>Random Forest / XGBoost</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-chart-line" style="color:#3f51b5;"></i><h3>Data Viz (Plotly/Seaborn)</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-magnifying-glass-chart" style="color:#e91e63;"></i><h3>Data Manipulation</h3></div>
-        </div>
+    <!-- 03 · DEVOPS & CLOUD INFRASTRUCTURE -->
+    <article class="card c3" data-delay="240">
+      <span class="card-idx">03</span>
+      <div class="card-top">
+        <div class="card-label lb3">Systems Automation</div>
+        <h2 class="card-title">DevOps &amp; Cloud Infrastructure</h2>
+      </div>
+      <div class="pills">
+        <span class="pill"><i class="devicon-docker-plain colored"></i> Docker / Compose</span>
+        <span class="pill"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
+        <span class="pill"><i class="devicon-terraform-plain colored"></i> Terraform</span>
+        <span class="pill"><i class="devicon-github-original" style="color:var(--text);"></i> GitHub CI/CD</span>
+        <span class="pill"><i class="devicon-amazonwebservices-original colored"></i> AWS Core Services</span>
+        <span class="pill"><i class="devicon-googlecloud-plain colored"></i> Google Cloud (GCP)</span>
+        <span class="pill"><i class="devicon-linux-plain colored"></i> Linux OS</span>
+        <span class="pill"><i class="devicon-bash-plain colored"></i> Bash / Shell</span>
+        <span class="pill"><i class="devicon-git-plain colored"></i> Git Workflows</span>
+        <span class="pill"><i class="devicon-jira-plain colored"></i> Jira Tracking</span>
+      </div>
+      <div class="card-sep"></div>
+      <ul class="bullets">
+        <li><span>Containerized multi-tier server clusters with <b>Docker Compose</b> and maintained automated image generation layers via <b>GitHub CI/CD</b>.</span></li>
+        <li><span>Provisioned declarative, repeatable environments in <b>GCP and AWS Core Infrastructure</b> using <b>Terraform Infrastructure as Code (IaC)</b>.</span></li>
+        <li><span>Managed configuration states, deployment pipelines, and internal team sprint milestones efficiently using secure <b>Git and Jira workflows</b>.</span></li>
+      </ul>
+    </article>
 
-    <h2 class="section-title">Cybersecurity & Network Engineering</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-shield-halved" style="color:#00e676;"></i><h3>Cloud Security Architecture</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-user-shield" style="color:#ffc107;"></i><h3>Vulnerability Mgmt</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-key" style="color:#03a9f4;"></i><h3>Fundamental Encryption</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-user-lock" style="color:#ff5722;"></i><h3>Sensitive Data Protection</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-network-wired" style="color:#9c27b0;"></i><h3>Computer Networking</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-bug" style="color:#f44336;"></i><h3>Web Application Security</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-fingerprint" style="color:#e91e63;"></i><h3>SSL/TLS, WHOIS, Regex</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-triangle-exclamation" style="color:#ffcc00;"></i><h3>Risk Analysis</h3></div>
-    </div>
+    <!-- 04 · DEVSECOPS & CYBERSECURITY -->
+    <article class="card c4" data-delay="360">
+      <span class="card-idx">04</span>
+      <div class="card-top">
+        <div class="card-label lb4">Platform Protection</div>
+        <h2 class="card-title">DevSecOps &amp; Cybersecurity</h2>
+      </div>
+      <div class="pills">
+        <span class="pill"><i class="devicon-gitlab-plain colored"></i> GitLab CI/CD</span>
+        <span class="pill" style="color:var(--green);"><i class="fa-solid fa-shield-halved"></i> Cloud Security</span>
+        <span class="pill" style="color:var(--orange);"><i class="fa-solid fa-user-shield"></i> Vulnerability Mgmt</span>
+        <span class="pill" style="color:var(--cyan);"><i class="fa-solid fa-key"></i> Encryption Fundamentals</span>
+        <span class="pill" style="color:var(--orange);"><i class="fa-solid fa-user-lock"></i> Data Protection</span>
+        <span class="pill" style="color:var(--purple2);"><i class="fa-solid fa-network-wired"></i> Computer Networking</span>
+        <span class="pill" style="color:var(--red);"><i class="fa-solid fa-bug"></i> Web App Security</span>
+        <span class="pill" style="color:var(--red);"><i class="fa-solid fa-fingerprint"></i> SSL/TLS / Regex</span>
+        <span class="pill" style="color:var(--orange);"><i class="fa-solid fa-triangle-exclamation"></i> Risk Analysis</span>
+      </div>
+      <div class="card-sep"></div>
+      <ul class="bullets">
+        <li><span>Engineered secure continuous delivery pathways utilizing <b>GitLab CI configurations</b> to automate system checks across development pipelines.</span></li>
+        <li><span>Analyzed logging mechanics, network traffic flows, and risk patterns inside defensive <b>Tata and Deloitte Cybersecurity Simulation environments</b>.</span></li>
+        <li><span>Applied key defensive policies (including WHOIS scouting, Regex pattern filtering, and SSL/TLS validation) aligned with <b>Coursera Security Risk Management foundations</b>.</span></li>
+      </ul>
+    </article>
 
-    <h2 class="section-title">Platforms & Tools</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="devicon-git-plain colored"></i><h3>Git & GitHub Pages</h3></div>
-        <div class="skill-card"><i class="devicon-gitlab-plain colored"></i><h3>GitLab</h3></div>
-        <div class="skill-card"><i class="devicon-vscode-plain colored"></i><h3>VS Code</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-rocket" style="color:#000; background:#fff; border-radius:50%; width:40px; height:40px; line-height:40px;"></i><h3>Vercel</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-bolt" style="color:#ffbd14;"></i><h3>Streamlit</h3></div>
-        <div class="skill-card"><i class="devicon-jupyter-plain colored"></i><h3>Jupyter / Colab</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-envelope-open-text" style="color:#ff6c37;"></i><h3>Postman</h3></div>
-        <div class="skill-card"><i class="devicon-jira-plain colored"></i><h3>Jira / Issue Tracking</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-chart-column" style="color:#f2c811;"></i><h3>Power BI</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-microchip" style="color:#00979d;"></i><h3>ESP8266 IoT</h3></div>
-        <div class="skill-card"><i class="devicon-figma-plain colored"></i><h3>Figma</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-chart-area" style="color:#ff4081;"></i><h3>yfinance</h3></div>
-    </div>
+  </div><!-- /cards -->
 
-    <h2 class="section-title">Strategy & Emerging Tech</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-lightbulb" style="color:#ffeb3b;"></i><h3>Ideation & Prototyping</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-briefcase" style="color:#8bc34a;"></i><h3>Business Modeling & Design</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-coins" style="color:#009688;"></i><h3>Financial Planning</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-rocket" style="color:#03a9f4;"></i><h3>Entrepreneurship</h3></div>
-    </div>
-
-    <h2 class="section-title">Languages & Core Competencies</h2>
-    <div class="skills-container">
-        <div class="skill-card"><i class="fa-solid fa-language" style="color:#a855f7;"></i><h3>Hindi /Marwadi / English / Tamil</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-comments" style="color:#a855f7;"></i><h3>Professional Communication</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-people-group" style="color:#a855f7;"></i><h3>Teamwork & Open Source</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-screwdriver-wrench" style="color:#a855f7;"></i><h3>Debugging & Problem Solving</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-clock" style="color:#a855f7;"></i><h3>Time Management</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-seedling" style="color:#a855f7;"></i><h3>Stress Management & Resilience</h3></div>
-    </div>
+  <!-- FOOTER -->
+  <footer class="page-foot">
+    <span class="foot-note">Ready for secure, automated production deployment.</span>
+    <div class="status-dot"></div>
+  </footer>
 
 </div>
 
 <script>
-function goBack() {
-    window.location.href = "index.html";
-}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const d = parseInt(e.target.dataset.delay || 0);
+    setTimeout(() => e.target.classList.add('visible'), d);
+    obs.unobserve(e.target);
+  });
+}, { threshold: 0.07 });
+
+document.querySelectorAll('.card').forEach(c => obs.observe(c));
 </script>
 </body>
 </html>
