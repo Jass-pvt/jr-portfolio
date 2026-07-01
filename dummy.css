@@ -380,9 +380,16 @@ body.light-theme #hero-text h1 { color: #0d0b1f; }
 }
 
 .card-item {
-  background: var(--bg-card); padding: 1.1rem 1.3rem;
-  position: relative; transition: all var(--transition);
+  background: var(--bg-card);
+  padding: 1.1rem 1.3rem;
+  position: relative;
+  transition: all var(--transition);
   border-left: 3px solid transparent;
+
+  min-height: 165px;      /* makes all cards equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .card-item:hover { background: var(--bg-card2); border-left-color: var(--purple); padding-left: 1.6rem; }
 .card-year { font-size: 0.7rem; font-weight: 700; color: var(--purple); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
