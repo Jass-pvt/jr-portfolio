@@ -54,7 +54,7 @@
 
         <div class="hero-btns">
           <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Hire Me</a>
-          <button class="btn-outline" onclick="window.open('https://drive.google.com/file/d/1eg9exvmgIs2XI2lWLjA1DSICHyKbehDY/view?usp=sharing','_blank')">
+          <button class="btn-outline" onclick="openResumeModal()">
             <i class="fas fa-download"></i> Download CV
           </button>
         </div>
@@ -239,5 +239,54 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- ========== RESUME MODAL ========== -->
+<div class="modal-overlay" id="resumeModal">
+
+  <div class="modal-box">
+
+    <div class="modal-header">
+      <div>
+        <h2>Download Resume</h2>
+        <p>Choose the resume that best matches the role.</p>
+      </div>
+
+      <span class="close-btn" onclick="closeResumeModal()">✕</span>
+    </div>
+
+    <div class="resume-grid">
+
+      <div class="resume-card">
+        <h3>🧠 AI / ML Engineer/ Data Scientist</h3>
+        <p>LLMs • LangGraph • TensorFlow</p>
+        <a href="https://drive.google.com/file/d/1uFqyz4SiU5gPf7Urme3MW9U_GlUhjT9X/view?usp=sharing" download>Download</a>
+      </div>
+
+      <div class="resume-card">
+        <h3>💻 Full Stack Developer</h3>
+        <p>React • FastAPI • PostgreSQL</p>
+        <a href="https://drive.google.com/file/d/1cPh_FKrGoT7VnPiG6QvdGjlHpkgWHEtO/view?usp=sharing" download>Download</a>
+      </div>
+
+      <div class="resume-card">
+        <h3>⚙️ Software Engineer</h3>
+        <p>Python • SQL • DSA</p>
+        <a href="https://drive.google.com/file/d/1Ll5vEx0ZftzMv2KoiZ36jqnQOeFnfi3J/view?usp=sharing" download>Download</a>
+      </div>
+
+      <div class="resume-card highlight">
+        <h3>⚙️ DevOps Engineer</h3>
+        <p>Docker • Kubernetes • AWS • Terraform</p>
+        <a href="https://drive.google.com/file/d/1LqFB2fY2N3RAMlFvRKJQYMFX4g8cstft/view?usp=sharing" download>Download</a>
+      </div>
+
+      
+      
+
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
