@@ -148,3 +148,40 @@ resumeModal?.addEventListener("click", (e) => {
     closeResumeModal();
   }
 });
+
+/*==============================
+ ACTIVE MOBILE NAV
+==============================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const links = document.querySelectorAll(".mobile-link");
+    const indicator = document.querySelector(".nav-indicator");
+
+    function moveIndicator(link){
+
+        indicator.style.left = link.offsetLeft + "px";
+
+    }
+
+    const active = document.querySelector(".mobile-link.active");
+
+    if(active){
+        moveIndicator(active);
+    }
+
+    links.forEach(link=>{
+
+        link.addEventListener("click",function(){
+
+            links.forEach(item=>item.classList.remove("active"));
+
+            this.classList.add("active");
+
+            moveIndicator(this);
+
+        });
+
+    });
+
+});
