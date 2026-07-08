@@ -1,7 +1,12 @@
 /* ============================================================
    TYPING ANIMATION
 ============================================================ */
-const phrases = ["Python Developer", "Cybersecurity Enthusiast", "Front-End Developer", "AI & ML Developer", "Cloud Enthusiast"];
+const phrases = [
+  "Software Engineer",
+  "Full Stack Developer",
+  "AI & ML Developer",
+  "Cloud & DevOps Enthusiast"
+];
 const typingEl = document.getElementById("typing");
 
 let pIdx = 0, lIdx = 0, deleting = false;
