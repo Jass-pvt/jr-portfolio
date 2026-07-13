@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Certifications — Jaswanth Rathore</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root {
+  --purple:        #a855f7;
+  --purple-deep:   #7c3aed;
+  --purple-light:  #c084fc;
+  --purple-glow:   rgba(168,85,247,0.25);
+  --purple-dim:    rgba(168,85,247,0.10);
+  --purple-border: rgba(168,85,247,0.28);
+  --indigo:        #6C63FF;
+  --bg:            #060610;
+  --bg-card:       #111122;
+  --bg-card2:      #16152a;
+  --border:        rgba(255,255,255,0.06);
+  --text:          #f0eeff;
+  --text-muted:    #8b87aa;
+  --text-dim:      #4a4769;
+  --radius:        14px;
+  --transition:    0.35s cubic-bezier(0.4,0,0.2,1);
+  --accent-grad: linear-gradient(135deg, var(--purple) 0%, var(--indigo) 100%);
+  --cyan: #22d3ee;
+  --green: #34d399;
+  --orange: #fb923c;
+  --red: #f87171;
+  --blue: #60a5fa;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; overflow-x: hidden; min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+
+body::before {
+  content: '';
+  position: fixed; top: -220px; right: -180px;
+  width: 650px; height: 650px;
+  background: radial-gradient(circle, rgba(124,58,237,0.14) 0%, transparent 65%);
+  pointer-events: none; z-index: 0;
+}
+body::after {
+  content: '';
+  position: fixed; bottom: -180px; left: -180px;
+  width: 550px; height: 550px;
+  background: radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 65%);
+  pointer-events: none; z-index: 0;
+}
+
+/* ============ NAVBAR — full width bar ============ */
+
+.navbar {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 500;
+  display: flex; align-items: center; gap: 28px;
+  background: rgba(14,14,22,0.55);
+  backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px; padding: 10px 14px 10px 22px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+  max-width: 94vw;
+}
+.nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.05rem; color: var(--text); }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-link {
+  font-size: 12.5px; font-weight: 600; color: var(--muted2); text-decoration: none;
+  padding: 8px 14px; border-radius: 999px; transition: all 0.3s var(--ease); white-space: nowrap;
+}
+.nav-link:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.nav-link.active {
+  color: #fff; background: var(--accent-grad);
+  box-shadow: 0 6px 18px var(--accent-glow);
+}
+.nav-hire {
+  font-size: 12.5px; font-weight: 700; color: #fff; text-decoration: none;
+  padding: 9px 20px; border-radius: 999px; background: var(--accent-grad);
+  box-shadow: 0 8px 22px var(--accent-glow); transition: all 0.3s var(--ease); white-space: nowrap;
+}
+.nav-hire:hover { transform: translateY(-2px); box-shadow: 0 12px 30px var(--accent-glow); }
+@media (max-width: 900px) { .nav-links { display: none; } }
+
+.wrap { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 24px 90px; }
+
+/* ============ HEADER ============ */
+.page-header { padding: 7.5rem 0 2.5rem; text-align: center; }
+.page-header h1 {
+  font-family: 'Syne', sans-serif; font-size: clamp(2.1rem, 6vw, 3.6rem); font-weight: 800;
+  color: #fff; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 0.6rem;
+}
+.sub-chevron { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--purple-light); font-weight: 700; font-size: 1rem; margin-bottom: 0.9rem; }
+.page-header p { color: var(--text-muted); font-size: 0.92rem; max-width: 480px; margin: 0 auto 2.2rem; line-height: 1.6; }
+
+/* ============ STATS STRIP ============ */
+.stats-card {
+  display: flex; justify-content: center; align-items: stretch;
+  background: var(--bg-card); border: 1px solid var(--purple-border); border-radius: var(--radius);
+  box-shadow: 0 16px 44px rgba(0,0,0,0.4); max-width: 940px; margin: 0 auto 2.6rem; overflow: hidden;
+}
+.stat-block { flex: 1; text-align: center; padding: 1.8rem 0.9rem; position: relative; transition: background var(--transition); }
+.stat-block:not(:last-child)::after { content:''; position:absolute; right:0; top:24%; bottom:24%; width:1px; background: var(--border); }
+.stat-block:hover { background: var(--purple-dim); }
+.stat-icon {
+  width: 40px; height: 40px; margin: 0 auto 0.6rem; border-radius: 12px;
+  display:flex; align-items:center; justify-content:center;
+  background: var(--purple-dim); border: 1px solid var(--purple-border); color: var(--purple-light); font-size: 16px;
+}
+.stat-n { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--text); }
+.stat-l { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.09em; margin-top: 0.25rem; }
+
+/* ============ CONTROLS ============ */
+.controls { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 3rem; }
+.filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.f-btn {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  padding: 0.55rem 1.1rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted);
+  transition: all var(--transition);
+}
+.f-btn:hover { border-color: var(--purple-border); color: var(--purple-light); }
+.f-btn.active { background: var(--accent-grad); border-color: transparent; color: #fff; box-shadow: 0 8px 20px var(--purple-glow); }
+.search-box { position: relative; display: flex; align-items: center; }
+.search-box i { position: absolute; left: 14px; color: var(--text-dim); font-size: 13px; }
+.search-box input {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 11px;
+  padding: 0.6rem 1rem 0.6rem 2.3rem; color: var(--text); font-size: 0.83rem;
+  font-family: 'Inter', sans-serif; width: 220px; transition: all var(--transition); outline: none;
+}
+.search-box input:focus { border-color: var(--purple-border); width: 260px; }
+.search-box input::placeholder { color: var(--text-dim); }
+
+/* ============ SECTION HEADS ============ */
+.sec-head { display:flex; align-items:center; gap: 0.7rem; margin-bottom: 0.3rem; }
+.sec-head .head-icon { color: var(--purple); font-size: 1.15rem; }
+.sec-head h2 { font-family:'Syne',sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff; }
+.count-pill { background: var(--purple-dim); color: var(--purple-light); font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.7rem; border-radius: 999px; border: 1px solid var(--purple-border); margin-left: 0.2rem; }
+.sec-title-row { display:flex; align-items:center; justify-content:space-between; margin-bottom: 0.3rem; flex-wrap: wrap; gap: 10px; }
+.sec-sub { color: var(--text-muted); font-size: 0.78rem; margin: 0 0 1.4rem 2rem; }
+
+/* ============ FEATURED GRID ============ */
+.featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px,1fr)); gap: 14px; margin-bottom: 3.5rem; }
+.feat-card {
+  background: var(--bg-card); border: 1px solid var(--purple-border); border-radius: var(--radius); padding: 1.2rem;
+  display: flex; flex-direction: column; position: relative; cursor: pointer;
+  transition: all var(--transition);
+}
+.feat-card:hover { transform: translateY(-6px); background: var(--bg-card2); border-color: var(--purple); box-shadow: 0 18px 44px var(--purple-glow); }
+.feat-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom: 0.7rem; }
+.feat-icon { width: 40px; height: 40px; border-radius: 11px; background: var(--purple-dim); border: 1px solid var(--purple-border); display:flex; align-items:center; justify-content:center; font-size: 17px; padding: 5px; }
+img.feat-icon { object-fit: contain; }
+.pill-tag { font-size: 0.62rem; font-weight: 800; padding: 0.22rem 0.65rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; }
+.pill-flagship { background: var(--accent-grad); }
+.pill-pub { background: linear-gradient(135deg,var(--blue),#3b82f6); }
+.sub-tag { display:inline-block; font-size: 0.6rem; font-weight: 700; padding: 0.18rem 0.6rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.tag-devops { background: var(--purple-dim); color: var(--purple-light); border: 1px solid var(--purple-border); }
+.tag-research { background: rgba(96,165,250,0.14); color: var(--blue); border: 1px solid rgba(96,165,250,0.3); }
+.tag-cloud { background: rgba(251,146,60,0.14); color: var(--orange); border: 1px solid rgba(251,146,60,0.3); }
+.tag-cyber { background: rgba(248,113,113,0.14); color: var(--red); border: 1px solid rgba(248,113,113,0.3); }
+.tag-data { background: rgba(52,211,153,0.14); color: var(--green); border: 1px solid rgba(52,211,153,0.3); }
+
+.feat-issuer { font-size: 0.68rem; color: var(--text-dim); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem; }
+.feat-title { font-family:'Syne',sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 0.6rem; min-height: 36px; }
+.feat-meta { font-size: 0.68rem; color: var(--text-muted); margin-bottom: 0.6rem; display:flex; align-items:center; gap: 0.3rem; flex-wrap: wrap; }
+.feat-meta i { color: var(--purple); font-size: 9px; }
+.feat-skills { display:flex; flex-wrap:wrap; gap: 0.3rem; margin-bottom: 0.9rem; }
+.feat-skills .tag { font-size: 0.6rem; padding: 0.16rem 0.5rem; border-radius: 6px; background: var(--bg-card2); border: 1px solid var(--border); color: var(--text-muted); }
+.feat-footer { margin-top: auto; padding-top: 0.7rem; border-top: 1px solid var(--border); }
+.feat-sub-label { font-size: 0.66rem; color: var(--text-dim); margin-bottom: 0.25rem; }
+.feat-link { display:inline-flex; align-items:center; gap: 0.35rem; color: var(--purple-light); font-size: 0.76rem; font-weight: 700; }
+.feat-link:hover { color: var(--purple); }
+
+/* ============ ACCORDION ============ */
+.accordion { display: flex; flex-direction: column; gap: 10px; margin-bottom: 3rem; }
+.acc-item {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+  transition: all var(--transition);
+}
+.acc-item:hover { border-color: var(--purple-border); }
+.acc-item.open { border-color: var(--purple-border); box-shadow: 0 12px 34px rgba(124,58,237,0.14); }
+.acc-header { display:flex; align-items:center; gap: 1rem; padding: 1.1rem 1.3rem; cursor: pointer; }
+.acc-cat-icon { width: 42px; height: 42px; border-radius: 12px; display:flex; align-items:center; justify-content:center; font-size: 17px; flex-shrink: 0; border: 1px solid; }
+.cat-ml { background: var(--purple-dim); border-color: var(--purple-border); color: var(--purple-light); }
+.cat-cloud { background: rgba(251,146,60,0.12); border-color: rgba(251,146,60,0.28); color: var(--orange); }
+.cat-cyber { background: rgba(248,113,113,0.12); border-color: rgba(248,113,113,0.28); color: var(--red); }
+.cat-dev { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.28); color: var(--green); }
+.cat-pub { background: rgba(96,165,250,0.12); border-color: rgba(96,165,250,0.28); color: var(--blue); }
+.acc-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); }
+.acc-count { font-size: 0.72rem; color: var(--text-muted); margin-top: 1px; }
+.acc-logos { display:flex; align-items:center; margin-left: auto; }
+.mini-logo {
+  width: 30px; height: 30px; border-radius: 9px; background: var(--bg-card2); border: 1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; font-size: 12px; margin-left: -8px; overflow: hidden; padding: 4px;
+}
+.mini-logo:first-child { margin-left: 0; }
+.mini-more { width: 30px; height: 30px; border-radius: 9px; background: var(--purple-dim); border: 1px solid var(--purple-border); color: var(--purple-light); display:flex; align-items:center; justify-content:center; font-size: 0.68rem; font-weight: 800; margin-left: -8px; }
+.acc-chevron { color: var(--text-muted); font-size: 13px; transition: transform var(--transition); margin-left: 1.1rem; flex-shrink: 0; }
+.acc-item.open .acc-chevron { transform: rotate(180deg); color: var(--purple-light); }
+
+.acc-panel { max-height: 0; overflow: hidden; transition: max-height var(--transition); }
+.acc-item.open .acc-panel { max-height: 2400px; }
+.acc-panel-inner { padding: 0.3rem 1.3rem 1.4rem; }
+
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 900px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .cert-grid { grid-template-columns: 1fr; } }
+
+.mini-cert-card {
+  background: var(--bg-card2); border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem;
+  cursor: pointer; transition: all var(--transition);
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.mini-cert-card:hover { border-color: var(--purple-border); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(124,58,237,0.18); }
+.mini-cert-top { display:flex; align-items:center; gap: 0.6rem; }
+.mini-cert-logo { width: 32px; height: 32px; border-radius: 9px; background: var(--purple-dim); border: 1px solid var(--purple-border); padding: 4px; flex-shrink: 0; display:flex; align-items:center; justify-content:center; font-size: 14px; }
+.mini-cert-title { font-size: 0.78rem; font-weight: 700; color: var(--text); line-height: 1.3; }
+.mini-cert-issuer { font-size: 0.66rem; color: var(--text-dim); }
+.mini-cert-date { font-size: 0.66rem; color: var(--text-muted); display:flex; align-items:center; gap:0.3rem; margin-top: auto; }
+.mini-cert-date i { color: var(--purple); font-size: 8px; }
+.mini-cert-status { font-size: 0.63rem; font-weight: 700; display:flex; align-items:center; gap: 0.3rem; }
+.mini-cert-status-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:10px;
+    gap:10px;
+}
+
+.mini-cert-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:12px;
+    padding:8px 14px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    color:#fff;
+    background:rgba(255,255,255,.05);
+    text-decoration:none;
+    transition:.25s;
+}
+
+.mini-cert-link:hover{
+    background:#7c3aed;
+    border-color:#7c3aed;
+    transform:translateY(-2px);
+}
+.status-verified { color: var(--green); }
+.status-pending { color: var(--orange); }
+
+.collapse-all-btn {
+  background: var(--bg-card); border: 1px solid var(--border); color: var(--text-muted);
+  font-size: 0.78rem; font-weight: 600; padding: 0.55rem 1.1rem; border-radius: 10px;
+  cursor: pointer; display:flex; align-items:center; gap: 0.4rem; transition: all var(--transition);
+}
+.collapse-all-btn:hover { border-color: var(--purple-border); color: var(--purple-light); }
+
+/* ============ MODAL ============ */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 9998; background: rgba(2,1,8,0.68);
+  opacity: 0; pointer-events: none; transition: opacity var(--transition);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; backdrop-filter: blur(10px); }
+.modal-box {
+  width: min(460px, 100%); max-height: 84vh; overflow-y: auto;
+  background: var(--bg-card2); border: 1px solid var(--purple-border); border-radius: var(--radius);
+  padding: 2rem; box-shadow: 0 40px 90px rgba(0,0,0,0.55), 0 0 0 1px var(--purple-glow);
+  transform: scale(0.92) translateY(16px); opacity: 0;
+  transition: transform var(--transition), opacity var(--transition); position: relative;
+}
+.modal-overlay.active .modal-box { transform: scale(1) translateY(0); opacity: 1; }
+.modal-close {
+  position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--purple-dim); border: 1px solid var(--purple-border); color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all var(--transition);
+}
+.modal-close:hover { background: var(--purple); color: #fff; transform: rotate(90deg); }
+.modal-top { display: flex; align-items: center; gap: 14px; margin-bottom: 1.2rem; }
+.modal-logo-wrap { width: 56px; height: 56px; border-radius: 12px; background: var(--purple-dim); border: 1px solid var(--purple-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+.modal-logo-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+.modal-issuer { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+.modal-title { font-family: 'Syne', sans-serif; font-size: 1.12rem; font-weight: 800; color: var(--text); line-height: 1.3; }
+.modal-meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.modal-meta i { color: var(--purple); }
+.modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.6rem; }
+.modal-tags .tag { font-size: 0.72rem; padding: 0.25rem 0.65rem; border-radius: 999px; background: var(--purple-dim); border: 1px solid var(--purple-border); color: var(--purple-light); font-weight: 600; }
+.modal-cta {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+  padding: 0.75rem 1.2rem; border-radius: 10px; font-size: 0.85rem; font-weight: 700;
+  background: var(--accent-grad); color: #fff; border: none; transition: all var(--transition);
+  box-shadow: 0 8px 22px var(--purple-glow);
+}
+.modal-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 30px var(--purple-glow); }
+.modal-cta.pending { background: rgba(251,146,60,0.12); color: var(--orange); box-shadow: none; cursor: default; }
+.modal-cta.pending:hover { transform: none; }
+
+/* ============ CTA BANNER ============ */
+.cta-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  background: var(--bg-card); border: 1px solid var(--purple-border); border-radius: var(--radius);
+  padding: 1.8rem 2rem; margin-bottom: 3rem; box-shadow: 0 16px 44px rgba(124,58,237,0.1);
+}
+.cta-left { display:flex; align-items:center; gap: 1.2rem; }
+.cta-icon { width: 54px; height: 54px; border-radius: 50%; background: var(--purple-dim); border: 1px solid var(--purple-border); display:flex; align-items:center; justify-content:center; color: var(--purple-light); font-size: 20px; flex-shrink: 0; }
+.cta-left h3 { font-family:'Syne',sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 0.2rem; }
+.cta-left p { font-size: 0.8rem; color: var(--text-muted); max-width: 380px; line-height: 1.5; }
+.cta-btn {
+  display:inline-flex; align-items:center; gap: 0.4rem; background: var(--accent-grad); color: #fff;
+  font-size: 0.83rem; font-weight: 700; padding: 0.75rem 1.4rem; border-radius: 10px;
+  transition: all var(--transition); white-space: nowrap; box-shadow: 0 8px 22px var(--purple-glow);
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px var(--purple-glow); }
+
+/* ============ FOOTER ============ */
+.footer { display:flex; align-items:center; justify-content:space-between; flex-wrap: wrap; gap: 12px; padding: 1.4rem 0 0; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.78rem; }
+.footer a { color: var(--purple-light); font-weight: 600; }
+.footer-socials { display:flex; gap: 0.6rem; }
+.footer-socials a { width: 32px; height: 32px; border-radius: 9px; background: var(--bg-card); border: 1px solid var(--border); display:flex; align-items:center; justify-content:center; color: var(--text-muted); transition: all var(--transition); }
+.footer-socials a:hover { color: var(--text); border-color: var(--purple-border); }
+
+.no-results { text-align:center; padding: 3rem 1rem; color: var(--text-dim); font-size: 0.9rem; display: none; }
+.no-results i { font-size: 2rem; margin-bottom: 0.8rem; display:block; color: var(--purple-deep); }
+
+@media (max-width: 700px) {
+  .navbar { padding: 0.8rem 1rem; }
+  .stats-card { flex-wrap: wrap; }
+  .stat-block { flex: 1 1 33%; }
+  .stat-block:nth-child(3n)::after { display:none; }
+  .controls { flex-direction: column; align-items: flex-start; }
+  .search-box input { width: 100%; }
+  .acc-logos { display: none; }
+  .cta-banner { flex-direction: column; align-items: flex-start; }
+  .page-header { padding-top: 6rem; }
+  .footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">JR.dev</div>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="index.html#skills">Skills</a>
+    <a class="nav-link" href="index.html#projects">Projects</a>
+    <a class="nav-link" href="index.html#experience">Experience</a>
+    <a class="nav-link active" href="certifications-top.html">Certifications</a>
+    <a class="nav-link" href="index.html#contact">Contact</a>
+  </div>
+  <a class="nav-hire" href="index.html#contact"><i class="fas fa-bolt"></i> Hire Me</a>
+</nav>
+
+<div class="wrap">
+
+  <div class="page-header">
+    <h1>Certifications</h1>
+    <div class="sub-chevron">› Built for Cloud, AI/ML, DevOps &amp; Cybersecurity</div>
+    <p>The credentials from my journey that reflect continuous learning, hands-on practice, and real-world impact.</p>
+
+    <div class="stats-card">
+      <div class="stat-block"><div class="stat-icon"><i class="fas fa-award"></i></div><div class="stat-n">24</div><div class="stat-l">Certificates</div></div>
+      <div class="stat-block"><div class="stat-icon"><i class="fas fa-table-cells"></i></div><div class="stat-n">4</div><div class="stat-l">Domains</div></div>
+      <div class="stat-block"><div class="stat-icon"><i class="fas fa-building"></i></div><div class="stat-n">8+</div><div class="stat-l">Organizations</div></div>
+      <div class="stat-block"><div class="stat-icon"><i class="fas fa-trophy"></i></div><div class="stat-n">1</div><div class="stat-l">Research Pub.</div></div>
+      <div class="stat-block"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-n">64+</div><div class="stat-l">Learning Hours</div></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="filter-bar">
+      <button class="f-btn active" onclick="filterAll('all',this)">All</button>
+      <button class="f-btn" onclick="filterAll('cloud',this)"><i class="fas fa-cloud"></i> Cloud &amp; DevOps</button>
+      <button class="f-btn" onclick="filterAll('cyber',this)"><i class="fas fa-shield-halved"></i> Cybersecurity</button>
+      <button class="f-btn" onclick="filterAll('ml',this)"><i class="fas fa-brain"></i> AI / ML</button>
+      <button class="f-btn" onclick="filterAll('dev',this)"><i class="fas fa-code"></i> Development</button>
+      <button class="f-btn" onclick="filterAll('pub',this)"><i class="fas fa-book"></i> Publication</button>
+    </div>
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" id="search-input" placeholder="Search certifications…" oninput="applyGlobalSearch()" />
+    </div>
+  </div>
+
+  <div class="sec-title-row">
+    <div class="sec-head"><i class="fas fa-star head-icon"></i><h2>Featured Certifications</h2></div>
+  </div>
+  <div class="sec-sub">My most impactful achievements</div>
+
+  <div class="featured-grid" id="featured-grid">
+
+    <div class="feat-card" data-cat="cloud" data-title="decoding devops udemy tiger analytics docker kubernetes terraform"
+      data-emoji="🚀" data-issuer="Udemy · Tiger Analytics Learning Initiative" data-name="Decoding DevOps – From Basics to Advanced Projects with AI"
+      data-date="Jun 2026" data-id="UC-32f6aa2e" data-skills="Docker,Kubernetes,Terraform,AWS,AI-assisted DevOps" data-status="on-file" data-link="https://www.udemy.com/certificate/UC-32f6aa2e-6c18-4541-b079-8c50dc4d873f/">
+      <div class="feat-top"><div class="feat-icon">🚀</div><span class="pill-tag pill-flagship">Flagship</span></div>
+      <span class="sub-tag tag-devops">DevOps</span>
+      <div class="feat-issuer">Udemy · Tiger Analytics Learning Initiative</div>
+      <div class="feat-title">Decoding DevOps – From Basics to Advanced Projects with AI</div>
+      <div class="feat-meta"><i class="fas fa-calendar"></i> Jun 2026 · UC-32f6aa2e</div>
+      <div class="feat-skills"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span></div>
+      <div class="feat-footer"><div class="feat-sub-label">64-hr Hands-on Program</div><a class="feat-link" href="https://www.udemy.com/certificate/UC-32f6aa2e-6c18-4541-b079-8c50dc4d873f/" target="_blank" onclick="event.stopPropagation()">View Certificate <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+    </div>
+
+    <div class="feat-card" data-cat="pub" data-title="research paper certification smart garden iot sustainable automation comsia university delhi"
+      data-emoji="📄" data-issuer="ComSIA 2026 · University of Delhi" data-name="Smart Garden: An IoT-Based Sustainable Automation System"
+      data-date="Mar 2026" data-id="Presentation" data-skills="IoT,Automation,Embedded,Research,Presentation" data-status="pending" data-link="https://drive.google.com/file/d/1QjnNpe1pfbI_KZK9zpUGXKk0dRkdP4EC/view">
+      <div class="feat-top"><div class="feat-icon"><i class="fas fa-file-lines"></i></div><span class="pill-tag pill-pub">Publication</span></div>
+      <span class="sub-tag tag-research">Research</span>
+      <div class="feat-issuer">ComSIA 2026 · University of Delhi</div>
+      <div class="feat-title">Smart Garden: An IoT-Based Sustainable Automation System</div>
+      <div class="feat-meta"><i class="fas fa-calendar"></i> Mar 2026 · Presentation</div>
+      <div class="feat-skills"><span class="tag">IoT</span><span class="tag">Automation</span><span class="tag">Embedded</span></div>
+       <div class="feat-footer"><div class="feat-sub-label">International Conference</div><a class="feat-link" href="https://drive.google.com/file/d/1QjnNpe1pfbI_KZK9zpUGXKk0dRkdP4EC/view?usp=sharing" target="_blank" onclick="event.stopPropagation()">View Certificate <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+    </div>
+
+    <div class="feat-card"
+     data-cat="internship"
+     data-title="tiger analytics devops internship experience certificate"
+     data-logo="https://www.tigeranalytics.com/wp-content/uploads/2023/09/favicon-Tiger-Analytics_.png"
+     data-issuer="Tiger Analytics"
+     data-name="DevOps Internship Experience Certificate"
+     data-date="Apr 2026 - Jun 2026"
+     data-id="Verified"
+     data-skills="Linux,Docker,AWS,Git,CI/CD,DevOps"
+     data-status="verified"
+     data-link="https://drive.google.com/file/d/1pkj2AwCaCq2GPzsTZhXKoU6vlEqiSzOb/view?usp=sharing">
+
+    <div class="feat-top">
+        <img class="feat-icon"
+             src="https://www.tigeranalytics.com/wp-content/uploads/2023/09/favicon-Tiger-Analytics_.png"
+             alt="Tiger Analytics">
+
+        <span class="pill-tag" style="background:rgba(16,185,129,0.85);">
+            Internship
+        </span>
+          </div>
+
+          <span class="sub-tag tag-internship" style="background:rgba(16,185,129,0.85);">Internship</span>
+
+          <div class="feat-issuer">Tiger Analytics</div>
+
+          <div class="feat-title">
+              DevOps Interns
+          </div>
+
+          <div class="feat-meta">
+              <i class="fas fa-calendar"></i>
+              21 Apr 2026 – 22 Jun 2026 
+          </div>
+
+          <div class="feat-skills">
+              <span class="tag">Linux</span>
+              <span class="tag">Docker</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Jenkins</span>
+              <span class="tag">Agentic AI</span>
+            
+          </div>
+
+          <div class="feat-footer">
+              <div class="feat-sub-label"></div>
+
+              <a class="feat-link"
+                href="https://drive.google.com/file/d/1pkj2AwCaCq2GPzsTZhXKoU6vlEqiSzOb/view?usp=sharing"
+                target="_blank"
+                onclick="event.stopPropagation()">
+                  View Certificate
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+          </div>
+      </div>
+   
+
+  </div>
+
+  <div class="sec-title-row">
+    <div class="sec-head"><i class="fas fa-layer-group head-icon"></i><h2>All Certifications</h2><span class="count-pill">24</span></div>
+    <button class="collapse-all-btn" id="collapse-all-btn" onclick="toggleAll()"><i class="fas fa-chevron-up" id="collapse-all-icon"></i> <span id="collapse-all-label">Collapse All</span></button>
+  </div>
+  <div class="sec-sub">Explore all my certifications by category</div>
+
+  <div class="accordion" id="accordion">
+
+    <div class="acc-item" data-cat="ml">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-cat-icon cat-ml"><i class="fas fa-brain"></i></div>
+        <div><div class="acc-name">AI / ML</div><div class="acc-count">6 Certificates</div></div>
+        <div class="acc-logos">
+          <img class="mini-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="">
+          <img class="mini-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="">
+          <img class="mini-logo" src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/06/Logo-google-cloud-icon-vector-PNG.png" alt="">
+          <img class="mini-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="">
+          <img class="mini-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="">
+          <div class="mini-more">+1</div>
+        </div>
+        <i class="fas fa-chevron-down acc-chevron"></i>
+      </div>
+      <div class="acc-panel">
+        <div class="acc-panel-inner">
+          <div class="cert-grid">
+
+            <div class="mini-cert-card" data-title="introduction data science infosys springboard"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" data-issuer="Infosys Springboard"
+              data-name="Introduction to Data Science" data-date="Apr 2026" data-id="" data-skills="Data Science,Machine Learning" data-status="on-file" data-link="https://drive.google.com/file/d/1Iis8t5mUNpiDCfnRC5xrGidjN8of9LXd/view?usp=sharing">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt=""><div class="mini-cert-title">Introduction to Data Science</div></div>
+              <div class="mini-cert-issuer">Infosys Springboard</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Apr 2026</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> On File
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://drive.google.com/file/d/1Iis8t5mUNpiDCfnRC5xrGidjN8of9LXd/view?usp=sharing"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="introduction natural language processing nlp infosys springboard"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" data-issuer="Infosys Springboard"
+              data-name="Introduction to Natural Language Processing" data-date="Apr 2026" data-id="" data-skills="NLP,Text Analysis" data-status="on-file" data-link="https://drive.google.com/file/d/1G_pBLumNdbf5v_qHoFAz0w0BQry2uYut/view?usp=sharing">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt=""><div class="mini-cert-title">Introduction to NLP</div></div>
+              <div class="mini-cert-issuer">Infosys Springboard</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Apr 2026</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> On File
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://drive.google.com/file/d/1G_pBLumNdbf5v_qHoFAz0w0BQry2uYut/view?usp=sharing"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="gen ai academy 2.0 security learning track google cloud hack2skill"
+              data-logo="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/06/Logo-google-cloud-icon-vector-PNG.png" data-issuer="Google Cloud Security · Hack2Skill"
+              data-name="Gen AI Academy 2.0 – Security Learning Track" data-date="Dec 2025" data-id="SE00118" data-skills="Cloud Security,GCP,Generative AI" data-status="verified"
+              data-link="https://certificate.hack2skill.com/user/genai2security/2025H2S10GENAI-SE00118">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/06/Logo-google-cloud-icon-vector-PNG.png" alt=""><div class="mini-cert-title">Gen AI Academy 2.0</div></div>
+              <div class="mini-cert-issuer">Google Cloud Security · Hack2Skill</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Dec 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://certificate.hack2skill.com/user/genai2security/2025H2S10GENAI-SE00118"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="introduction generative ai art of possible amazon web services"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" data-issuer="Amazon Web Services"
+              data-name="Introduction to Generative AI – Art of the Possible" data-date="Sep 2025" data-id="" data-skills="Generative AI,ML Algorithms" data-status="verified"
+              data-link="https://drive.google.com/file/d/1ZA8XV_Xk-NSVrQrj4XrvwpH7pwvs_xNR/view?usp=sharing">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt=""><div class="mini-cert-title">Gen AI – Art of the Possible</div></div>
+              <div class="mini-cert-issuer">Amazon Web Services</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Sep 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> On File
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://drive.google.com/file/d/1ZA8XV_Xk-NSVrQrj4XrvwpH7pwvs_xNR/view?usp=sharing"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="machine learning dimensionality reduction ibm cognitive class"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" data-issuer="IBM · Cognitive Class"
+              data-name="Machine Learning – Dimensionality Reduction" data-date="Apr 2025" data-id="" data-skills="Machine Learning" data-status="verified"
+              data-link="https://courses.cognitiveclass.ai/certificates/be9146ea2d954f4092b69c55d89fc7c9">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt=""><div class="mini-cert-title">ML – Dimensionality Reduction</div></div>
+              <div class="mini-cert-issuer">IBM · Cognitive Class</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Apr 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://courses.cognitiveclass.ai/certificates/be9146ea2d954f4092b69c55d89fc7c9"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="data visualization r ibm cognitive class"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" data-issuer="IBM · Cognitive Class"
+              data-name="Data Visualization with R" data-date="Mar 2025" data-id="" data-skills="Data Visualization,R" data-status="verified"
+              data-link="https://courses.cognitiveclass.ai/certificates/7f093b6eb7634ea3a61deea9232568ca">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt=""><div class="mini-cert-title">Data Visualization with R</div></div>
+              <div class="mini-cert-issuer">IBM · Cognitive Class</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Mar 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://courses.cognitiveclass.ai/certificates/7f093b6eb7634ea3a61deea9232568ca"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-cat="cloud">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-cat-icon cat-cloud"><i class="fas fa-cloud"></i></div>
+        <div><div class="acc-name">Cloud &amp; DevOps</div><div class="acc-count">2 Certificates</div></div>
+        <div class="acc-logos">
+          <div class="mini-logo" style="font-size:14px;">🚀</div>
+          <img class="mini-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="">
+          <div class="mini-more">+0</div>
+        </div>
+        <i class="fas fa-chevron-down acc-chevron"></i>
+      </div>
+      <div class="acc-panel">
+        <div class="acc-panel-inner">
+          <div class="cert-grid">
+
+            <div class="mini-cert-card" data-title="decoding devops udemy tiger analytics docker kubernetes terraform"
+              data-emoji="🚀" data-issuer="Udemy · Tiger Analytics" data-name="Decoding DevOps – From Basics to Advanced Projects with AI"
+              data-date="Jun 2026" data-id="UC-32f6aa2e" data-skills="Docker,Kubernetes,Terraform,AWS,AI-assisted DevOps" data-status="on-file" data-link="https://www.udemy.com/certificate/UC-32f6aa2e-6c18-4541-b079-8c50dc4d873f/">
+              <div class="mini-cert-top"><div class="mini-cert-logo">🚀</div><div class="mini-cert-title">Decoding DevOps</div></div>
+              <div class="mini-cert-issuer">Udemy · Tiger Analytics</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Jun 2026</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://www.udemy.com/certificate/UC-32f6aa2e-6c18-4541-b079-8c50dc4d873f/"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="aws cloud practitioner essentials amazon web services"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" data-issuer="Amazon Web Services"
+              data-name="AWS Cloud Practitioner Essentials" data-date="Sep 2025" data-id="" data-skills="Cloud Computing,AWS Core Services" data-status="verified"
+              data-link="https://drive.google.com/file/d/1JXg4KwGq0B7KhCgvbHmPLML9T_A1SI9E/view?usp=sharing">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt=""><div class="mini-cert-title">AWS Cloud Practitioner</div></div>
+              <div class="mini-cert-issuer">Amazon Web Services</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Sep 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://drive.google.com/file/d/1JXg4KwGq0B7KhCgvbHmPLML9T_A1SI9E/view?usp=sharing"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-cat="cyber">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-cat-icon cat-cyber"><i class="fas fa-shield-halved"></i></div>
+        <div><div class="acc-name">Cybersecurity</div><div class="acc-count">6 Certificates</div></div>
+        <div class="acc-logos">
+          <img class="mini-logo" src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt="">
+          <img class="mini-logo" src="https://img.freepik.com/premium-vector/google-app-icon_1273375-1571.jpg?w=740" alt="">
+          <img class="mini-logo" src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt="">
+          <img class="mini-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="">
+          <img class="mini-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_sRo5NEMP5zaR3_zi3vhtirpmKTSCHrGTw&s" alt="">
+          <div class="mini-more">+1</div>
+        </div>
+        <i class="fas fa-chevron-down acc-chevron"></i>
+      </div>
+      <div class="acc-panel">
+        <div class="acc-panel-inner">
+          <div class="cert-grid">
+
+            <div class="mini-cert-card" data-title="cyber job simulation deloitte australia forage"
+              data-logo="https://cdn-assets.theforage.com/images/forage-schema-logo.png" data-issuer="Deloitte Australia · Forage"
+              data-name="Cyber Job Simulation" data-date="Sep 2025" data-id="" data-skills="Web App Security,Networking" data-status="verified"
+              data-link="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_dZ76qiwSHJv9FN86d_1756811600853_completion_certificate.pdf">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt=""><div class="mini-cert-title">Cyber Job Simulation</div></div>
+              <div class="mini-cert-issuer">Deloitte Australia · Forage</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Sep 2025</div>
+              <div class="mini-cert-status-row">
+                    <div class="mini-cert-status status-verified">
+                        <i class="fas fa-circle-check"></i> Verified
+                    </div>
+
+                    <a class="mini-cert-link"
+                      href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_dZ76qiwSHJv9FN86d_1756811600853_completion_certificate.pdf"
+                      target="_blank"
+                      onclick="event.stopPropagation()">
+                        View Certificate
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="play it safe manage security risks google coursera"
+              data-logo="https://img.freepik.com/premium-vector/google-app-icon_1273375-1571.jpg?w=740" data-issuer="Google · Coursera"
+              data-name="Play It Safe: Manage Security Risks" data-date="Sep 2025" data-id="" data-skills="Cybersecurity,Risk Analysis" data-status="verified"
+              data-link="https://www.coursera.org/account/accomplishments/verify/CHS45LWX299L">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://img.freepik.com/premium-vector/google-app-icon_1273375-1571.jpg?w=740" alt=""><div class="mini-cert-title">Play It Safe</div></div>
+              <div class="mini-cert-issuer">Google · Coursera</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Sep 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://www.coursera.org/account/accomplishments/verify/CHS45LWX299L"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="cybersecurity analyst job simulation tata group forage"
+              data-logo="https://cdn-assets.theforage.com/images/forage-schema-logo.png" data-issuer="Tata Group · Forage"
+              data-name="Cybersecurity Analyst Job Simulation" data-date="Aug 2025" data-id="" data-skills="Communication,Problem Solving" data-status="verified"
+              data-link="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_dZ76qiwSHJv9FN86d_1756451329381_completion_certificate.pdf">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt=""><div class="mini-cert-title">Cybersecurity Analyst Sim</div></div>
+              <div class="mini-cert-issuer">Tata Group · Forage</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Aug 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_dZ76qiwSHJv9FN86d_1756451329381_completion_certificate.pdf"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="foundations cybersecurity google coursera"
+              data-logo="https://img.freepik.com/premium-vector/google-app-icon_1273375-1571.jpg?w=740" data-issuer="Google · Coursera"
+              data-name="Foundations of Cybersecurity" data-date="Jun 2025" data-id="" data-skills="Cybersecurity" data-status="verified"
+              data-link="https://www.coursera.org/account/accomplishments/records/GB53UN51LU2A">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://img.freepik.com/premium-vector/google-app-icon_1273375-1571.jpg?w=740" alt=""><div class="mini-cert-title">Foundations of Cybersecurity</div></div>
+              <div class="mini-cert-issuer">Google · Coursera</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Jun 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://www.coursera.org/account/accomplishments/records/GB53UN51LU2A"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="fundamentals encryption ibm cognitive class"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" data-issuer="IBM · Cognitive Class"
+              data-name="Fundamentals of Encryption" data-date="Apr 2025" data-id="" data-skills="Encryption,Cybersecurity" data-status="verified"
+              data-link="https://courses.cognitiveclass.ai/certificates/9994dff1473d4ab8ba283818f7b87124">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt=""><div class="mini-cert-title">Fundamentals of Encryption</div></div>
+              <div class="mini-cert-issuer">IBM · Cognitive Class</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Apr 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://courses.cognitiveclass.ai/certificates/9994dff1473d4ab8ba283818f7b87124"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="blockchain applications nptel iit"
+              data-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_sRo5NEMP5zaR3_zi3vhtirpmKTSCHrGTw&s" data-issuer="NPTEL · IIT"
+              data-name="Blockchain and its Applications" data-date="Jan 2025" data-id="" data-skills="Blockchain" data-status="verified"
+              data-link="https://drive.google.com/file/d/1drf8VXjJADCwl3JwzXqXxfSH8DmrBXUH/view?usp=sharing">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_sRo5NEMP5zaR3_zi3vhtirpmKTSCHrGTw&s" alt=""><div class="mini-cert-title">Blockchain and its Applications</div></div>
+              <div class="mini-cert-issuer">NPTEL · IIT</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Jan 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://drive.google.com/file/d/1drf8VXjJADCwl3JwzXqXxfSH8DmrBXUH/view?usp=sharing"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-cat="dev">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-cat-icon cat-dev"><i class="fas fa-code"></i></div>
+        <div><div class="acc-name">Development</div><div class="acc-count">9 Certificates</div></div>
+        <div class="acc-logos">
+          <div class="mini-logo" style="font-size:14px;">💻</div>
+          <img class="mini-logo" src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Extra-Large.jpg" alt="">
+          <img class="mini-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png" alt="">
+          <img class="mini-logo" src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt="">
+          <img class="mini-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="">
+          <div class="mini-more">+4</div>
+        </div>
+        <i class="fas fa-chevron-down acc-chevron"></i>
+      </div>
+      <div class="acc-panel">
+        <div class="acc-panel-inner">
+          <div class="cert-grid">
+
+            
+
+            <div class="mini-cert-card" data-title="certificate participation open source competition unstop"
+              data-logo="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Extra-Large.jpg" data-issuer="Unstop"
+              data-name="Certificate of Participation – Open Source Competition" data-date="Jan 2026" data-id="b71ee1b5" data-skills="Open Source" data-status="verified"
+              data-link="https://unstop.com/certificate-preview/b71ee1b5-c367-4603-a82e-53fd8d073b78">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Extra-Large.jpg" alt=""><div class="mini-cert-title">Open Source Competition</div></div>
+              <div class="mini-cert-issuer">Unstop</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Jan 2026</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://unstop.com/certificate-preview/b71ee1b5-c367-4603-a82e-53fd8d073b78"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="software engineer intern hackerrank"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png" data-issuer="HackerRank"
+              data-name="Software Engineer Intern" data-date="Jan 2026" data-id="" data-skills="Python,SQL" data-status="verified"
+              data-link="https://www.hackerrank.com/certificates/ccad183b59dd">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png" alt=""><div class="mini-cert-title">Software Engineer Intern</div></div>
+              <div class="mini-cert-issuer">HackerRank</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Jan 2026</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://www.hackerrank.com/certificates/ccad183b59dd"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="software engineering job simulation jp morgan forage"
+              data-logo="https://cdn-assets.theforage.com/images/forage-schema-logo.png" data-issuer="J.P. Morgan · Forage"
+              data-name="Software Engineering Job Simulation" data-date="Oct 2025" data-id="" data-skills="Software Engineering" data-status="verified"
+              data-link="https://www.theforage.com/completion-certificates/Sj7temL583QAYpHXD/E6McHJDKsQYh79moz_Sj7temL583QAYpHXD_dZ76qiwSHJv9FN86d_1760359417152_completion_certificate.pdf">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://cdn-assets.theforage.com/images/forage-schema-logo.png" alt=""><div class="mini-cert-title">SE Job Simulation</div></div>
+              <div class="mini-cert-issuer">J.P. Morgan · Forage</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Oct 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://www.theforage.com/completion-certificates/Sj7temL583QAYpHXD/E6McHJDKsQYh79moz_Sj7temL583QAYpHXD_dZ76qiwSHJv9FN86d_1760359417152_completion_certificate.pdf"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="nestle e-learning resilience"
+              data-logo="https://graduan.sgp1.cdn.digitaloceanspaces.com/media/460632/w770/cbfdc54e-9fa3-426e-b58b-fc42433324fa-NDYwNjMy.png" data-issuer="Nestlé India"
+              data-name="Nestlé E-Learning 2025 – Resilience" data-date="Sep 2025" data-id="" data-skills="Time Management,Stress Management" data-status="verified"
+              data-link="https://drive.google.com/file/d/16ZeDewWNswrTC8Dqu4r4LlMLjtwy3a9y/view?usp=sharing">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://graduan.sgp1.cdn.digitaloceanspaces.com/media/460632/w770/cbfdc54e-9fa3-426e-b58b-fc42433324fa-NDYwNjMy.png" alt=""><div class="mini-cert-title">Nestlé Resilience</div></div>
+              <div class="mini-cert-issuer">Nestlé India</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Sep 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://drive.google.com/file/d/16ZeDewWNswrTC8Dqu4r4LlMLjtwy3a9y/view?usp=sharing"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="sql relational databases 101 ibm cognitive class"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" data-issuer="IBM · Cognitive Class"
+              data-name="SQL &amp; Relational Databases 101" data-date="Sep 2025" data-id="" data-skills="SQL" data-status="verified"
+              data-link="https://courses.cognitiveclass.ai/certificates/5dfa47dbae7b48c6b2b0227465f731a9">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt=""><div class="mini-cert-title">SQL &amp; Relational DBs</div></div>
+              <div class="mini-cert-issuer">IBM · Cognitive Class</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Sep 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://courses.cognitiveclass.ai/certificates/5dfa47dbae7b48c6b2b0227465f731a9"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="python everybody university michigan coursera"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" data-issuer="University of Michigan · Coursera"
+              data-name="Programming for Everybody (Python)" data-date="Jun 2025" data-id="" data-skills="Python" data-status="verified"
+              data-link="https://www.coursera.org/account/accomplishments/verify/XX9EZIC7Z2V8">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt=""><div class="mini-cert-title">Programming for Everybody</div></div>
+              <div class="mini-cert-issuer">U. Michigan · Coursera</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Jun 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://www.coursera.org/account/accomplishments/verify/XX9EZIC7Z2V8"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="front end development infosys springboard"
+              data-logo="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" data-issuer="Infosys Springboard"
+              data-name="Front End Development" data-date="Apr 2025" data-id="" data-skills="HTML5,CSS,JavaScript" data-status="verified"
+              data-link="https://drive.google.com/file/d/17AaAG-exZjTZN33gWKh91GzuL89AQROb/view?usp=sharing">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt=""><div class="mini-cert-title">Front End Development</div></div>
+              <div class="mini-cert-issuer">Infosys Springboard</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Apr 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://drive.google.com/file/d/17AaAG-exZjTZN33gWKh91GzuL89AQROb/view?usp=sharing"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="mini-cert-card" data-title="ignite ideation prototyping business modeling wadhwani foundation"
+              data-logo="https://wadhwanifoundation.org/wp-content/uploads/2023/10/Wadhwani-Foundation-Logo.png" data-issuer="Wadhwani Foundation"
+              data-name="IGNITE 3.4 – Ideation, Prototyping &amp; Business Modeling" data-date="Apr 2025" data-id="67fdf5a6" data-skills="Business Modeling,Prototyping" data-status="verified"
+              data-link="https://web.certificate.wfglobal.org/en/certificate?certificateId=67fdf5a6eeacc2785e22de56">
+              <div class="mini-cert-top"><img class="mini-cert-logo" src="https://wadhwanifoundation.org/wp-content/uploads/2023/10/Wadhwani-Foundation-Logo.png" alt=""><div class="mini-cert-title">IGNITE 3.4</div></div>
+              <div class="mini-cert-issuer">Wadhwani Foundation</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Apr 2025</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> Verified
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://web.certificate.wfglobal.org/en/certificate?certificateId=67fdf5a6eeacc2785e22de56"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-cat="pub">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-cat-icon cat-pub"><i class="fas fa-book"></i></div>
+        <div><div class="acc-name">Publication</div><div class="acc-count">1 Certificate</div></div>
+        <div class="acc-logos">
+          <div class="mini-logo" style="font-size:14px;">📄</div>
+          <div class="mini-more">+0</div>
+        </div>
+        <i class="fas fa-chevron-down acc-chevron"></i>
+      </div>
+      <div class="acc-panel">
+        <div class="acc-panel-inner">
+          <div class="cert-grid">
+
+            <div class="mini-cert-card" data-title="research paper certification smart garden iot comsia university delhi"
+              data-emoji="📄" data-issuer="ComSIA 2026 · University of Delhi" data-name="Smart Garden: An IoT-Based Sustainable Automation System"
+              data-date="Mar 2026" data-id="Presentation" data-skills="IoT,Automation,Embedded,Research,Presentation" data-status="pending" data-link="https://drive.google.com/file/d/1QjnNpe1pfbI_KZK9zpUGXKk0dRkdP4EC/view?usp=sharing">
+              <div class="mini-cert-top"><div class="mini-cert-logo">📄</div><div class="mini-cert-title">Smart Garden Research Paper</div></div>
+              <div class="mini-cert-issuer">ComSIA 2026 · University of Delhi</div>
+              <div class="mini-cert-date"><i class="fas fa-calendar"></i> Mar 2026</div>
+              <div class="mini-cert-status-row">
+                <div class="mini-cert-status status-verified">
+                    <i class="fas fa-circle-check"></i> On File
+                </div>
+
+                <a class="mini-cert-link"
+                  href="https://drive.google.com/file/d/1QjnNpe1pfbI_KZK9zpUGXKk0dRkdP4EC/view"
+                  target="_blank"
+                  onclick="event.stopPropagation()">
+                    View Certificate
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="no-results" id="no-results"><i class="fas fa-search"></i>No certifications match your search.</div>
+
+  <div class="cta-banner">
+    <div class="cta-left">
+      <div class="cta-icon"><i class="fas fa-trophy"></i></div>
+      <div>
+        <h3>Always learning. Always building.</h3>
+        <p>I'm continuously upskilling and staying up-to-date with the latest technologies.</p>
+      </div>
+    </div>
+    <a class="cta-btn" href="project.html">View My Projects <i class="fas fa-arrow-right"></i></a>
+  </div>
+
+  <div class="footer">
+    <div>© 2026 <a href="index.html">JR.dev</a> · Built with <span style="color:#f87171;">♥</span> and ☕</div>
+    
+  </div>
+
+</div>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal()"><i class="fas fa-xmark"></i></div>
+    <div class="modal-top">
+      <div class="modal-logo-wrap" id="modal-logo-wrap"><img id="modal-logo" src="" alt="" style="display:none;"><span id="modal-emoji" style="font-size:24px;display:none;"></span></div>
+      <div>
+        <div class="modal-issuer" id="modal-issuer"></div>
+        <div class="modal-title" id="modal-title"></div>
+      </div>
+    </div>
+    <div class="modal-meta" id="modal-meta"></div>
+    <div class="modal-tags" id="modal-tags"></div>
+    <div id="modal-cta-wrap"></div>
+  </div>
+</div>
+
+<script>
+function toggleAcc(headerEl) {
+  var item = headerEl.closest('.acc-item');
+  item.classList.toggle('open');
+  syncCollapseLabel();
+}
+function toggleAll() {
+  var items = document.querySelectorAll('.acc-item');
+  var anyOpen = Array.from(items).some(function(i){ return i.classList.contains('open'); });
+  items.forEach(function(i){ i.classList.toggle('open', !anyOpen); });
+  syncCollapseLabel();
+}
+function syncCollapseLabel() {
+  var items = document.querySelectorAll('.acc-item');
+  var anyOpen = Array.from(items).some(function(i){ return i.classList.contains('open'); });
+  document.getElementById('collapse-all-label').textContent = anyOpen ? 'Collapse All' : 'Expand All';
+  document.getElementById('collapse-all-icon').className = anyOpen ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+}
+
+var currentCat = 'all';
+function filterAll(cat, btn) {
+  currentCat = cat;
+  document.querySelectorAll('.f-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  applyGlobalSearch();
+}
+
+function applyGlobalSearch() {
+  var q = document.getElementById('search-input').value.toLowerCase().trim();
+
+  var anyFeatVisible = false;
+  document.querySelectorAll('#featured-grid .feat-card').forEach(function(card) {
+    var catOk = currentCat === 'all' || card.dataset.cat === currentCat;
+    var qOk = !q || card.dataset.title.includes(q);
+    var vis = catOk && qOk;
+    card.style.display = vis ? 'flex' : 'none';
+    if (vis) anyFeatVisible = true;
+  });
+  document.getElementById('featured-grid').style.display = anyFeatVisible ? 'grid' : 'none';
+
+  var anyAccVisible = false;
+  document.querySelectorAll('.acc-item').forEach(function(item) {
+    var cat = item.dataset.cat;
+    var catOk = currentCat === 'all' || cat === currentCat;
+    var anyCardVisible = false;
+    item.querySelectorAll('.mini-cert-card').forEach(function(card) {
+      var cardOk = !q || card.dataset.title.includes(q);
+      card.style.display = cardOk ? 'flex' : 'none';
+      if (cardOk) anyCardVisible = true;
+    });
+    var vis = catOk && (q ? anyCardVisible : true);
+    item.style.display = vis ? 'block' : 'none';
+    if (vis) {
+      anyAccVisible = true;
+      if (q) item.classList.add('open');
+    }
+  });
+
+  document.getElementById('no-results').style.display = (!anyFeatVisible && !anyAccVisible) ? 'block' : 'none';
+  syncCollapseLabel();
+}
+
+var overlay = document.getElementById('modal-overlay');
+
+function openModalFromCard(card) {
+  var logo = card.dataset.logo;
+  var emoji = card.dataset.emoji;
+  var issuer = card.dataset.issuer;
+  var name = card.dataset.name;
+  var date = card.dataset.date;
+  var id = card.dataset.id;
+  var skills = card.dataset.skills ? card.dataset.skills.split(',').filter(Boolean) : [];
+  var status = card.dataset.status;
+  var link = card.dataset.link;
+
+  var logoImg = document.getElementById('modal-logo');
+  var emojiSpan = document.getElementById('modal-emoji');
+  if (logo) {
+    logoImg.src = logo; logoImg.style.display = 'block'; emojiSpan.style.display = 'none';
+  } else {
+    logoImg.style.display = 'none'; emojiSpan.style.display = 'block'; emojiSpan.textContent = emoji || '📜';
+  }
+
+  document.getElementById('modal-issuer').textContent = issuer || '';
+  document.getElementById('modal-title').textContent = name || '';
+
+  var metaHtml = '';
+  if (date) metaHtml += '<i class="fas fa-calendar"></i> ' + date;
+  if (id) metaHtml += (date ? ' &middot; ' : '') + id;
+  document.getElementById('modal-meta').innerHTML = metaHtml;
+
+  document.getElementById('modal-tags').innerHTML = skills.map(function(s){ return '<span class="tag">' + s + '</span>'; }).join('');
+
+  var ctaWrap = document.getElementById('modal-cta-wrap');
+  if (link) {
+    ctaWrap.innerHTML = '<a class="modal-cta" href="' + link + '" target="_blank"><i class="fas fa-shield-halved"></i> View Certificate</a>';
+  } else if (status === 'pending') {
+    ctaWrap.innerHTML = '<div class="modal-cta pending"><i class="fas fa-clock"></i> Verification link pending</div>';
+  } else {
+    ctaWrap.innerHTML = '<div class="modal-cta pending" style="background:rgba(52,211,153,0.12); color:#34d399;"><i class="fas fa-circle-check"></i> Certificate on file</div>';
+  }
+
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+function closeModalOnOverlay(e) { if (e.target === overlay) closeModal(); }
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+document.querySelectorAll('.feat-card, .mini-cert-card').forEach(function(card) {
+  card.addEventListener('click', function(e) {
+    if (e.target.closest('a')) return;
+    openModalFromCard(card);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', syncCollapseLabel);
+</script>
+</body>
+</html>
