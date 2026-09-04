@@ -90,6 +90,13 @@ body::after {
 }
 .nav-hire:hover { transform: translateY(-2px); box-shadow: 0 12px 30px var(--accent-glow); }
 @media (max-width: 900px) { .nav-links { display: none; } }
+.nav-bike {
+  font-size: 12.5px; font-weight: 700; color: #fff; text-decoration: none;
+  padding: 9px 20px; border-radius: 999px; background: var(--accent-grad);
+  box-shadow: 0 8px 22px var(--accent-glow); transition: all 0.3s var(--ease); white-space: nowrap;
+}
+.nav-bike:hover { transform: translateY(-2px); box-shadow: 0 12px 30px var(--accent-glow); }
+@media (max-width: 900px) { .nav-links { display: none; } }
 
 .wrap { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 24px 90px; }
 
@@ -359,7 +366,9 @@ img.feat-icon { object-fit: contain; }
     <a class="nav-link" href="index.html#experience">Experience</a>
     <a class="nav-link active" href="certifications-top.html">Certifications</a>
     <a class="nav-link" href="index.html#contact">Contact</a>
+    
   </div>
+  <a class="nav-bike" href="index.html"><i class="fas fa-long-arrow-alt-left"></i></i> Back</a>
   <a class="nav-hire" href="index.html#contact"><i class="fas fa-bolt"></i> Hire Me</a>
 </nav>
 
