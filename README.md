@@ -25,7 +25,7 @@ A personal portfolio website showcasing projects, skills, and achievements of **
 
 ## 📸 Portfolio Screenshot
 
-Here is a preview of my portfolio website:https://github.com/Jass-pvt/jr-portfolio/blob/main/portfoilo.jpeg
+Here is a preview of my portfolio website: https://github.com/Jass-pvt/jr-portfolio/blob/main/portfoilo.jpeg?raw=true
 
 
 
